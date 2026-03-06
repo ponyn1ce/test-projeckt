@@ -569,6 +569,28 @@ main .recent-orders a{
 
 
 
+.language-switcher {
+
+  position: absolute;
+  top: 1.26rem;
+  right: 21.7rem;
+
+}
+
+#languageSelect {
+
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid #dadce0;
+
+  font-size: 14px;
+
+  background: #e3e4f0;
+  cursor: pointer;
+
+}
+
+
 /*media queries*/
 
 
