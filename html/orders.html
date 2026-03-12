@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=orders" />
+    <link rel="stylesheet" href="/css/orders.css">
+    <script src="/js/script.js"></script>
+    <script src="/js/i18n.js"></script>
+    <title>Orders</title>
+</head>
+<body>    
+<div class="container">
+    <aside>
+        <div class="top">
+            <div class="logo">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#123244" />
+                    <path d="M2 17L12 22L22 17" stroke="#123244" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M2 12L12 17L22 12" stroke="#123244" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <h2 class="text-muted">Photarea</h2>
+            </div>
+
+            <div class="close" id="close-btn">
+                <span class="material-icons-sharp">close</span>
+            </div>
+        </div>
+
+
+        <div class="sidebar">
+
+            <a href="/index.html">
+                <span class="material-icons-sharp">grid_view</span>
+                <h3 data-i18n="dashboard">Dashboard</h3>
+            </a>
+
+            <a href="./html/customers.html">
+                <span class="material-icons-sharp">person_outline</span>
+                <h3 data-i18n="customers">Customers</h3>
+            </a>
+
+            <a href="./html/orders.html" class="active">
+                <span class="material-icons-sharp">receipt_long</span>
+                <h3 data-i18n="orders">Orders</h3>
+            </a>
+
+            <a href="./html/analytics.html">
+                <span class="material-icons-sharp">insights</span>
+                <h3 data-i18n="analytics">Analytics</h3>
+            </a>
+
+            <a href="./html/messages.html">
+                <span class="material-icons-sharp">mail_outline</span>
+                <h3 data-i18n="messages">Messages</h3>
+            </a>
+
+            <a href="./html/products.html">
+                <span class="material-icons-sharp">inventory</span>
+                <h3 data-i18n="products">Products</h3>
+                <span class="message-count"></span>
+            </a>
+
+            <a href="./html/reports.html">
+                <span class="material-icons-sharp">report_gmailerrorred</span>
+                <h3 data-i18n="reports">Reports</h3>
+            </a>
+
+            <a href="./html/setting.html">
+                <span class="material-icons-sharp">settings</span>
+                <h3 data-i18n="settings">Setting</h3>
+            </a>
+
+            <a href="./html/add_produkt.html">
+                <span class="material-icons-sharp">add</span>
+                <h3 data-i18n="add_product">Add Product</h3>
+            </a>
+
+            <a href="./html/profile.html">
+                <span class="material-icons-sharp">logout</span>
+                <h3 data-i18n="logout">Logout</h3>
+            </a>
+        </div>
+    </aside>
+
+    <!--Main Section-->
+
+    <main>
+        <h1 data-i18n="tracking_orders">Tracking orders</h1>
+
+
+        <div class="tracking-orders">
+
+		    <p class="hint" id="statusHint" style="display: none"></p>
+
+		    <div class="summary-grid">
+				<div class="start-card icon-right">
+					<div class="start-text">
+						<h3 class="stat-label" data-i18n="total">Total orders</h3> 
+						<h1 id="statTotal">0</h1>
+					</div>
+                    <span class="material-symbols-outlined">orders</span>
+				</div>
+				<div class="start-card icon-right">
+					<div class="start-text">
+						<h3 class="stat-label" data-i18n="new">New orders</h3>
+						<h1 id="statNew">0</h1>
+					</div>
+                    <span class="material-icons-sharp">local_mall</span>
+				</div>
+				<div class="start-card icon-right">
+					<div class="start-text">
+						<h3 class="stat-label" data-i18n="processing">Processing</h3>
+					<h1 id="statProcessing">0</h1>
+					</div>
+                    <span class="material-icons-sharp">shopping_cart</span>
+				</div>
+				<div class="start-card icon-right">
+					<div class="start-text">
+						<h3 class="stat-label" data-i18n="delivered">Delivered</h3>
+						<h1 id="statDelivered">0</h1>
+					</div>
+                    <span class="material-icons-sharp">person</span>
+				</div>
+				<div class="start-card icon-right">
+					<div class="start-text">
+						<h3 class="stat-label" data-i18n="canceled">Canceled</h3>
+						<h1 id="statCanceled">0</h1>
+					</div>
+                    <span class="material-icons-sharp" >light_mode</span>
+				</div>
+		    </div>
+
+			<section class="filters">
+				<div class="field">
+					<label class="field-label" for="q">Поиск</label>
+					<input class="field-input" id="q" type="search" placeholder="ID, имя, email, телефон" autocomplete="off" />
+				</div>
+				<div class="field">
+					<label class="field-label" for="status">Статус</label>
+					<select class="field-input" id="status">
+						<option value="">Все</option>
+						<option value="unconfirmed">Не подтвержден</option>
+						<option value="new">Новый</option>
+						<option value="processing">В работе</option>
+						<option value="shipped">Отправлен</option>
+						<option value="delivered">Доставлен</option>
+						<option value="canceled">Отменён</option>
+						<option value="refunded">Возврат</option>
+					</select>
+				</div>
+				<div class="field">
+					<label class="field-label" for="payment">Оплата</label>
+					<select class="field-input" id="payment">
+						<option value="">Все</option>
+						<option value="paid">Оплачен</option>
+						<option value="unpaid">Не оплачен</option>
+						<option value="refund">Возврат</option>
+					</select>
+				</div>
+				<div class="field">
+					<label class="field-label" for="dateFrom">С даты</label>
+					<input class="field-input" id="dateFrom" type="date" />
+				</div>
+				<div class="field">
+					<label class="field-label" for="dateTo">По дату</label>
+					<input class="field-input" id="dateTo" type="date" />
+				</div>
+				<div class="field field-actions">
+					<label class="field-label" aria-hidden="true">&nbsp;</label>
+					<button class="btn-ghost" type="button" id="btnReset">Сбросить</button>
+				</div>
+			</section>
+
+			<div class="table-wrap" aria-label="Список заказов">
+				<table class="products-table orders-table">
+					<thead>
+						<tr>
+							<th>№</th>
+							<th>Клиент</th>
+							<th>Контакты</th>
+							<th>Сумма</th>
+							<th>Статус</th>
+							<th>Оплата</th>
+							<th>Дата</th>
+							<th style="width: 210px">Действия</th>
+						</tr>
+					</thead>
+					<tbody id="ordersTbody"></tbody>
+				</table>
+			</div>
+
+			<p class="hint" id="emptyHint" style="display: none">Ничего не найдено по текущим фильтрам.</p>
+		</main>
+
+		<div id="orderModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="orderModalTitle">
+			<div class="modal-content modal-wide">
+				<div class="modal-header">
+					<h2 class="modal-title" id="orderModalTitle">Заказ</h2>
+					<button class="close-modal" type="button" id="closeOrderModal" aria-label="Закрыть">×</button>
+				</div>
+
+				<div class="order-modal-grid">
+					<section class="order-card">
+						<h3 class="order-card-title">Основное</h3>
+						<div class="kv" id="orderMeta"></div>
+						<div class="row">
+							<div class="field" style="margin: 0">
+								<label class="field-label" for="modalStatus">Статус</label>
+								<select class="field-input" id="modalStatus">
+									<option value="new">Новый</option>
+									<option value="processing">В работе</option>
+									<option value="shipped">Отправлен</option>
+									<option value="delivered">Доставлен</option>
+									<option value="canceled">Отменён</option>
+									<option value="refunded">Возврат</option>
+								</select>
+							</div>
+							<div class="field" style="margin: 0">
+								<label class="field-label" for="modalPayment">Оплата</label>
+								<select class="field-input" id="modalPayment">
+									<option value="paid">Оплачен</option>
+									<option value="unpaid">Не оплачен</option>
+									<option value="refund">Возврат</option>
+								</select>
+							</div>
+						</div>
+							<div class="row" style="margin-top: 12px">
+								<div class="field" style="margin: 0">
+									<label class="field-label" for="modalPages">Страниц (мин. 10)</label>
+									<input class="field-input" id="modalPages" type="number" min="10" step="4" value="10" />
+								</div>
+								<div class="field" style="margin: 0">
+									<label class="field-label" for="modalTotal">Цена (EUR)</label>
+									<input class="field-input" id="modalTotal" type="text" readonly value="—" />
+								</div>
+							</div>
+						<div class="row" style="margin-top: 12px">
+								<button class="btn-primary" type="button" id="btnSaveOrder">Сохранить</button>
+							<button class="btn-secondary" type="button" id="btnCopy">Скопировать ID</button>
+								<button class="btn-danger" type="button" id="btnDeleteOrder">Удалить</button>
+						</div>
+							<p class="hint">Алгоритм: базовая цена за 10 страниц, каждые +4 страницы = +4€.</p>
+					</section>
+
+					<section class="order-card">
+						<h3 class="order-card-title">Состав заказа</h3>
+						<div class="items" id="orderItems"></div>
+					</section>
+				</div>
+			</div>
+		</div>
+    </div>
+
+
+
+    </main>
+
+
+    <div class="right">
+        <div class="top">
+            <button id="menu-btn">
+                <span class="material-icons-sharp">menu</span>
+            </button>
+            <div class="theme-toggler">
+                <span class="material-icons-sharp active" >light_mode</span>
+                <span class="material-icons-sharp">dark_mode</span>
+            </div>
+            <div class="profile">
+                <div class="info">
+                    <p>Hey, <b>Chapman</b></p>
+                    <small class="text-muted" data-i18n="admin">Admin</small>
+                </div>
+                <div class="profile-photo">
+                    <img src="./img/photo_2026-03-04_16-17-17.jpg" alt="">
+                </div>
+            </div>
+        </div>
+
+    <div class="language-switcher">
+        <select name="" id="languageSelect">
+            <option value="en">English</option>
+            <option value="ru">Russian</option>
+        </select>
+    </div>
+
+</div>
+</body>
+</html>

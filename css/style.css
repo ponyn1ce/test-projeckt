@@ -28,7 +28,7 @@
 
 .dark-theme-variables {
     --color-background: #181a1e;
-    --color-whiite: #202528;
+    --color-white: #202528;
     --color-dark: #edeffd;
     --color-dark-veriant: #a3bdcc;
     --color-light: rgba(0,0,0,0.4);
@@ -232,7 +232,7 @@ aside .sidebar a:active{
     }
 
     aside .sidebar a:hover span{
-            margin-left: 1rem;
+        margin-left: 1rem;
     }
 
 
