@@ -44,6 +44,8 @@ const initTestItemsPagination = () => {
         return;
     }
 
+    pagination.style.display = '';
+
     const pageList = pagination.querySelector('.page-list');
     const prevBtn = pagination.querySelector('[data-action="prev"]');
     const nextBtn = pagination.querySelector('[data-action="next"]');
@@ -85,21 +87,22 @@ const initTestItemsPagination = () => {
         updateControls();
     };
 
-    prevBtn.addEventListener('click', () => {
+    prevBtn.onclick = () => {
         if (currentPage > 1) {
             renderPage(currentPage - 1);
         }
-    });
+    };
 
-    nextBtn.addEventListener('click', () => {
+    nextBtn.onclick = () => {
         if (currentPage < totalPages) {
             renderPage(currentPage + 1);
         }
-    });
+    };
 
     renderPageButtons();
     renderPage(1);
 };
 
+window.refreshTestItemsPagination = initTestItemsPagination;
 window.addEventListener('DOMContentLoaded', initTestItemsPagination);
 

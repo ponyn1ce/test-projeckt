@@ -1,5 +1,5 @@
 export const orders = [
-   {
+    {
         "id": 1,
         "client": "Andrei Chapman",
         "contacts": "+7 926 705-00-00",
@@ -12,12 +12,12 @@ export const orders = [
 
     {
         "id": 2,
-        "client": "Genady Petrov",
-        "contacts": "+7 999 123-45-67",
-        "total": "€ 120.00",
-        "status": "Processing",
-        "payment": "Paid",
-        "date": "05-01-2015",
+        "client": "Schamil Larchenko",
+        "contacts": "+7 916 887-14-12",
+        "total": "€ 12.00",
+        "status": "Canceled",
+        "payment": "Refund",
+        "date": "11-10-2012",
         "action": "Details"
     },
 
@@ -27,18 +27,18 @@ export const orders = [
         "client": "Sofia Belousova",
         "contacts": "+7 985 101-40-07",
         "total": "€ 00.00",
-        "status": "Processing",
-        "payment": "Shipped",
+        "status": "Canceled",
+        "payment": "Refund",
         "date": "13-04-2016",
-        "action": "Details"
+        "action": "Divorce"
     },
 
     {
         "id": 4,
-        "client": "Polina Shania",
+        "client": "Polina Shanina",
         "contacts": "+7 999 888-77-66",
         "total": "€ 1.20",
-        "status": "Processing",
+        "status": "Shipped",
         "payment": "Paid",
         "date": "27-02-2026",
         "action": "Refunded"
@@ -46,17 +46,61 @@ export const orders = [
 
     {
         "id": 5,
-        "client": "Valentin Zalezki",
-        "contacts": "+1 900 123-450-37",
-        "total": "€ 11.50",
-        "status": "Processing",
-        "payment": "Unconfirmed",
-        "date": "17-07-2025",
+        "client": "Valery Gnidenko",
+        "contacts": "+7 800 555-35-35",
+        "total": "€ 25.55",
+        "status": "Delivered",
+        "payment": "Paid",
+        "date": "28-10-2020",
         "action": "Details"
     },
 
     {
         "id": 6,
+        "client": "Eva Keks",
+        "contacts": "+7 915 060-60-67",
+        "total": "€ 1200.00",
+        "status": "Processing",
+        "payment": "Unpaid",
+        "date": "17-07-2025",
+        "action": "Details"
+    },
+
+    {
+        "id": 7,
+        "client": "Yana Kni",
+        "contacts": "+7 909 303-11-24",
+        "total": "€ 56.10",
+        "status": "Processing",
+        "payment": "New",
+        "date": "14-02-2026",
+        "action": "Details"
+    },
+
+    {
+        "id": 8,
+        "client": "Alesya unprecedented",
+        "contacts": "+7 911 005-15-99",
+        "total": "€ 8.99",
+        "status": "Canceled",
+        "payment": "Refund",
+        "date": "02-11-2022",
+        "action": "Details"
+    },
+
+    {
+        "id": 9,
+        "client": "Mark Gerasimov",
+        "contacts": "+7 915 002-99-11",
+        "total": "€ 20.00",
+        "status": "Delivered",
+        "payment": "Paid",
+        "date": "2025-11-23",
+        "action": "Details"
+    },
+    
+    {
+        "id": 10,
         "client": "Ivan Putin",
         "contacts": "+7 999 999-99-99",
         "total": "€ error",
@@ -67,57 +111,13 @@ export const orders = [
     },
 
     {
-        "id": 7,
-        "client": "Michael Wolkov",
-        "contacts": "+7 999 123-45-67",
-        "total": "€ 120.00",
-        "status": "Delivered",
-        "payment": "Paid",
-        "date": "2024-06-01",
-        "action": "Details"
-    },
-
-    {
-        "id": 8,
-        "client": "Vitaliy Sokolov",
-        "contacts": "+7 999 123-45-67",
-        "total": "€ 120.00",
-        "status": "Processing",
-        "payment": "Paid",
-        "date": "2024-06-01",
-        "action": "Details"
-    },
-
-    {
-        "id": 9,
-        "client": "Valera Gnidenko",
-        "contacts": "+7 999 123-45-67",
-        "total": "€ 120.00",
-        "status": "Processing",
-        "payment": "Paid",
-        "date": "2024-06-01",
-        "action": "Details"
-    },
-
-    {
-        "id": 10,
-        "client": "Dick Cheney",
-        "contacts": "+7 999 123-45-67",
-        "total": "€ 120.00",
-        "status": "Processing",
-        "payment": "Paid",
-        "date": "2024-06-01",
-        "action": "Details"
-    },
-
-    {
         "id": 11,
         "client": "Nick Meister",
-        "contacts": "+7 999 123-45-67",
-        "total": "€ 120.00",
-        "status": "Processing",
+        "contacts": "+7 981 678-22-11",
+        "total": "€ 1990.00",
+        "status": "Successfully",
         "payment": "Paid",
-        "date": "2024-06-01",
+        "date": "24-10-2025",
         "action": "Details"
     },
 
@@ -135,22 +135,22 @@ export const orders = [
     {
         "id": 13,
         "client": "Anastasia Ivanova",
-        "contacts": "+7 999 123-45-67",
-        "total": "€ 120.00",
+        "contacts": "+7 382 011-18-52",
+        "total": "€ 48.75",
         "status": "Processing",
         "payment": "Paid",
-        "date": "2024-06-01",
+        "date": "01-01-2019",
         "action": "Details"
     },
 
     {
         "id": 14,
         "client": "Velentina Kharpova",
-        "contacts": "+7 999 123-45-67",
-        "total": "€ 120.00",
-        "status": "Processing",
-        "payment": "Paid",
-        "date": "2024-06-01",
+        "contacts": "+7 521 471-74-90",
+        "total": "€ 9.99",
+        "status": "Unconfirmed",
+        "payment": "Unpaid",
+        "date": "11-05-2019",
         "action": "Details"
     },
 
@@ -172,145 +172,146 @@ export const orders = [
         "total": "€ 00.00",
         "status": "Stop",
         "payment": "Unpaid",
-        "date": "24-02-2022",
+        "date": "22-02-2022",
         "action": "Details"
     },
 
     {
         "id": 17,
-        "client": "Genady Petrov",
-        "contacts": "+7 999 123-45-67",
-        "total": "€ 120.00",
-        "status": "Processing",
+        "client": "Miron Valentinowich",
+        "contacts": "+7 582 097-49-44",
+        "total": "€ 12.00",
+        "status": "New",
         "payment": "Paid",
-        "date": "2024-06-01",
+        "date": "26-06-2026",
         "action": "Details"
     },
 
     {
         "id": 18,
-        "client": "Genady Petrov",
-        "contacts": "+7 999 123-45-67",
-        "total": "€ 120.00",
-        "status": "Processing",
+        "client": "Andrei Chapman",
+        "contacts": "+7 926 705-00-00",
+        "total": "€ 10.000.00",
+        "status": "Done",
         "payment": "Paid",
-        "date": "2024-06-01",
+        "date": "18-11-2017",
         "action": "Details"
     },
 
     {
         "id": 19,
-        "client": "Genady Petrov",
-        "contacts": "+7 999 123-45-67",
-        "total": "€ 120.00",
-        "status": "Processing",
-        "payment": "Paid",
-        "date": "2024-06-01",
+        "client": "Schamil Larchenko",
+        "contacts": "+7 916 887-14-12",
+        "total": "€ 12.00",
+        "status": "Canceled",
+        "payment": "Refund",
+        "date": "11-10-2012",
         "action": "Details"
     },
 
+
     {
         "id": 20,
-        "client": "Genady Petrov",
-        "contacts": "+7 999 123-45-67",
-        "total": "€ 120.00",
-        "status": "Processing",
-        "payment": "Paid",
-        "date": "2024-06-01",
-        "action": "Details"
+        "client": "Sofia Belousova",
+        "contacts": "+7 985 101-40-07",
+        "total": "€ 00.00",
+        "status": "Canceled",
+        "payment": "Refund",
+        "date": "13-04-2016",
+        "action": "Divorce"
     },
 
     {
         "id": 21,
-        "client": "Genady Petrov",
-        "contacts": "+7 999 123-45-67",
-        "total": "€ 120.00",
-        "status": "Processing",
+        "client": "Polina Shanina",
+        "contacts": "+7 999 888-77-66",
+        "total": "€ 1.20",
+        "status": "Shipped",
         "payment": "Paid",
-        "date": "2024-06-01",
-        "action": "Details"
+        "date": "27-02-2026",
+        "action": "Refunded"
     },
 
     {
         "id": 22,
-        "client": "Genady Petrov",
-        "contacts": "+7 999 123-45-67",
-        "total": "€ 120.00",
-        "status": "Processing",
+        "client": "Valery Gnidenko",
+        "contacts": "+7 800 555-35-35",
+        "total": "€ 25.55",
+        "status": "Delivered",
         "payment": "Paid",
-        "date": "2024-06-01",
+        "date": "28-10-2020",
         "action": "Details"
     },
 
     {
         "id": 23,
-        "client": "Genady Petrov",
-        "contacts": "+7 999 123-45-67",
-        "total": "€ 120.00",
+        "client": "Eva Keks",
+        "contacts": "+7 915 060-60-67",
+        "total": "€ 1200.00",
         "status": "Processing",
-        "payment": "Paid",
-        "date": "2024-06-01",
+        "payment": "Unpaid",
+        "date": "17-07-2025",
         "action": "Details"
     },
 
     {
         "id": 24,
-        "client": "Genady Petrov",
-        "contacts": "+7 999 123-45-67",
-        "total": "€ 120.00",
+        "client": "Yana Kni",
+        "contacts": "+7 909 303-11-24",
+        "total": "€ 56.10",
         "status": "Processing",
-        "payment": "Paid",
-        "date": "2024-06-01",
+        "payment": "New",
+        "date": "14-02-2026",
         "action": "Details"
     },
 
     {
         "id": 25,
-        "client": "Genady Petrov",
-        "contacts": "+7 999 123-45-67",
-        "total": "€ 120.00",
-        "status": "Processing",
-        "payment": "Paid",
-        "date": "2024-06-01",
+        "client": "Alesya unprecedented",
+        "contacts": "+7 911 005-15-99",
+        "total": "€ 8.99",
+        "status": "Canceled",
+        "payment": "Refund",
+        "date": "02-11-2022",
         "action": "Details"
     },
 
     {
         "id": 26,
-        "client": "Genady Petrov",
-        "contacts": "+7 999 123-45-67",
-        "total": "€ 120.00",
-        "status": "Processing",
+        "client": "Mark Gerasimov",
+        "contacts": "+7 915 002-99-11",
+        "total": "€ 20.00",
+        "status": "Delivered",
         "payment": "Paid",
-        "date": "2024-06-01",
+        "date": "2025-11-23",
         "action": "Details"
     },
-
+    
     {
         "id": 27,
-        "client": "Genady Petrov",
-        "contacts": "+7 999 123-45-67",
-        "total": "€ 120.00",
-        "status": "Processing",
-        "payment": "Paid",
-        "date": "2024-06-01",
-        "action": "Details"
+        "client": "Ivan Putin",
+        "contacts": "+7 999 999-99-99",
+        "total": "€ error",
+        "status": "New",
+        "payment": "aid",
+        "date": "24-02-2022",
+        "action": "When?"
     },
 
     {
         "id": 28,
-        "client": "Genady Petrov",
-        "contacts": "+7 999 123-45-67",
-        "total": "€ 120.00",
-        "status": "Processing",
+        "client": "Nick Meister",
+        "contacts": "+7 981 678-22-11",
+        "total": "€ 1990.00",
+        "status": "Successfully",
         "payment": "Paid",
-        "date": "2024-06-01",
+        "date": "24-10-2025",
         "action": "Details"
     },
 
     {
         "id": 29,
-        "client": "Genady Petrov",
+        "client": "Ukio Chirasima",
         "contacts": "+7 999 123-45-67",
         "total": "€ 120.00",
         "status": "Processing",
@@ -321,29 +322,29 @@ export const orders = [
 
     {
         "id": 30,
-        "client": "Genady Petrov",
-        "contacts": "+7 999 123-45-67",
-        "total": "€ 120.00",
+        "client": "Anastasia Ivanova",
+        "contacts": "+7 382 011-18-52",
+        "total": "€ 48.75",
         "status": "Processing",
         "payment": "Paid",
-        "date": "2024-06-01",
+        "date": "01-01-2019",
         "action": "Details"
     },
 
     {
         "id": 31,
-        "client": "Genady Petrov",
-        "contacts": "+7 999 123-45-67",
-        "total": "€ 120.00",
-        "status": "Processing",
-        "payment": "Paid",
-        "date": "2024-06-01",
+        "client": "Velentina Kharpova",
+        "contacts": "+7 521 471-74-90",
+        "total": "€ 9.99",
+        "status": "Unconfirmed",
+        "payment": "Unpaid",
+        "date": "11-05-2019",
         "action": "Details"
     },
 
     {
         "id": 32,
-        "client": "Genady Petrov",
+        "client": "Daniel Schmalz",
         "contacts": "+7 999 123-45-67",
         "total": "€ 120.00",
         "status": "Processing",
@@ -354,34 +355,23 @@ export const orders = [
 
     {
         "id": 33,
-        "client": "Genady Petrov",
-        "contacts": "+7 999 123-45-67",
-        "total": "€ 120.00",
-        "status": "Processing",
-        "payment": "Paid",
-        "date": "2024-06-01",
+        "client": "Adolf Hasenberg",
+        "contacts": "+43 681 111 475 11",
+        "total": "€ 00.00",
+        "status": "Stop",
+        "payment": "Unpaid",
+        "date": "22-02-2022",
         "action": "Details"
     },
 
     {
         "id": 34,
-        "client": "Genady Petrov",
-        "contacts": "+7 999 123-45-67",
-        "total": "€ 120.00",
-        "status": "Processing",
+        "client": "Miron Valentinowich",
+        "contacts": "+7 582 097-49-44",
+        "total": "€ 12.00",
+        "status": "New",
         "payment": "Paid",
-        "date": "2024-06-01",
-        "action": "Details"
-    },
-
-    {
-        "id": 35,
-        "client": "Genady Petrov",
-        "contacts": "+7 999 123-45-67",
-        "total": "€ 120.00",
-        "status": "Processing",
-        "payment": "Paid",
-        "date": "2024-06-01",
+        "date": "26-06-2026",
         "action": "Details"
     }
 ];
