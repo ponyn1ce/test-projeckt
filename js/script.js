@@ -81,8 +81,15 @@ const initTestItemsPagination = () => {
         const end = start + perPage;
 
         rows.forEach((row, index) => {
+            row.classList.remove('is-last-visible');
             row.style.display = index >= start && index < end ? '' : 'none';
         });
+
+        const visibleRows = rows.filter((row) => row.style.display !== 'none');
+        const lastVisibleRow = visibleRows[visibleRows.length - 1];
+        if (lastVisibleRow) {
+            lastVisibleRow.classList.add('is-last-visible');
+        }
 
         updateControls();
     };
@@ -105,4 +112,53 @@ const initTestItemsPagination = () => {
 
 window.refreshTestItemsPagination = initTestItemsPagination;
 window.addEventListener('DOMContentLoaded', initTestItemsPagination);
+
+
+const THEME_KEY = 'user-theme';
+
+// Функция установки темы
+function setTheme(isDark) {
+    document.body.classList.toggle('dark-theme-variables', isDark);
+
+    // Обновляем активность спанов
+    const span1 = themeToggler.querySelector('span:nth-child(1)');
+    const span2 = themeToggler.querySelector('span:nth-child(2)');
+
+    if (isDark) {
+        span1.classList.add('active');
+        span2.classList.remove('active');
+    } else {
+        span1.classList.remove('active');
+        span2.classList.add('active');
+    }
+}
+
+// Инициализация темы при загрузке страницы
+function initTheme() {
+    const storedTheme = localStorage.getItem(THEME_KEY);
+    let isDark;
+
+    if (storedTheme) {
+        isDark = storedTheme === 'dark';
+    } else {
+        // Используем системную тему по умолчанию
+        isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+
+    setTheme(isDark);
+}
+
+// Переключение темы по клику
+themeToggler.addEventListener('click', () => {
+    // Получаем текущий статус после initTheme
+    const isCurrentlyDark = document.body.classList.contains('dark-theme-variables');
+
+    setTheme(!isCurrentlyDark);
+
+    // Сохраняем выбор пользователя
+    localStorage.setItem(THEME_KEY, !isCurrentlyDark ? 'dark' : 'light');
+});
+
+// Запуск при загрузке страницы
+window.addEventListener('DOMContentLoaded', initTheme);
 

@@ -274,20 +274,48 @@
                 <div class="profile-photo">
                     <img src="/img/photo_2026-03-04_16-17-17.jpg" alt="">
                 </div>
-        </div>
-    </div>
+        	</div>
 
-    <div class="language-switcher">
-        <select name="" id="languageSelect">
-            <option value="en">English</option>
-            <option value="ru">Russian</option>
-        </select>
-    </div>
+    	</div>
+
+    	<div class="language-switcher">
+        	<select name="" id="languageSelect">
+            	<option value="en">English</option>
+            	<option value="ru">Russian</option>
+        	</select>
+    	</div>
+
+
+		<div class="orders-country">
+			<h2 data-i18n="orders_country">Orders by Country</h2>
+
+			<div class="update">
+				<div class="orders-chart">
+					<div id="ordersByCountry"></div>
+				</div>
+			</div>
+			<a href="/html/analytics.html" data-i18n="show_all">Show All</a>
+		</div>
+
+
+		<div class="ai-like-insights">
+			<h2 data-i18n="smart_insights">Smart Insights</h2>
+
+			<div class="update" id="aiHints">
+				<div class="ai-like">
+					<ul id="aiInsights"></ul>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	
 
 
 </div>
-<script src="/js/script.js"></script>
-<script src="/js/i18n.js"></script>
-<script type="module" src="/js/ordersController.js"></script>
+<script src="../js/script.js"></script>
+<script src="../js/i18n.js"></script>
+<script src="../js/ordersBycountry.js"></script>
+<script type="module" src="../js/ordersController.js"></script>
 </body>
 </html>

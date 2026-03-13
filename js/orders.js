@@ -7,7 +7,8 @@ export const orders = [
         "status": "Done",
         "payment": "Paid",
         "date": "18-11-2017",
-        "action": "Details"
+        "action": "Details",
+        "country": "Russia"
     },
 
     {
@@ -18,7 +19,8 @@ export const orders = [
         "status": "Canceled",
         "payment": "Refund",
         "date": "11-10-2012",
-        "action": "Details"
+        "action": "Details",
+        "country": "Russia"
     },
 
 
@@ -30,7 +32,8 @@ export const orders = [
         "status": "Canceled",
         "payment": "Refund",
         "date": "13-04-2016",
-        "action": "Divorce"
+        "action": "Divorce",
+        "country": "Russia"
     },
 
     {
@@ -41,7 +44,8 @@ export const orders = [
         "status": "Shipped",
         "payment": "Paid",
         "date": "27-02-2026",
-        "action": "Refunded"
+        "action": "Refunded",
+        "country": "Russia"
     },
 
     {
@@ -52,7 +56,8 @@ export const orders = [
         "status": "Delivered",
         "payment": "Paid",
         "date": "28-10-2020",
-        "action": "Details"
+        "action": "Details",
+        "country": "Russia"
     },
 
     {
@@ -63,29 +68,32 @@ export const orders = [
         "status": "Processing",
         "payment": "Unpaid",
         "date": "17-07-2025",
-        "action": "Details"
+        "action": "Details",
+        "country": "Russia"
     },
 
     {
         "id": 7,
-        "client": "Yana Kni",
+        "client": "Yana Jacopson",
         "contacts": "+7 909 303-11-24",
         "total": "€ 56.10",
         "status": "Processing",
         "payment": "New",
         "date": "14-02-2026",
-        "action": "Details"
+        "action": "Details",
+        "country": "Armenia"
     },
 
     {
         "id": 8,
-        "client": "Alesya unprecedented",
+        "client": "Alesya Unprecedented",
         "contacts": "+7 911 005-15-99",
         "total": "€ 8.99",
         "status": "Canceled",
         "payment": "Refund",
         "date": "02-11-2022",
-        "action": "Details"
+        "action": "Details",
+        "country": "Russia",
     },
 
     {
@@ -95,8 +103,9 @@ export const orders = [
         "total": "€ 20.00",
         "status": "Delivered",
         "payment": "Paid",
-        "date": "2025-11-23",
-        "action": "Details"
+        "date": "23-11-2025",
+        "action": "Details",
+        "country": "Austria"
     },
     
     {
@@ -107,7 +116,8 @@ export const orders = [
         "status": "New",
         "payment": "aid",
         "date": "24-02-2022",
-        "action": "When?"
+        "action": "When?",
+        "country": "Russia"
     },
 
     {
@@ -118,7 +128,8 @@ export const orders = [
         "status": "Successfully",
         "payment": "Paid",
         "date": "24-10-2025",
-        "action": "Details"
+        "action": "Details",
+        "country": "China"
     },
 
     {
@@ -128,8 +139,9 @@ export const orders = [
         "total": "€ 120.00",
         "status": "Processing",
         "payment": "Paid",
-        "date": "2024-06-01",
-        "action": "Details"
+        "date": "02-02-2022",
+        "action": "Details",
+        "country": "Germany"
     },
 
     {
@@ -140,7 +152,8 @@ export const orders = [
         "status": "Processing",
         "payment": "Paid",
         "date": "01-01-2019",
-        "action": "Details"
+        "action": "Details",
+        "country": "Russia"
     },
 
     {
@@ -151,7 +164,8 @@ export const orders = [
         "status": "Unconfirmed",
         "payment": "Unpaid",
         "date": "11-05-2019",
-        "action": "Details"
+        "action": "Details",
+        "country": "Austria"
     },
 
     {
@@ -161,8 +175,9 @@ export const orders = [
         "total": "€ 120.00",
         "status": "Processing",
         "payment": "Paid",
-        "date": "2024-06-01",
-        "action": "Details"
+        "date": "02-02-2022",
+        "action": "Details",
+        "country": "Germany"
     },
 
     {
@@ -173,7 +188,8 @@ export const orders = [
         "status": "Stop",
         "payment": "Unpaid",
         "date": "22-02-2022",
-        "action": "Details"
+        "action": "Details",
+        "country": "Austria"
     },
 
     {
@@ -184,7 +200,8 @@ export const orders = [
         "status": "New",
         "payment": "Paid",
         "date": "26-06-2026",
-        "action": "Details"
+        "action": "Details",
+        "country": "Austria"
     },
 
     {
@@ -195,7 +212,8 @@ export const orders = [
         "status": "Done",
         "payment": "Paid",
         "date": "18-11-2017",
-        "action": "Details"
+        "action": "Details",
+        "country": "Russia"
     },
 
     {
@@ -206,7 +224,8 @@ export const orders = [
         "status": "Canceled",
         "payment": "Refund",
         "date": "11-10-2012",
-        "action": "Details"
+        "action": "Details",
+        "country": "Austria"
     },
 
 
@@ -218,7 +237,8 @@ export const orders = [
         "status": "Canceled",
         "payment": "Refund",
         "date": "13-04-2016",
-        "action": "Divorce"
+        "action": "Divorce",
+        "country": "Finland"
     },
 
     {
@@ -229,7 +249,8 @@ export const orders = [
         "status": "Shipped",
         "payment": "Paid",
         "date": "27-02-2026",
-        "action": "Refunded"
+        "action": "Refunded",
+        "country": "USA"
     },
 
     {
@@ -240,7 +261,8 @@ export const orders = [
         "status": "Delivered",
         "payment": "Paid",
         "date": "28-10-2020",
-        "action": "Details"
+        "action": "Details",
+        "country": "Finland"
     },
 
     {
@@ -251,29 +273,32 @@ export const orders = [
         "status": "Processing",
         "payment": "Unpaid",
         "date": "17-07-2025",
-        "action": "Details"
+        "action": "Details",
+        "country": "Turkey"
     },
 
     {
         "id": 24,
-        "client": "Yana Kni",
+        "client": "Yana Jacopson",
         "contacts": "+7 909 303-11-24",
         "total": "€ 56.10",
         "status": "Processing",
         "payment": "New",
         "date": "14-02-2026",
-        "action": "Details"
+        "action": "Details",
+        "country": "Turkey"
     },
 
     {
         "id": 25,
-        "client": "Alesya unprecedented",
+        "client": "Alesya Unprecedented",
         "contacts": "+7 911 005-15-99",
         "total": "€ 8.99",
         "status": "Canceled",
         "payment": "Refund",
         "date": "02-11-2022",
-        "action": "Details"
+        "action": "Details",
+        "country": "Armenia",
     },
 
     {
@@ -284,7 +309,8 @@ export const orders = [
         "status": "Delivered",
         "payment": "Paid",
         "date": "2025-11-23",
-        "action": "Details"
+        "action": "Details",
+        "country": "Austria"
     },
     
     {
@@ -295,7 +321,8 @@ export const orders = [
         "status": "New",
         "payment": "aid",
         "date": "24-02-2022",
-        "action": "When?"
+        "action": "When?",
+        "country": "Ukraine"
     },
 
     {
@@ -306,7 +333,8 @@ export const orders = [
         "status": "Successfully",
         "payment": "Paid",
         "date": "24-10-2025",
-        "action": "Details"
+        "action": "Details",
+        "country": "Germany"
     },
 
     {
@@ -317,7 +345,8 @@ export const orders = [
         "status": "Processing",
         "payment": "Paid",
         "date": "2024-06-01",
-        "action": "Details"
+        "action": "Details",
+        "country": "Germany"
     },
 
     {
@@ -328,7 +357,8 @@ export const orders = [
         "status": "Processing",
         "payment": "Paid",
         "date": "01-01-2019",
-        "action": "Details"
+        "action": "Details",
+        "country": "Italy"
     },
 
     {
@@ -339,7 +369,8 @@ export const orders = [
         "status": "Unconfirmed",
         "payment": "Unpaid",
         "date": "11-05-2019",
-        "action": "Details"
+        "action": "Details",
+        "country": "Spain"
     },
 
     {
@@ -350,7 +381,8 @@ export const orders = [
         "status": "Processing",
         "payment": "Paid",
         "date": "2024-06-01",
-        "action": "Details"
+        "action": "Details",
+        "country": "Germany"
     },
 
     {
@@ -361,7 +393,8 @@ export const orders = [
         "status": "Stop",
         "payment": "Unpaid",
         "date": "22-02-2022",
-        "action": "Details"
+        "action": "Details",
+        "country": "Scotland"
     },
 
     {
@@ -372,6 +405,7 @@ export const orders = [
         "status": "New",
         "payment": "Paid",
         "date": "26-06-2026",
-        "action": "Details"
+        "action": "Details",
+        "country": "Switzerland"
     }
 ];

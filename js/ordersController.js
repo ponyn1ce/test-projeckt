@@ -284,3 +284,145 @@ const attachFilterListeners = () => {
 attachFilterListeners();
 attachModalListeners();
 renderOrders();
+
+const flags = {
+  Austria: "🇦🇹",
+  Germany: "🇩🇪",
+  France: "🇫🇷",
+  USA: "🇺🇸",
+  Russia: "🇷🇺",
+  Armenia: "🇦🇲",
+  Italy: "🇮🇹",
+  Spain: "🇪🇸",
+  Portugal: "🇵🇹",
+  China: "🇨🇳",
+  Japan: "🇯🇵",
+  Switzerland: "🇨🇭",
+  Scotland: "🏴",
+  Ukraine: "🇺🇦",
+  Turkey: "🇹🇷",
+  Iran : "🇮🇷",
+  Finland: "🇫🇮",
+};
+
+
+function getOrdersByCountry() {
+
+  const result = {};
+
+  orders.forEach(order => {
+
+    const country = order.country;
+
+    if (!country) return;
+
+    if (!result[country]) {
+      result[country] = 0;
+    }
+
+    result[country]++;
+
+  });
+
+  return result;
+}
+
+function renderOrdersByCountry() {
+
+  const container = document.getElementById("ordersByCountry");
+
+  if (!container) {
+    console.warn("ordersByCountry container not found");
+    return;
+  }
+
+  const countries = getOrdersByCountry();
+
+  const sortedCountries = Object.entries(countries)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 5);
+
+  container.innerHTML = "";
+
+  sortedCountries.forEach((item) => {
+
+    const country = item[0];
+    const count = item[1];
+
+    const row = document.createElement("div");
+
+    row.className = "country-row";
+
+    row.innerHTML = `
+      <span>${flags[country] || ""} ${country}</span>
+      <span>${count}</span>
+    `;
+
+    container.appendChild(row);
+
+  });
+
+}
+renderOrdersByCountry();
+
+
+
+// Функция для обновления статистики
+function updateOrderStats(orders) {
+  const total = orders.length;
+  const countNew = orders.filter(o => o.status === "New").length;
+  const countProcessing = orders.filter(o => o.status === "Processing").length;
+  const countDelivered = orders.filter(o => o.status === "Delivered").length;
+  const countCanceled = orders.filter(o => o.status === "Canceled").length;
+
+  // Вставляем данные в HTML
+  document.getElementById("statTotal").textContent = total;
+  document.getElementById("statNew").textContent = countNew;
+  document.getElementById("statProcessing").textContent = countProcessing;
+  document.getElementById("statDelivered").textContent = countDelivered;
+  document.getElementById("statCanceled").textContent = countCanceled;
+}
+
+// Вызываем функцию при загрузке страницы
+updateOrderStats(orders);
+
+
+
+// Функция генерации AI-подсказок
+function generateAIHints(orders) {
+  const hints = [];
+
+  const countNew = orders.filter(o => o.status === "New").length;
+  const countProcessing = orders.filter(o => o.status === "Processing").length;
+  const countCanceled = orders.filter(o => o.status === "Canceled").length;
+    const countDelivered = orders.filter(o => o.status === "Delivered").length;
+
+  // Псевдо-AI правила
+  if(countNew > 3) hints.push("• 💬 Новых заказов много — стоит обработать их быстрее.");
+  else hints.push("• 😔 Новых заказов немного — текущий темп нормальный.");
+
+  if(countProcessing > 2) hints.push("• 💼 Заказы в обработке накапливаются — проверь ресурсы.");
+  if(countDelivered > 1) hints.push("• ✅ Много доставленных заказов — отличная работа!");
+  if(countCanceled > 0) hints.push(`• ‼️ Есть отмененные заказы (${countCanceled} штук) — возможно, стоит связаться с клиентами.`);
+  else hints.push("• ☺️ Отмененных заказов нет — отлично!");
+
+  // Подсчет по странам
+  const countries = {};
+  orders.forEach(o => countries[o.country] = (countries[o.country] || 0) + 1);
+  const topCountry = Object.keys(countries).sort((a,b)=> countries[b]-countries[a])[0];
+  hints.push(`• 🌍 Самая популярная страна: ${topCountry} (${countries[topCountry]} заказов)`);
+
+  // Вставка в HTML
+  const ul = document.getElementById("aiInsights");
+  ul.innerHTML = ""; // очистка предыдущих подсказок
+  hints.forEach(text => {
+    const li = document.createElement("li");
+    li.textContent = text;
+    ul.appendChild(li);
+  });
+}
+
+// Авто-запуск при загрузке страницы
+document.addEventListener("DOMContentLoaded", () => {
+  generateAIHints(orders);
+});
