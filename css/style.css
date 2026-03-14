@@ -379,6 +379,7 @@ main .recent-orders{
 
 main .recent-orders h2{
     margin-bottom: 0.8rem;
+    margin-left: 1.1rem;
 }
 
 main .recent-orders table{
@@ -473,6 +474,7 @@ main .recent-orders a{
 
  .right .recent-updates h2{
     margin-bottom: 0.8rem ;
+    margin-left: 1.1rem;
  }
 
 
@@ -504,6 +506,7 @@ main .recent-orders a{
 
 .right .sales-analytics h2{
     margin-bottom: 0.8rem;
+    margin-left: 1.1rem;
 }
 
 .right .sales-analytics .item{

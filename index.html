@@ -157,46 +157,12 @@
 
         <div class="recent-orders">
             <h2 data-i18n="recent_orders">Recent Orders</h2>
+		    <div class="test-items">
                 <table>
-                    <thead>
-                        <tr>
-                            <th data-i18n="product_name">Product Name</th>
-                            <th data-i18n="quantity">Quantity</th>
-                            <th data-i18n="price">Price</th>
-                            <th data-i18n="status">Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td data-i18n="foldable_mini_drone">Galoshes</td>
-                            <td>24326</td>
-                            <td>Due</td>
-                            <td class="warning" data-i18n="pending">Pending</td>
-                            <td class="primary" data-i18n="details">Details</td>
-                        </tr>
-                        <tr>
-                            <td data-i18n="foldable_mini_drone">Foldable Mini Drone</td>
-                            <td>24326</td>
-                            <td>Due</td>
-                            <td class="warning" data-i18n="pending">Pending</td>
-                            <td class="primary" data-i18n="details">Details</td>
-                        </tr>
-                        <tr>
-                            <td data-i18n="foldable_mini_drone">Foldable Mini Drone</td>
-                            <td>24326</td>
-                            <td>Due</td>
-                            <td class="warning" data-i18n="pending">Pending</td>
-                            <td class="primary" data-i18n="details">Details</td>
-                        </tr>
-                        <tr>
-                            <td data-i18n="foldable_mini_drone">Foldable Mini Drone</td>
-                            <td>24326</td>
-                            <td>Due</td>
-                            <td class="warning" data-i18n="pending">Pending</td>
-                            <td class="primary" data-i18n="details">Details</td>
-                        </tr>
-                    </tbody>
-                </table>
+				    <tbody id="ordersTable"></tbody>
+			    </table>
+			    <p class="hint hint-empty" id="emptyHint" style="display: none" data-i18n="nothing_found">Nothing found for the current filters.</p>
+		    </div>
             <a href="./html/orders.html" data-i18n="show_all">Show All</a>
         </div>
     </main>

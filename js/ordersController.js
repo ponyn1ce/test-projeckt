@@ -406,12 +406,6 @@ function generateAIHints(orders) {
   if(countCanceled > 0) hints.push(`• ‼️ Есть отмененные заказы (${countCanceled} штук) — возможно, стоит связаться с клиентами.`);
   else hints.push("• ☺️ Отмененных заказов нет — отлично!");
 
-  // Подсчет по странам
-  const countries = {};
-  orders.forEach(o => countries[o.country] = (countries[o.country] || 0) + 1);
-  const topCountry = Object.keys(countries).sort((a,b)=> countries[b]-countries[a])[0];
-  hints.push(`• 🌍 Самая популярная страна: ${topCountry} (${countries[topCountry]} заказов)`);
-
   // Вставка в HTML
   const ul = document.getElementById("aiInsights");
   ul.innerHTML = ""; // очистка предыдущих подсказок
