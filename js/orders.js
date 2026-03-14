@@ -1,6 +1,18 @@
 export const orders = [
-    {
+        {
         "id": 1,
+        "client": "Megan Fox",
+        "contacts": "+1 185 389-05-63",
+        "total": "€ 0.00",
+        "status": "Canceled",
+        "payment": "Refund",
+        "date": "13-04-2016",
+        "action": "Divorce",
+        "country": "USA"
+    },
+
+    {
+        "id": 2,
         "client": "Andrei Chapman",
         "contacts": "+7 926 705-00-00",
         "total": "€ 10.000.00",
@@ -12,52 +24,39 @@ export const orders = [
     },
 
     {
-        "id": 2,
-        "client": "Schamil Larchenko",
-        "contacts": "+7 916 887-14-12",
+        "id": 3,
+        "client": "John Wick",
+        "contacts": "+1 516 816-80-45",
         "total": "€ 12.00",
         "status": "Canceled",
         "payment": "Refund",
         "date": "11-10-2012",
         "action": "Details",
-        "country": "Russia"
-    },
-
-
-    {
-        "id": 3,
-        "client": "Sofia Belousova",
-        "contacts": "+7 985 101-40-07",
-        "total": "€ 00.00",
-        "status": "Canceled",
-        "payment": "Refund",
-        "date": "13-04-2016",
-        "action": "Divorce",
-        "country": "Russia"
+        "country": "USA"
     },
 
     {
         "id": 4,
-        "client": "Polina Shanina",
-        "contacts": "+7 999 888-77-66",
+        "client": "Brad Pitt",
+        "contacts": "+1 365 826-00-43",
         "total": "€ 1.20",
         "status": "Shipped",
         "payment": "Paid",
         "date": "27-02-2026",
         "action": "Refunded",
-        "country": "Russia"
+        "country": "USA"
     },
 
     {
         "id": 5,
-        "client": "Valery Gnidenko",
-        "contacts": "+7 800 555-35-35",
+        "client": "Chuck Norris",
+        "contacts": "+1 888 775-11-12",
         "total": "€ 25.55",
         "status": "Delivered",
         "payment": "Paid",
         "date": "28-10-2020",
         "action": "Details",
-        "country": "Russia"
+        "country": "USA"
     },
 
     {
@@ -74,30 +73,6 @@ export const orders = [
 
     {
         "id": 7,
-        "client": "Yana Jacopson",
-        "contacts": "+7 909 303-11-24",
-        "total": "€ 56.10",
-        "status": "Processing",
-        "payment": "New",
-        "date": "14-02-2026",
-        "action": "Details",
-        "country": "Armenia"
-    },
-
-    {
-        "id": 8,
-        "client": "Alesya Unprecedented",
-        "contacts": "+7 911 005-15-99",
-        "total": "€ 8.99",
-        "status": "Canceled",
-        "payment": "Refund",
-        "date": "02-11-2022",
-        "action": "Details",
-        "country": "Russia",
-    },
-
-    {
-        "id": 9,
         "client": "Mark Gerasimov",
         "contacts": "+7 915 002-99-11",
         "total": "€ 20.00",
@@ -106,6 +81,30 @@ export const orders = [
         "date": "23-11-2025",
         "action": "Details",
         "country": "Austria"
+    },
+
+    {
+        "id": 8,
+        "client": "Ukio Chashiroma",
+        "contacts": "+7 999 123-45-67",
+        "total": "€ 120.00",
+        "status": "Processing",
+        "payment": "Paid",
+        "date": "02-02-2022",
+        "action": "Details",
+        "country": "Japan"
+    },
+
+    {
+        "id": 9,
+        "client": "Yana Jacopson",
+        "contacts": "+7 909 303-11-24",
+        "total": "€ 56.10",
+        "status": "Processing",
+        "payment": "New",
+        "date": "14-02-2026",
+        "action": "Details",
+        "country": "Armenia"
     },
     
     {
@@ -129,7 +128,7 @@ export const orders = [
         "payment": "Paid",
         "date": "24-10-2025",
         "action": "Details",
-        "country": "China"
+        "country": "Germany"
     },
 
     {
@@ -213,7 +212,7 @@ export const orders = [
         "payment": "Paid",
         "date": "18-11-2017",
         "action": "Details",
-        "country": "Russia"
+        "country": "Austria"
     },
 
     {
@@ -407,5 +406,89 @@ export const orders = [
         "date": "26-06-2026",
         "action": "Details",
         "country": "Switzerland"
-    }
+    },
+    
+    {
+        "id": 35,
+        "client": "Brad Pitt",
+        "contacts": "+1 365 826-00-43",
+        "total": "€ 1.20",
+        "status": "Shipped",
+        "payment": "Paid",
+        "date": "27-02-2026",
+        "action": "Refunded",
+        "country": "Finland"
+    },
+
+    {
+        "id": 36,
+        "client": "Brad Pitt",
+        "contacts": "+1 365 826-00-43",
+        "total": "€ 1.20",
+        "status": "Shipped",
+        "payment": "Paid",
+        "date": "27-02-2026",
+        "action": "Refunded",
+        "country": "Finland"
+    },
+
+    {
+        "id": 37,
+        "client": "Brad Pitt",
+        "contacts": "+1 365 826-00-43",
+        "total": "€ 1.20",
+        "status": "Delivered",
+        "payment": "Paid",
+        "date": "27-02-2026",
+        "action": "Refunded",
+        "country": "Austria"
+    },
+
+    {
+        "id": 38,
+        "client": "Brad Pitt",
+        "contacts": "+1 365 826-00-43",
+        "total": "€ 1.20",
+        "status": "Delivered",
+        "payment": "Paid",
+        "date": "27-02-2026",
+        "action": "Refunded",
+        "country": "Turkey"
+    },
+
+    {
+        "id": 39,
+        "client": "Brad Pitt",
+        "contacts": "+1 365 826-00-43",
+        "total": "€ 1.20",
+        "status": "Shipped",
+        "payment": "Paid",
+        "date": "27-02-2026",
+        "action": "Refunded",
+        "country": "China"
+    },
+
+    {
+        "id": 40,
+        "client": "Brad Pitt",
+        "contacts": "+1 365 826-00-43",
+        "total": "€ 1.20",
+        "status": "Delivered",
+        "payment": "Paid",
+        "date": "27-02-2026",
+        "action": "Refunded",
+        "country": "Japan"
+    },
+
+    {
+        "id": 41,
+        "client": "Brad Pitt",
+        "contacts": "+1 365 826-00-43",
+        "total": "€ 1.20",
+        "status": "Delivered",
+        "payment": "Paid",
+        "date": "27-02-2026",
+        "action": "Refunded",
+        "country": "Italy"
+    },
 ];

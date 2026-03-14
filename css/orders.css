@@ -896,13 +896,13 @@ border-bottom:none;
     box-shadow: none;
 }
 
-.right .ai-like-insights .ai-like #aiHints ul{
-    font-size: 0.87rem;
+.right .ai-like-insights #aiHints .ai-like #aiInsights{
+    font-size: 1rem;
     padding: var(--padding-1);
     color: var(--color-dark-veriant);
 }
 
-.right .ai-like-insights .ai-like #aiHints ul li{
+.right .ai-like-insights #aiHints .ai-like #aiInsights li{
     margin-bottom: 0.4rem;
 }
 
