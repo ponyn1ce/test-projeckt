@@ -113,7 +113,7 @@ small{
 }
 
 .text-muted{
-    color: var(--color-info-dark);
+    color: var(--color-dark);
 }
 
 p{
@@ -143,7 +143,6 @@ aside{
 }
 
 aside .top{
-    background: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -164,6 +163,10 @@ aside .close{
     display: none;
 }
 
+
+.logo{display:flex;align-items:center;gap:6px;flex:0 0 auto;text-decoration:none;color:var(--color-dark)}
+.logo svg{width:26px;height:26px}
+.brand{color:var(--color-dark);font-weight:700;font-size:19px;letter-spacing:-0.01em;text-decoration:none;}
 
 /*sidebar*/
 
@@ -575,7 +578,7 @@ main .recent-orders a{
 .language-switcher {
 
   position: absolute;
-  top: 1.26rem;
+  top: 1.2rem;
   right: 21.7rem;
 
 }

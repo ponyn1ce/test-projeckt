@@ -69,7 +69,8 @@ display: grid;
 width: 96%;
 margin: 0 auto;
 gap: 1.8rem;
-grid-template-columns: 14rem auto 23rem;
+grid-template-columns: 14rem minmax(0, 1fr) 23rem;
+align-items: start;
 }
 
 a{
@@ -256,6 +257,7 @@ aside .sidebar .message-count{
 
 main{
     margin-top: 1.4rem;
+    min-width: 0;
 }
 
 main .date{
@@ -301,6 +303,7 @@ main .tracking-orders .summary-grid > div{
     margin-top: 1rem;
     box-shadow: var(--box-shadow);
     transition: all 300ms ease;
+    min-width: 0;
 }
 
 main .tracking-orders .summary-grid > div:hover{
@@ -405,7 +408,7 @@ main .tracking-orders .filters .field.field-actions .btn-ghost{
     padding: 0.5rem 1.2rem;
     border-radius: var(--border-radius-1);
     transition: all 300ms ease;
-    margin-right: 3.3rem;
+    margin-right: 0;
 }
 
 main .tracking-orders .filters .field.field-actions .btn-ghost:hover{
@@ -856,6 +859,7 @@ body.modal-open{
 
 .right{
     margin-top: 1.4rem;
+    min-width: 0;
 
 }
 
@@ -902,9 +906,8 @@ body.modal-open{
 }
 
 .language-switcher {
-
-  position: absolute;
-  top: 1.26rem;
+    position: absolute;
+  top: 1.2rem;
   right: 21.7rem;
 
 }
@@ -935,6 +938,8 @@ body.modal-open{
     padding: var(--card-padding);
     box-shadow: var(--box-shadow);
     transition: all 300ms ease;
+     width: 100%;
+     min-width: 0;
  }
 
 .right .orders-country .orders-chart:hover{
@@ -950,8 +955,13 @@ body.modal-open{
 display:flex;
 justify-content:space-between;
 align-items:center;
+gap: 1rem;
 padding:0.5rem 0;
 border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+.country-row span{
+    min-width: 0;
 }
 
 .country-row:last-child{
@@ -981,6 +991,8 @@ border-bottom:none;
     border-radius: var(--card-border-radius);
     box-shadow: var(--box-shadow);
     transition: all 300ms ease;
+    width: 100%;
+    min-width: 0;
 }
 
 .right .ai-like-insights .ai-like:hover{
@@ -1001,8 +1013,8 @@ border-bottom:none;
 
 @media screen and (max-width: 1200px){
     .container{
-         width: 94%;
-         grid-template-columns: 7rem auto 23rem;
+        width: 94%;
+        grid-template-columns: 7rem minmax(0, 1fr) 20rem;
     }
 
     aside .logo h2{
@@ -1022,40 +1034,24 @@ border-bottom:none;
         margin-top: 1.8rem;
     }
 
-    main .tracking-orders{
-        grid-template-columns: 1fr;
-        gap: 0;
+    main .tracking-orders .summary-grid{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    
-
-    main .tracking-orders .table-wrap,
-    main .tracking-orders .test-items{
-        width: 94%;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        margin: 2rem 0 0 8.8rem;
+    main .tracking-orders .summary-grid > div:last-child{
+        grid-column: 1 / -1;
     }
 
-    main .tracking-orders .table-wrap table,
-    main .tracking-orders .test-items table{
-        width: 83vw;
-    }
-
-    .main .tracking-orders .filters .btn-ghost{
-        justify-content: center;
-        text-align: center;
-        display: flex;
+    .language-switcher{
+        position: static;
     }
 }
-
-/*media queries 2*/
 
 @media screen and (max-width: 768px) {
     .container{
         width: 100%;
         grid-template-columns: 1fr;
+        gap: 0;
     }
 
     aside{
@@ -1081,10 +1077,7 @@ border-bottom:none;
         margin-left: 1rem;
     }
 
-    aside .logo h2{
-        display: inline;
-    }
-
+    aside .logo h2,
     aside .sidebar h3{
         display: inline;
     }
@@ -1109,67 +1102,57 @@ border-bottom:none;
         padding: 0 1rem;
     }
 
-    /* Summary grid: fit within small screens with larger numbers */
-    main .tracking-orders .summary-grid{
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 0.8rem;
-    }
-
-    main .tracking-orders .summary-grid > div{
-        padding: 0.9rem 0.7rem;
-        min-width: 0;
-    }
-
-    main .tracking-orders .summary-grid > div:last-child{
-        grid-column: 1 / -1;
-    }
-
-    main .tracking-orders .summary-grid .start-card.icon-right {
-        flex-direction: column;
-        gap: 0.4rem;
-        text-align: center;
-    }
-
-    main .tracking-orders .summary-grid h1{
-        font-size: 1.5rem;
-    }
-
-    main .tracking-orders .summary-grid h3{
-        font-size: 0.72rem;
+    main h1{
+        font-size: 1.9rem;
         line-height: 1.15;
     }
 
-    main .tracking-orders > div span{
-        font-size: 1.6rem;
-        padding: 0.2rem;
+    main .tracking-orders,
+    .right,
+    .right .orders-country,
+    .right .ai-like-insights{
+        width: 100%;
     }
 
-    /* Filters: column layout, reset button inline */
+    main .tracking-orders .summary-grid{
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    main .tracking-orders .summary-grid .start-card.icon-right{
+        justify-content: space-between;
+        gap: 0.8rem;
+    }
+
+    main .tracking-orders .summary-grid .start-text{
+        align-items: flex-start;
+    }
+
+    main .tracking-orders .summary-grid .start-card.icon-right .start-text h3,
+    main .tracking-orders .summary-grid .start-card.icon-right .start-text h1{
+        text-align: left;
+    }
+
     main .tracking-orders .filters{
         grid-template-columns: 1fr;
         gap: 1rem;
-        box-sizing: border-box;
-        overflow: hidden;
     }
 
     main .tracking-orders .filters .field.field-actions{
-        flex-direction: row;
         justify-content: flex-start;
     }
 
-    main .tracking-orders .filters .field.field-actions .btn-ghost{
-        margin-right: 0;
+    main .tracking-orders .table-wrap,
+    main .tracking-orders .test-items,
+    .right .orders-country .orders-chart,
+    .right .ai-like-insights .ai-like{
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
-    /* Table and test items */
     main .tracking-orders .table-wrap,
     main .tracking-orders .test-items{
-        position: relative;
-        margin: 2rem 0 0 0;
-        width: 100%;
-        left: 0;
-        transform: none;
         overflow-x: auto;
     }
 
@@ -1177,11 +1160,15 @@ border-bottom:none;
     main .tracking-orders .test-items table{
         width: 100%;
         min-width: 600px;
-        margin: 0;
+    }
+
+    main .tracking-orders .filters .field.field-actions .btn-ghost{
+        width: 200%;
+        text-align: center;
+        margin-top: 0.67rem;
     }
 
     .right{
-        width: 100%;
         margin: 0 auto 4rem;
         padding: 0 1rem;
         box-sizing: border-box;
@@ -1191,7 +1178,10 @@ border-bottom:none;
         position: fixed;
         top: 0;
         left: 0;
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr) auto auto;
         align-items: center;
+        gap: 0.75rem;
         padding: 0 1rem;
         height: 4.6rem;
         background: var(--color-white);
@@ -1199,44 +1189,86 @@ border-bottom:none;
         margin: 0;
         z-index: 2;
         box-shadow: 0 1rem 1rem var(--color-light);
-        display: flex;
-        justify-content: flex-end;
-        gap: 1rem;
-        box-sizing: border-box;
-    }
-
-    .right .top .theme-toggler{
-        position: static;
-        width: 4.4rem;
-        margin: 0;
-    }
-
-    .right .profile .info{
-        display: none;
-    }
-    
-    .right .top .profile{
-        gap: 0;
     }
 
     .right .top button{
         display: inline-block;
         background: transparent;
         cursor: pointer;
-        position: absolute;
+        position: static;
         color: var(--color-dark);
-        left: 1rem;
+        justify-self: start;
     }
 
     .right .top button span{
         font-size: 2rem;
     }
 
+    .right .top .theme-toggler{
+        width: 4.4rem;
+        position: static;
+    }
+
+    .right .profile .info{
+        display: none;
+    }
+
+    .right .top .profile{
+        gap: 0;
+        justify-self: end;
+    }
+
     .right .language-switcher{
-        position: absolute;
-        margin: 0;
-        width: 5rem;
-        position: absolute;
-        left: 42%;
+        position: static;
+        margin-left: 10rem;
+        width: auto;
+        justify-self: center;
+    }
+
+    #languageSelect{
+        width: 100%;
+        max-width: 8rem;
+    }
+
+    .right .orders-country h2,
+    .right .ai-like-insights h2{
+        margin-left: 0;
+    }
+
+    .right .orders-country .orders-chart #ordersByCountry,
+    .right .ai-like-insights #aiHints .ai-like #aiInsights{
+        font-size: 1.1rem;
+    }
+
+    .country-row span:first-child{
+        flex: 1;
+        overflow-wrap: anywhere;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    main,
+    .right{
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+
+    main .tracking-orders .summary-grid > div{
+        padding: 1rem;
+    }
+
+    .right .top{
+        gap: 0.5rem;
+        padding: 0 0.75rem;
+    }
+
+    #languageSelect{
+        max-width: 6.8rem;
+        font-size: 0.95rem;
+        padding: 4px 8px;
+    }
+
+    .right .top .theme-toggler{
+        width: 4rem;
     }
 }
