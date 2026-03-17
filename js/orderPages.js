@@ -88,4 +88,3 @@ const initTestItemsPagination = () => {
 
 window.refreshTestItemsPagination = initTestItemsPagination;
 window.addEventListener('DOMContentLoaded', initTestItemsPagination);
-

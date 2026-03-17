@@ -191,15 +191,26 @@ const getFilteredOrders = () => {
   });
 };
 
+const getVisibleOrders = (ordersList) => {
+  const hasPagination = Boolean(document.querySelector(".test-items-pagination"));
+
+  if (hasPagination) {
+    return ordersList;
+  }
+
+  return ordersList.slice(0, 8);
+};
+
 const renderOrders = () => {
   if (!table) {
     return;
   }
 
   const filtered = getFilteredOrders();
+  const visibleOrders = getVisibleOrders(filtered);
 
   table.innerHTML = "";
-  filtered.forEach((order) => {
+  visibleOrders.forEach((order) => {
     table.appendChild(buildRow(order));
   });
 

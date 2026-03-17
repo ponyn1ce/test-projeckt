@@ -161,18 +161,79 @@
                 <table>
 				    <tbody id="ordersTable"></tbody>
 			    </table>
-			    <p class="hint hint-empty" id="emptyHint" style="display: none" data-i18n="nothing_found">Nothing found for the current filters.</p>
 		    </div>
             <a href="./html/orders.html" data-i18n="show_all">Show All</a>
         </div>
     </main>
     <!--END OF MAIN SECTION -->
 
+    <!-- Modal window -->
+     	<div id="orderModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="orderModalTitle">
+		<div class="modal-content modal-wide">
+			<div class="modal-header">
+				<h2 class="modal-title" id="orderModalTitle" data-i18n="order">Order</h2>
+				<button class="close-modal" type="button" id="closeOrderModal" aria-label="Close">×</button>
+			</div>
+			<div class="order-modal-grid">
+				<section class="order-card">
+					<h3 class="order-card-title" data-i18n="main">Main information</h3>
+					<div class="order-fields">
+						<div class="order-field-col">
+							<div class="kv" id="orderMeta"></div>
+						</div>
+						<div class="order-field-divider" aria-hidden="true"></div>
+						<div class="order-field-coll">
+							<div class="field">
+								<label class="field-label" for="modalStatus" data-i18n="status">Status</label>
+								<select class="field-input" id="modalStatus">
+									<option value="new" data-i18n="new">New</option>
+									<option value="processing" data-i18n="processing">Processing</option>
+									<option value="shipped" data-i18n="shipped">Shipped</option>
+									<option value="delivered" data-i18n="delivered">Delivered</option>
+									<option value="canceled" data-i18n="canceled">Canceled</option>
+									<option value="refunded" data-i18n="refunded">Refunded</option>
+								</select>
+							</div>
+							<div class="field">
+								<label class="field-label" for="modalPayment" data-i18n="payment">Payment</label>
+								<select class="field-input1" id="modalPayment">
+									<option value="paid" data-i18n="paid">Paid</option>
+									<option value="unpaid" data-i18n="unpaid">Unpaid</option>
+									<option value="refund" data-i18n="refund">Refund</option>
+								</select>
+							</div>
+							<div class="field">
+								<label class="field-label" for="modalPages" data-i18n="pages">Pages</label>
+								<input class="field-input2" id="modalPages" type="number" min="10" step="4" value="10" />
+							</div>
+							<div class="field">
+								<label class="field-label" for="modalTotal" data-i18n="price">Price</label>
+								<input class="field-input1" id="modalTotal" type="text" readonly value="—" />
+							</div>
+						</div>
+					</div>
+					<div class="row" style="justify-content: center; margin-top: 2rem;">
+						<button class="btn-primary" type="button" id="btnSaveOrder" data-i18n="save">Save</button>
+						<button class="btn-secondary" type="button" id="btnCopy" data-i18n="copy_id">Copy ID</button>
+						<button class="btn-danger" type="button" id="btnDeleteOrder" data-i18n="delete">Delete</button>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+    <!--Modal window end-->
+
     <div class="right">
         <div class="top">
             <button id="menu-btn">
                 <span class="material-icons-sharp">menu</span>
             </button>
+            <div class="language-switcher">
+                <select name="" id="languageSelect">
+                    <option value="en">English</option>
+                    <option value="ru">Russian</option>
+                </select>
+            </div>
             <div class="theme-toggler">
                 <span class="material-icons-sharp active" >light_mode</span>
                 <span class="material-icons-sharp">dark_mode</span>
@@ -188,12 +249,6 @@
             </div>
         </div>
 
-        <div class="language-switcher">
-            <select name="" id="languageSelect">
-                <option value="en">English</option>
-                <option value="ru">Russian</option>
-            </select>
-        </div>
 
         <!--END OF TOP-->
 
@@ -316,5 +371,7 @@
 
 <script src="./js/script.js"></script>
 <script src="./js/i18n.js"></script>
+<script src="./js/orderPages.js"></script>
+<script type="module" src="./js/ordersController.js"></script>
 </body>
 </html>
