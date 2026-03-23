@@ -250,3 +250,31 @@ aside .sidebar .message-count{
 }
 
 /* sidebar */
+
+main{
+    margin-top: 1.4rem;
+}
+
+main .analytics-cards{
+    display: grid;
+    gap: 1.6rem;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+main .analytics-cards > div{
+    background: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+}
+
+main .analytics-cards > div:hover{
+    box-shadow: none;
+}
+
+main .analytics-cards > div .orders7-days{
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
