@@ -100,7 +100,7 @@
                             <a href="./orders.html"><h2>see orders</h2> <span class="material-icons-sharp">arrow_forward</span></a>
                         </div>
                         <div class="middle">
-                            <h1 class="start" id="lastOrders">0</h1>
+                            <h1 id="lastOrders">0</h1>
                             <h3 data-i18n="last_7_days_orders">Last 7 Days Orders</h3>
                         </div>
                     </div>
@@ -136,6 +136,72 @@
 
         </div>
     </main>
+
+
+
+
+
+
+
+
+
+
+
+        <div class="right">
+        <div class="top">
+            <button id="menu-btn">
+                <span class="material-icons-sharp">menu</span>
+            </button>
+
+    		<div class="language-switcher">
+        		<select name="" id="languageSelect">
+            		<option value="en">English</option>
+            		<option value="ru">Russian</option>
+        		</select>
+    		</div>
+            <div class="theme-toggler">
+                <span class="material-icons-sharp active" >light_mode</span>
+                <span class="material-icons-sharp">dark_mode</span>
+            </div>
+            <div class="profile">
+                <div class="info">
+                    <p>Hey, <b>Chapman</b></p>
+                    <small class="text-muted" data-i18n="admin">Admin</small>
+                </div>
+                <div class="profile-photo">
+                    <img src="/img/photo_2026-03-04_16-17-17.jpg" alt="">
+                </div>
+        	</div>
+
+    	</div>
+
+
+		<div class="orders-country">
+			<h2 data-i18n="orders_country">Orders by Country</h2>
+
+			<div class="update">
+				<div class="orders-chart">
+					<div id="ordersByCountry"></div>
+				</div>
+			</div>
+			<a href="/html/analytics.html" data-i18n="show_all">Show All</a>
+		</div>
+
+        <!--
+		<div class="ai-like-insights">
+			<h2 data-i18n="smart_insights">Smart Insights</h2>
+
+			<div id="aiHints">
+				<div class="ai-like">
+					<ul id="aiInsights"></ul>
+				</div>
+			</div>
+		</div>
+        -->
+
+
+
+	</div>	
 </div>   
 <script src="../js/script.js"></script>
 <script src="../js/i18n.js"></script>
