@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=orders" />
-    <link rel="stylesheet" href="../css/orders.css">
+    <link rel="stylesheet" href="../css/analytics.css">
 
     <title>Analytics</title>
 </head>
@@ -87,52 +87,52 @@
     <!--Main Section-->
 
     <main>
-        <h1 data-i18n="tracking_orders">Analytics</h1>
+        <h1 data-i18n="analytics">Analytics</h1>
 
-        <div class="analytics-cards">
-
-
-
-            <div class="orders7days">
-                <div class="item offline">
-                    <!--
-                    <div class="icon">
-                        <span class="material-icons-sharp">local_mall</span>
-                    </div>
-                    -->
-                    <div class="right">
-                        <div class="info">
-                            <h3 data-i18n="total_orders">334</h3>
-                            <h2 data-i18n="offline_orders">Orders</h2>
-                            <small class="text-muted">Last 24 Hours</small>
+        <div class="analytics">
+            <div class="analytics-left">
+                <div class="orders">
+                    <div class="orderscard">
+                        <div class="orderscard-top">
+                            <div class="icon">
+                                <span class="material-icons-sharp">shopping_cart</span>
+                            </div>
+                            <a href="./orders.html"><h2>see orders</h2> <span class="material-icons-sharp">arrow_forward</span></a>
+                        </div>
+                        <div class="middle">
+                            <h1 class="start" id="lastOrders">0</h1>
+                            <h3 data-i18n="last_7_days_orders">Last 7 Days Orders</h3>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="delivered">
-                <div class="deliveredstats">
-                    <div class="right">
-                        <div class="info">
-                            <h3 data-i18n="delivered_orders">322</h3>
+            
+            <div class="analytics-right">
+                <div class="canceled">
+                    <div class="canceledcard">
+                        <div class="canceledcard-top">
+                            <div class="icon">
+                                <span class="material-icons-sharp">cancel</span>
+                            </div>
+                            <h1 class="start" id="lastOrders">0</h1>
+                            <a href="./orders.html"><h2>Canceled</h2> <span class="material-icons-sharp">arrow_forward</span></a>
                         </div>
-                        <h2>Delivered orders</h2>
+                    </div>
+                </div>
+
+                <div class="delivered">
+                    <div class="deliveredcard">
+                        <div class="deliveredcard-top">
+                            <div class="icon">
+                                <span class="material-icons-sharp">delivery_dining</span>
+                            </div>
+                            <h1 class="start" id="lastOrders">0</h1>
+                            <a href="./orders.html"><h2>Delivered</h2> <span class="material-icons-sharp">arrow_forward</span></a>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="cancelled">
-                <div class="cancelledstats">
-                    <div class="right">
-                        <div class="info">
-                            <h3 data-i18n="cancelled_orders">12</h3>
-                        </div>
-                        <h2>Cancelled orders</h2>
-                    </div>
-                </div>
-            </div>
-
-
 
         </div>
     </main>
