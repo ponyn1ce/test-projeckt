@@ -6,6 +6,7 @@ async function loadLanguage(lang) {
 
     const response = await fetch(`/lang/${lang}.json`);
     const translations = await response.json();
+    window.currentTranslations = translations; // Экспортируем глобально для других скриптов
 
     document.querySelectorAll("[data-i18n]").forEach(el => {
 
@@ -18,6 +19,25 @@ async function loadLanguage(lang) {
     });
 
     localStorage.setItem("language", lang);
+
+    // Обновляем подсказки Smart Insights при смене языка
+    if (typeof loadAITranslations !== 'undefined') {
+      loadAITranslations().then(() => {
+        if (typeof generateAIHints !== 'undefined' && window.lastOrdersData) {
+          generateAIHints(window.lastOrdersData);
+        }
+      });
+    }
+
+    // Обновляем перевод аналитики
+    if (typeof renderAllAnalytics !== 'undefined' && window.lastOrdersData) {
+      renderAllAnalytics(window.lastOrdersData);
+    }
+    
+    // Обновляем график на странице аналитики
+    if (typeof window.refreshChartLang === 'function') {
+      window.refreshChartLang();
+    }
 
   } catch (error) {
     console.error("Translation loading error:", error);

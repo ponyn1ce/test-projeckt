@@ -576,11 +576,10 @@ main .recent-orders a{
 
 
 .language-switcher {
-
-  position: absolute;
-  top: 1.2rem;
-  right: 21.7rem;
-
+        position: static;
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.2rem;
 }
 
 #languageSelect {
@@ -619,12 +618,14 @@ body.modal-open{
     color: var(--color-dark);
     border-radius: var(--card-border-radius);
     box-shadow: var(--box-shadow);
-    width: min(560px, 100%);
+    width: min(40rem, 100%);
     padding: 2rem;
+    max-height: 90vh; /* Адаптация для мобильных устройств: окно не вылезает за экран */
+    overflow-y: auto; /* Внутренний скролл, если окно большое */
 }
 
 .modal .modal-content.modal-wide{
-    max-width: 560px;
+    max-width: 40rem;
 }
 
 .modal .modal-header{
@@ -821,7 +822,7 @@ body.modal-open{
 
 @media (max-width: 900px){
     .modal .modal-content.modal-wide{
-        max-width: 560px;
+        max-width: 40rem;
     }
 
     .modal .order-fields{
@@ -895,6 +896,10 @@ body.modal-open{
         display: none;
 
     }
+
+        .language-switcher{
+        position: static;
+    }
 }
 
     /*media queries 2*/
@@ -967,55 +972,101 @@ body.modal-open{
             margin: 0;
         }
 
-        .right{
-            width: 94%;
-            margin: 0 auto 4rem;
-        }
+    .right{
+        margin: 0 auto 4rem;
+        padding: 0 1rem;
+        box-sizing: border-box;
+    }
 
-        .right .top{
-            position: fixed;
-            top: 0;
-            left: 0;
-            align-items: center;
-            padding: 0 0.8rem;
-            height: 4.6rem;
-            background: var(--color-white);
-            width: 100%;
-            margin: 0;
-            z-index: 2;
-            box-shadow: 0 1rem 1rem var(--color-light);
-        
-        }
-
-        .right .top .theme-toggler{
-            width: 4.4rem;
-            position: absolute;
-            left: 66%;
-
-        }
-
-        .right .profile .info{
-            display: none;
-        }
-
-        .right .top button{
-            display: inline-block;
-            background: transparent;
-            cursor: pointer;
-            position: absolute;
-            color: var(--color-dark);
-            left: 1rem;
-        }
-
-        .right .top button span{
-            font-size: 2rem;
-        }
-        
-        .right .language-switcher{
-        position: absolute;
+    .right .top{
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr) auto auto;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0 1rem;
+        height: 4.6rem;
+        background: var(--color-white);
+        width: 100%;
         margin: 0;
-        width: 5rem;
-        position: absolute;
-        left: 42%;
+        z-index: 2;
+        box-shadow: 0 1rem 1rem var(--color-light);
     }
+
+    .right .top button{
+        display: inline-block;
+        background: transparent;
+        cursor: pointer;
+        position: static;
+        color: var(--color-dark);
+        justify-self: start;
     }
+
+    .right .top button span{
+        font-size: 2rem;
+    }
+
+    .right .top .theme-toggler{
+        width: 4.4rem;
+        position: static;
+    }
+
+    .right .profile .info{
+        display: none;
+    }
+
+    .right .top .profile{
+        gap: 0;
+        justify-self: end;
+    }
+
+    .right .language-switcher{
+        position: static;
+        margin-left: 10rem;
+        margin-top: 1rem;
+        width: auto;
+        justify-self: center;
+    }
+
+}
+
+
+@media screen and (min-width: 1921px) {
+    html {
+        font-size: 21px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .modal .order-fields {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .modal .order-field-divider {
+        display: block;
+        width: 100%;
+        height: 1px;
+        margin: 0.5rem 0;
+    }
+    .modal .modal-content {
+        padding: 1rem;
+        width: 95%;
+    }
+    .modal .kv {
+        grid-template-columns: 90px 1fr;
+        font-size: 1rem;
+    }
+    .modal .modal-title {
+        font-size: 1.5rem;
+    }
+    .modal .row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .modal .row button {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}

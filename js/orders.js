@@ -6,7 +6,7 @@ export const orders = [
         "total": "€ 0.00",
         "status": "Canceled",
         "payment": "Refund",
-        "date": "13-04-2016",
+        "date": "13-04-2013",
         "action": "Divorce",
         "country": "USA"
     },
@@ -54,7 +54,7 @@ export const orders = [
         "total": "€ 25.55",
         "status": "Delivered",
         "payment": "Paid",
-        "date": "28-10-2020",
+        "date": "23-03-2023",
         "action": "Details",
         "country": "USA"
     },
@@ -138,7 +138,7 @@ export const orders = [
         "total": "€ 120.00",
         "status": "Processing",
         "payment": "Paid",
-        "date": "02-02-2022",
+        "date": "14-02-2021",
         "action": "Details",
         "country": "Germany"
     },
@@ -174,7 +174,7 @@ export const orders = [
         "total": "€ 120.00",
         "status": "Processing",
         "payment": "Paid",
-        "date": "02-02-2022",
+        "date": "12-01-2026",
         "action": "Details",
         "country": "Germany"
     },
@@ -210,7 +210,7 @@ export const orders = [
         "total": "€ 10.000.00",
         "status": "Done",
         "payment": "Paid",
-        "date": "18-11-2017",
+        "date": "18-11-2018",
         "action": "Details",
         "country": "Austria"
     },
@@ -222,7 +222,7 @@ export const orders = [
         "total": "€ 12.00",
         "status": "Canceled",
         "payment": "Refund",
-        "date": "11-10-2012",
+        "date": "20-06-2015",
         "action": "Details",
         "country": "Austria"
     },
@@ -259,7 +259,7 @@ export const orders = [
         "total": "€ 25.55",
         "status": "Delivered",
         "payment": "Paid",
-        "date": "28-10-2020",
+        "date": "31-10-2020",
         "action": "Details",
         "country": "Finland"
     },
@@ -498,7 +498,7 @@ export const orders = [
         "total": "€ 120.00",
         "status": "Processing",
         "payment": "Paid",
-        "date": "02-02-2022",
+        "date": "12-02-2024",
         "action": "Details",
         "country": "Germany"
     },
@@ -522,7 +522,7 @@ export const orders = [
         "total": "€ 120.00",
         "status": "Processing",
         "payment": "Paid",
-        "date": "02-02-2022",
+        "date": "02-08-2020",
         "action": "Details",
         "country": "Germany"
     },
@@ -547,7 +547,7 @@ export const orders = [
         "total": "€ 120.00",
         "status": "Processing",
         "payment": "Paid",
-        "date": "02-02-2022",
+        "date": "07-04-2023",
         "action": "Details",
         "country": "Germany"
     },
@@ -571,7 +571,7 @@ export const orders = [
         "total": "€ 25.55",
         "status": "Delivered",
         "payment": "Paid",
-        "date": "28-10-2020",
+        "date": "01-05-2025",
         "action": "Details",
         "country": "USA"
     },
@@ -655,7 +655,7 @@ export const orders = [
         "total": "€ 20.00",
         "status": "Delivered",
         "payment": "Paid",
-        "date": "23-11-2025",
+        "date": "05-01-2026",
         "action": "Details",
         "country": "Austria"
     },
@@ -667,7 +667,7 @@ export const orders = [
         "total": "€ 120.00",
         "status": "Processing",
         "payment": "Paid",
-        "date": "02-02-2022",
+        "date": "30-09-2026",
         "action": "Details",
         "country": "Japan"
     },
@@ -727,7 +727,7 @@ export const orders = [
         "total": "€ 120.00",
         "status": "New",
         "payment": "Paid",
-        "date": "02-02-2022",
+        "date": "19-06-2024",
         "action": "Details",
         "country": "Japan"
     },
@@ -787,7 +787,7 @@ export const orders = [
         "total": "€ 120.00",
         "status": "Delivered",
         "payment": "Paid",
-        "date": "02-02-2022",
+        "date": "17-11-2022",
         "action": "Details",
         "country": "Japan"
     },
@@ -799,7 +799,7 @@ export const orders = [
         "total": "€ 56.10",
         "status": "Delivered",
         "payment": "New",
-        "date": "14-02-2026",
+        "date": "27-03-2026",
         "action": "Details",
         "country": "China"
     }

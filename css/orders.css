@@ -260,27 +260,6 @@ main{
     min-width: 0;
 }
 
-main .date{
-    display: inline-block;
-    background: var(--color-light);
-    border-radius: var(--border-radius-1);
-    margin-top: 1rem;
-    padding: 0.5rem 1.6rem;
-}
-
-main .date input[type="date"]{
-    background: transparent;
-    color: var(--color-dark);
-}
-
-
-main .admin-container{
-    display: grid;
-    gap: 1.6rem;
-    grid-template-columns: repeat(3, 1fr);
-}
-
-
 .logo{display:flex;align-items:center;gap:6px;flex:0 0 auto;text-decoration:none;color:var(--color-dark)}
 .logo svg{width:26px;height:26px}
 .brand{color:var(--color-dark);font-weight:700;font-size:19px;letter-spacing:-0.01em;text-decoration:none;}
@@ -414,6 +393,16 @@ main .tracking-orders .filters .field.field-actions .btn-ghost{
 main .tracking-orders .filters .field.field-actions .btn-ghost:hover{
     background: var(--color-info-dark);
     color: var(--color-white);
+}
+
+main .tracking-orders .filters .field.field-actions .btn-ghost{
+    background: transparent;
+    color: var(--color-dark);
+    border: 1px solid var(--color-info-dark);
+    padding: 0.5rem 1.2rem;
+    border-radius: var(--border-radius-1);
+    transition: all 300ms ease;
+    margin-right: 0;
 }
 
 main .tracking-orders .table-wrap{
@@ -639,12 +628,14 @@ body.modal-open{
     color: var(--color-dark);
     border-radius: var(--card-border-radius);
     box-shadow: var(--box-shadow);
-    width: min(560px, 100%);
+    width: min(40rem, 100%);
     padding: 2rem;
+    max-height: 90vh; /* Адаптация для мобильных устройств: окно не вылезает за экран */
+    overflow-y: auto; /* Внутренний скролл, если окно большое */
 }
 
 .modal .modal-content.modal-wide{
-    max-width: 560px;
+    max-width: 40rem;
 }
 
 .modal .modal-header{
@@ -841,7 +832,7 @@ body.modal-open{
 
 @media (max-width: 900px){
     .modal .modal-content.modal-wide{
-        max-width: 560px;
+        max-width: 40rem;
     }
 
     .modal .order-fields{
@@ -906,10 +897,10 @@ body.modal-open{
 }
 
 .language-switcher {
-    position: absolute;
-  top: 1.2rem;
-  right: 21.7rem;
-
+        position: static;
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.2rem;
 }
 
 #languageSelect {
@@ -1221,6 +1212,7 @@ border-bottom:none;
     .right .language-switcher{
         position: static;
         margin-left: 10rem;
+        margin-top: 1rem;
         width: auto;
         justify-self: center;
     }
@@ -1272,3 +1264,42 @@ border-bottom:none;
         width: 4rem;
     }
 }
+
+@media screen and (min-width: 1921px) {
+    html {
+        font-size: 21px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .modal .order-fields {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .modal .order-field-divider {
+        display: block;
+        width: 100%;
+        height: 1px;
+        margin: 0.5rem 0;
+    }
+    .modal .modal-content {
+        padding: 1rem;
+        width: 95%;
+    }
+    .modal .kv {
+        grid-template-columns: 90px 1fr;
+        font-size: 1rem;
+    }
+    .modal .modal-title {
+        font-size: 1.5rem;
+    }
+    .modal .row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .modal .row button {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
+
