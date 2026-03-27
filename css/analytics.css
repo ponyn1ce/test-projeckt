@@ -261,12 +261,12 @@ main{
 .brand{color:var(--color-dark);font-weight:700;font-size:19px;letter-spacing:-0.01em;text-decoration:none;}
 
 main .analytics {
-    margin-top: 1.8rem;
+    margin-top: 1.55rem;
     display: grid;
     grid-template-columns: minmax(200px, 2fr) minmax(200px, 1fr);
     gap: 1.6rem;
     align-items: start;
-    height: 320px;
+    min-height: 320px;
 }
 
 main .analytics-left,
@@ -455,6 +455,120 @@ main .analytics .delivered .deliveredcard .icon{
 
 
 
+main .card {
+    margin-top: 1.3rem;
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    color: var(--color-dark);
+    box-shadow: var(--box-shadow);
+}
+
+main .card:hover {
+    box-shadow: none;
+}
+
+main .card.chart-card {
+    max-width: 100%;
+    height: 499px;
+    display: flex;
+    flex-direction: column;
+}
+
+main .card.chart-card canvas {
+    max-height: 360px;
+}
+
+main .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 20px;
+    color: var(--color-dark);
+}
+
+main .card-header h3 {
+    font-size: 1.5rem;
+    color: var(--color-dark);
+    width: 100%;
+}
+
+main .date-filters {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+}
+
+main .date-filters input {
+    background: var(--color-white);
+    border: 1px solid #3a3f47;
+    color: var(--color-dark);
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+main .date-filters input:focus {
+    outline: none;
+    border-color: #4f46e5;
+    background: #252a30;
+}
+
+main .date-filters input::placeholder {
+    color: #777;
+}
+
+main .date-filters .date-separator {
+    color: #777;
+}
+
+main .date-filters .btn-reset {
+    background: transparent;
+    border: 1px solid #2c2f36;
+    color: #aaa;
+    padding: 8px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 0.8rem;
+}
+
+main .date-filters .btn-reset:hover {
+    background: var(--color-danger);
+    color: var(--color-white);
+    border-color: var(--color-danger);
+}
+
+main .date-filters .group-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+main .date-filters button {
+    background: transparent;
+    border: 1px solid #2c2f36;
+    color: #aaa;
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+main .date-filters button:hover {
+    background: #2c2f36;
+    color: var(--color-white);
+}
+
+main .date-filters .active {
+    background: #4f46e5;
+    color: var(--color-white);
+    border: none;
+}
+
+
 
 
 
@@ -581,8 +695,372 @@ border-bottom:none;
     color: var(--color-primary);
 }
 
+/* ===== EXPANDABLE COUNTRIES LIST STYLES ===== */
+
+.orders-country {
+    position: relative;
+}
+
+.orders-chart-expandable {
+    display: flex;
+    flex-direction: column;
+}
+
+.orders-list-preview {
+    flex: 1;
+}
+
+/* Кнопки Show All / Show Less */
+.expand-collapse-buttons {
+    display: flex;
+    gap: 0;
+    border-top: 1px solid var(--color-light);
+}
+
+.expand-btn,
+.collapse-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-primary);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 200ms ease;
+    font-family: 'Poppins', sans-serif;
+    flex: 1;
+}
+
+.expand-btn:hover,
+.collapse-btn:hover {
+    color: var(--color-primary-veriant);
+}
+
+.expand-btn .material-icons-sharp,
+.collapse-btn .material-icons-sharp {
+    font-size: 20px;
+    transition: transform 300ms ease;
+}
+
+.expand-btn[aria-expanded="true"] .material-icons-sharp {
+    transform: rotate(180deg);
+}
+
+/* Expanded list - разворачивается внутри карточки */
+.countries-expanded {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 400ms ease, opacity 300ms ease;
+}
+
+.countries-expanded.active {
+    max-height: 600px;
+    opacity: 1;
+}
+
+.countries-expanded.active .countries-list {
+    opacity: 1;
+    animation: slideInList 300ms ease 100ms forwards;
+}
+
+.countries-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0 0 0.5rem 0;
+    animation: slideInList 300ms ease 100ms forwards;
+    opacity: 0;
+}
+
+.country-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 200ms ease;
+    animation: slideInItem 300ms ease backwards;
+    font-size: 1.2rem;
+    color: var(--color-dark-veriant);
+}
+
+.country-row:last-child {
+    border-bottom: none;
+}
+
+.country-row span {
+    min-width: 0;
+}
+
+.country-row span:last-child {
+    color: var(--color-info-dark);
+}
+
+.country-row:nth-child(1) { animation-delay: 0.1s; }
+.country-row:nth-child(2) { animation-delay: 0.15s; }
+.country-row:nth-child(3) { animation-delay: 0.2s; }
+.country-row:nth-child(4) { animation-delay: 0.25s; }
+.country-row:nth-child(5) { animation-delay: 0.3s; }
+.country-row:nth-child(6) { animation-delay: 0.35s; }
+.country-row:nth-child(n+7) { animation-delay: 0.4s; }
+
+.country-row:hover {
+    color: var(--color-primary);
+}
+
+/* Animations */
+@keyframes slideInList {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInItem {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Dark theme support */
+.dark-theme-variables .countries-expanded,
+body.dark-theme .countries-expanded {
+    background: transparent;
+}
+
+.dark-theme-variables .expand-btn,
+.dark-theme-variables .collapse-btn,
+body.dark-theme .expand-btn,
+body.dark-theme .collapse-btn {
+    border-top-color: var(--color-light);
+    color: var(--color-primary);
+}
+
+.dark-theme-variables .expand-btn:hover,
+.dark-theme-variables .collapse-btn:hover,
+body.dark-theme .expand-btn:hover,
+body.dark-theme .collapse-btn:hover {
+    color: var(--color-primary-veriant);
+}
+
+.dark-theme-variables .country-item,
+body.dark-theme .country-item {
+    background: var(--color-background);
+}
+
+.dark-theme-variables .country-item:hover,
+body.dark-theme .country-item:hover {
+    box-shadow: 0 2px 8px rgba(115, 128, 236, 0.15);
+}
+
+.dark-theme-variables .country-info h4,
+body.dark-theme .country-info h4 {
+    color: var(--color-dark);
+}
+
+.dark-theme-variables .country-info .order-count,
+body.dark-theme .country-info .order-count {
+    color: var(--color-info-dark);
+}
+
+.dark-theme-variables .country-bar,
+body.dark-theme .country-bar {
+    background: var(--color-light);
+}
+
+.right .ai-like-insights{
+    margin-top: 1.8rem;
+    height: auto;
+}
+
+.right .ai-like-insights h2{
+    margin-bottom: 0.8rem ;
+    margin-left: 1.1rem;
+}
+
+.right .ai-like-insights #aiHints {
+    height: 100%;
+}
+
+.right .ai-like-insights .ai-like{
+    background: var(--color-white);
+    padding: var(--card-padding);
+    padding-right: 1.2rem;
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+    width: calc(100% - 5px);
+    height: auto;
+    min-height: 460px; /* Чтобы не сжималось меньше, но при этом расширялось под контент без скролла */
+    overflow-y: hidden;
+}
+
+.right .ai-like-insights .ai-like:hover{
+    box-shadow: none;
+}
+
+.right .ai-like-insights #aiHints .ai-like #aiInsights{
+    font-size: 1rem;
+    padding: var(--padding-1);
+    color: var(--color-dark-veriant);
+}
+
+.right .ai-like-insights #aiHints .ai-like #aiInsights li{
+    margin-bottom: 0.4rem;
+}
+
+
+
+
+
+
+
+
+
+/* Analytics Row - Positioned inside main */
+main .analytics-row {
+  display: grid;
+  grid-template-columns: 1.5fr 2fr;
+  gap: 1.6rem;
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+main .cardvorona {
+  background: var(--color-white);
+  border-radius: var(--card-border-radius);
+  padding: var(--card-padding);
+  box-shadow: var(--box-shadow);
+  transition: all 300ms ease;
+  min-width: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  max-height: 260px;
+}
+
+main .cardvorona:hover {
+  box-shadow: none;
+}
+
+main .cardvorona h3 {
+  margin-bottom: 0.8rem;
+  font-size: 1.3rem;
+  color: var(--color-dark);
+  font-weight: 600;
+}
+
+main .cardvorona > div {
+  flex: 1;
+  overflow-y: hidden;
+  padding-right: 0;
+}
+
+/* Funnel */
+main .funnel-row {
+  margin-bottom: 0.8rem;
+}
+
+main .funnel-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  margin-bottom: 0.4rem;
+  color: var(--color-info-dark);
+}
+
+main .funnel-bar {
+  height: 5px;
+  border-radius: var(--border-radius-2);
+  background: var(--color-primary);
+  transition: width 0.6s ease;
+}
+
+/* Drop-off */
+.drop-item {
+  padding: 0.6rem;
+  border-radius: var(--border-radius-2);
+  margin-bottom: 0.6rem;
+  background: var(--color-light);
+  border-left: 3px solid var(--color-primary);
+  font-size: 0.85rem;
+}
+
+.drop-item:last-child {
+  margin-bottom: 0;
+}
+
+.drop-bad {
+  border-left-color: var(--color-danger);
+}
+
+.drop-ok {
+  border-left-color: var(--color-success);
+}
+
+.drop-item strong {
+  color: var(--color-dark);
+  font-size: 0.8rem;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.drop-item div {
+  color: var(--color-info-dark);
+  font-size: 0.78rem;
+}
+
+/* Aging - in both main and right */
+.aging-bar {
+  height: 5px;
+  border-radius: var(--border-radius-2);
+  margin-bottom: 0.6rem;
+  background: var(--color-primary);
+}
+
+
+
+
+
+
+
+
+/* Responsive */
+@media screen and (max-width: 1200px) {
+    .countries-expanded.active {
+        max-height: 500px;
+    }
+
+    .country-item {
+        padding: 0.6rem;
+    }
+
+    .country-info h4 {
+        font-size: 0.85rem;
+    }
+
+    .country-bar {
+        width: 60px;
+    }
+}
+
 @media screen and (min-width: 1921px) {
     html {
         font-size: 21px;
     }
 }
+
+

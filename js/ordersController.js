@@ -1,5 +1,8 @@
 import { orders } from "/js/orders.js";
 
+// Сохраняем заказы в глобальную переменную для доступа из других скриптов
+window.lastOrdersData = orders;
+
 const table = document.getElementById("ordersTable");
 const emptyHint = document.getElementById("emptyHint");
 const modal = document.getElementById("orderModal");
@@ -261,23 +264,38 @@ const attachModalListeners = () => {
 
 const attachFilterListeners = () => {
   if (qInput) {
-    qInput.addEventListener("input", renderOrders);
+    qInput.addEventListener("input", () => {
+      renderOrders();
+      updateCountriesStatistics();
+    });
   }
 
   if (statusSelect) {
-    statusSelect.addEventListener("change", renderOrders);
+    statusSelect.addEventListener("change", () => {
+      renderOrders();
+      updateCountriesStatistics();
+    });
   }
 
   if (paymentSelect) {
-    paymentSelect.addEventListener("change", renderOrders);
+    paymentSelect.addEventListener("change", () => {
+      renderOrders();
+      updateCountriesStatistics();
+    });
   }
 
   if (dateFromInput) {
-    dateFromInput.addEventListener("change", renderOrders);
+    dateFromInput.addEventListener("change", () => {
+      renderOrders();
+      updateCountriesStatistics();
+    });
   }
 
   if (dateToInput) {
-    dateToInput.addEventListener("change", renderOrders);
+    dateToInput.addEventListener("change", () => {
+      renderOrders();
+      updateCountriesStatistics();
+    });
   }
 
   if (resetBtn) {
@@ -288,6 +306,7 @@ const attachFilterListeners = () => {
       if (dateFromInput) dateFromInput.value = "";
       if (dateToInput) dateToInput.value = "";
       renderOrders();
+      updateCountriesStatistics();
     });
   }
 };
@@ -317,11 +336,11 @@ const flags = {
 };
 
 
-function getOrdersByCountry() {
+function getOrdersByCountry(ordersList = getFilteredOrders()) {
 
   const result = {};
 
-  orders.forEach(order => {
+  ordersList.forEach(order => {
 
     const country = order.country;
 
@@ -338,7 +357,7 @@ function getOrdersByCountry() {
   return result;
 }
 
-function renderOrdersByCountry() {
+function renderOrdersByCountry(ordersList = getFilteredOrders()) {
 
   const container = document.getElementById("ordersByCountry");
 
@@ -347,7 +366,7 @@ function renderOrdersByCountry() {
     return;
   }
 
-  const countries = getOrdersByCountry();
+  const countries = getOrdersByCountry(ordersList);
 
   const sortedCountries = Object.entries(countries)
     .sort((a, b) => b[1] - a[1])
@@ -376,6 +395,134 @@ function renderOrdersByCountry() {
 }
 renderOrdersByCountry();
 
+// ===== COUNTRIES MODAL CLASS =====
+class CountriesModal {
+  constructor() {
+    this.openBtn = document.querySelector('[data-modal-trigger="countries"]');
+    this.closeBtn = document.querySelector('[data-modal-close="countries"]');
+    this.modal = document.getElementById('countriesModal');
+    this.countriesList = document.getElementById('countriesListContent');
+    
+    // Если необходимые элементы не существуют (например, на orders.html), пропускаем инициализацию
+    if (!this.modal || !this.countriesList) {
+      return;
+    }
+    
+    this.isOpen = false;
+    this.init();
+  }
+
+  init() {
+    if (this.openBtn) {
+      this.openBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.open();
+      });
+    }
+
+    if (this.closeBtn) {
+      this.closeBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.close();
+      });
+    }
+
+    // Закрытие при нажатии на ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && this.isOpen) {
+        this.close();
+      }
+    });
+  }
+
+  getCountriesStatistics() {
+    const filteredOrders = getFilteredOrders();
+    const countriesMap = {};
+
+    // Подсчитываем количество заказов по странам из отфильтрованных данных
+    filteredOrders.forEach(order => {
+      if (order.country) {
+        countriesMap[order.country] = (countriesMap[order.country] || 0) + 1;
+      }
+    });
+
+    // Преобразуем в массив и сортируем по количеству заказов
+    return Object.entries(countriesMap)
+      .map(([country, count]) => ({
+        name: country,
+        orders: count
+      }))
+      .sort((a, b) => b.orders - a.orders);
+  }
+
+  renderCountries() {
+    if (!this.countriesList) return;
+
+    const countries = this.getCountriesStatistics();
+    
+    // Показываем только страны начиная со степени 6 (пропускаем первые 5, которые видны в превью)
+    const expandedCountries = countries.slice(5);
+
+    this.countriesList.innerHTML = expandedCountries
+      .map((country) => `
+        <div class="country-row">
+          <span>${flags[country.name] || ""} ${country.name}</span>
+          <span>${country.orders}</span>
+        </div>
+      `)
+      .join('');
+  }
+
+  getOrdersText(count) {
+    // Для правильного отображения слова "заказ/заказа/заказов"
+    if (count % 10 === 1 && count % 100 !== 11) {
+      return 'заказ';
+    } else if (count % 10 >= 2 && count % 10 <= 4 && (count % 100 < 10 || count % 100 >= 20)) {
+      return 'заказа';
+    } else {
+      return 'заказов';
+    }
+  }
+
+  open() {
+    if (!this.modal) return;
+
+    this.renderCountries();
+    this.modal.classList.add('active');
+    this.openBtn.setAttribute('aria-expanded', 'true');
+    this.openBtn.style.display = 'none';
+    if (this.closeBtn) this.closeBtn.style.display = 'flex';
+    this.isOpen = true;
+  }
+
+  close() {
+    if (!this.modal) return;
+
+    this.modal.classList.remove('active');
+    this.openBtn.setAttribute('aria-expanded', 'false');
+    this.openBtn.style.display = 'flex';
+    if (this.closeBtn) this.closeBtn.style.display = 'none';
+    this.isOpen = false;
+  }
+
+  update() {
+    if (this.isOpen) {
+      this.renderCountries();
+    }
+  }
+}
+
+// Инициализация CountriesModal
+const countriesModal = new CountriesModal();
+
+// Функция для обновления статистики стран
+function updateCountriesStatistics() {
+  renderOrdersByCountry();
+  if (countriesModal) {
+    countriesModal.update();
+  }
+}
+
 
 
 // Функция для обновления статистики
@@ -386,48 +533,211 @@ function updateOrderStats(orders) {
   const countDelivered = orders.filter(o => o.status === "Delivered").length;
   const countCanceled = orders.filter(o => o.status === "Canceled").length;
 
-  // Вставляем данные в HTML
-  document.getElementById("statTotal").textContent = total;
-  document.getElementById("statNew").textContent = countNew;
-  document.getElementById("statProcessing").textContent = countProcessing;
-  document.getElementById("statDelivered").textContent = countDelivered;
-  document.getElementById("statCanceled").textContent = countCanceled;
+  // Вставляем данные в HTML (только если элементы существуют)
+  const el1 = document.getElementById("statTotal");
+  const el2 = document.getElementById("statNew");
+  const el3 = document.getElementById("statProcessing");
+  const el4 = document.getElementById("statDelivered");
+  const el5 = document.getElementById("statCanceled");
+  
+  if (el1) el1.textContent = total;
+  if (el2) el2.textContent = countNew;
+  if (el3) el3.textContent = countProcessing;
+  if (el4) el4.textContent = countDelivered;
+  if (el5) el5.textContent = countCanceled;
 }
 
 // Вызываем функцию при загрузке страницы
 updateOrderStats(orders);
+updateCountriesStatistics();
 
 
+// Объект для хранения переводов
+let aiTranslations = {};
+
+// Загружаем переводы для подсказок
+async function loadAITranslations() {
+  try {
+    const currentLang = localStorage.getItem("language") || "en";
+    const response = await fetch(`/lang/${currentLang}.json`);
+    aiTranslations = await response.json();
+  } catch (error) {
+    console.error("Failed to load AI hints translations:", error);
+    // Fallback to English
+    aiTranslations = {
+      "insight_orders_improved": "Orders improved by",
+      "insight_orders_declined": "Orders declined by",
+      "insight_delivery_improved": "Delivery rate improved by",
+      "insight_delivery_declined": "Delivery rate declined by",
+      "insight_delivery_stable": "Delivery rate stable by",
+      "insight_orders_stable": "Orders stable by",
+      "insight_this_week": "this week",
+      "insight_canceled_trend": "orders canceled — check customer satisfaction",
+      "insight_processing_trend": "orders in progress — monitor workflow",
+      "insight_excellent": "Excellent performance — keep up the good work!",
+      "insight_many_new": "Many new orders — process them faster.",
+      "insight_few_new": "Few new orders — current pace is normal.",
+      "insight_processing": "Orders in progress are accumulating — check resources.",
+      "insight_delivered": "Many delivered orders — great work!",
+      "insight_canceled_msg": "Canceled orders detected — consider contacting customers.",
+      "insight_no_canceled": "No canceled orders — excellent!"
+    };
+  }
+}
 
 // Функция генерации AI-подсказок
 function generateAIHints(orders) {
-  const hints = [];
+  const ul = document.getElementById("aiInsights");
+  if (!ul) return;
 
+  ul.innerHTML = ""; // очистка предыдущих подсказок
+
+  // Получаем текущую дату
+  const today = new Date(2026, 2, 26); // 26 марта 2026
+
+  // Функция для парсинга даты формата "DD-MM-YYYY"
+  const parseDate = (dateString) => {
+    const [day, month, year] = dateString.split("-").map(Number);
+    return new Date(year, month - 1, day);
+  };
+
+  // Функция для получения номера недели
+  const getWeekNumber = (date) => {
+    const firstDay = new Date(date.getFullYear(), 0, 1);
+    const pastDaysOfYear = (date - firstDay) / 86400000;
+    return Math.ceil((pastDaysOfYear + firstDay.getDay() + 1) / 7);
+  };
+
+  // Функция для получения цвета и эмодзи
+  const getColorAndEmoji = (percent) => {
+    if (percent >= 10) return { color: "#41f1b6", emoji: "📈", trend: "improved" }; // зелёный
+    if (percent >= 0) return { color: "#ffbb55", emoji: "⚠️", trend: "stable" }; // жёлтый
+    return { color: "#ff7782", emoji: "📉", trend: "declined" }; // красный
+  };
+
+  // Подсчитываем статусы заказов
   const countNew = orders.filter(o => o.status === "New").length;
   const countProcessing = orders.filter(o => o.status === "Processing").length;
+  const countDelivered = orders.filter(o => o.status === "Delivered" || o.status === "Done").length;
   const countCanceled = orders.filter(o => o.status === "Canceled").length;
-    const countDelivered = orders.filter(o => o.status === "Delivered").length;
+  const total = orders.length;
 
-  // Псевдо-AI правила
-  if(countNew > 3) hints.push("• 💬 Новых заказов много — стоит обработать их быстрее.");
-  else hints.push("• 😔 Новых заказов немного — текущий темп нормальный.");
+  // Подсчитываем заказы по неделям для аналитики
+  const currentWeek = getWeekNumber(today);
+  const previousWeek = currentWeek - 1;
 
-  if(countProcessing > 2) hints.push("• 💼 Заказы в обработке накапливаются — проверь ресурсы.");
-  if(countDelivered > 1) hints.push("• ✅ Много доставленных заказов — отличная работа!");
-  if(countCanceled > 0) hints.push(`• ‼️ Есть отмененные заказы (${countCanceled} штук) — возможно, стоит связаться с клиентами.`);
-  else hints.push("• ☺️ Отмененных заказов нет — отлично!");
+  let thisWeekOrders = 0;
+  let lastWeekOrders = 0;
+  let deliverdThisWeek = 0;
+  let deliveredLastWeek = 0;
 
-  // Вставка в HTML
-  const ul = document.getElementById("aiInsights");
-  ul.innerHTML = ""; // очистка предыдущих подсказок
-  hints.forEach(text => {
-    const li = document.createElement("li");
-    li.textContent = text;
-    ul.appendChild(li);
+  orders.forEach(order => {
+    const orderDate = parseDate(order.date);
+    const orderWeek = getWeekNumber(orderDate);
+    const orderYear = orderDate.getFullYear();
+
+    if (orderYear === today.getFullYear() && orderWeek === currentWeek) {
+      thisWeekOrders++;
+      if (order.status === "Done" || order.status === "Delivered") {
+        deliverdThisWeek++;
+      }
+    }
+
+    if (orderYear === today.getFullYear() && orderWeek === previousWeek) {
+      lastWeekOrders++;
+      if (order.status === "Done" || order.status === "Delivered") {
+        deliveredLastWeek++;
+      }
+    }
   });
+
+  // Расчет процентов
+  const orderChangePercent = lastWeekOrders > 0 
+    ? Math.round(((thisWeekOrders - lastWeekOrders) / lastWeekOrders) * 100)
+    : 0;
+
+  const deliveryChangePercent = deliveredLastWeek > 0
+    ? Math.round(((deliverdThisWeek - deliveredLastWeek) / deliveredLastWeek) * 100)
+    : 0;
+
+  const orderTrend = getColorAndEmoji(orderChangePercent);
+  const deliveryTrend = getColorAndEmoji(deliveryChangePercent);
+
+  // Определяем тип страницы
+  const isAnalyticsPage = document.getElementById("aiHints") && document.querySelector(".ai-like-insights");
+
+  // ANALYTICS VERSION - с процентами и цветами
+  if (isAnalyticsPage) {
+    // Insight 1: Orders changed
+    const orderSign = orderChangePercent >= 0 ? "+" : "";
+    const orderTrendText = orderTrend.trend === "improved" ? aiTranslations["insight_orders_improved"] || "Orders improved by" :
+                          orderTrend.trend === "declined" ? aiTranslations["insight_orders_declined"] || "Orders declined by" :
+                          aiTranslations["insight_orders_stable"] || "Orders stable by";
+    
+    const li1 = document.createElement("li");
+    li1.innerHTML = `<span style="color: ${orderTrend.color}">${orderTrend.emoji}</span> ${orderTrendText} <strong style="color: ${orderTrend.color}">${orderSign}${orderChangePercent}%</strong> ${aiTranslations["insight_this_week"] || "this week"}`;
+    ul.appendChild(li1);
+
+    // Insight 2: Delivery rate changed
+    const deliverySign = deliveryChangePercent >= 0 ? "+" : "";
+    const deliveryTrendText = deliveryTrend.trend === "improved" ? aiTranslations["insight_delivery_improved"] || "Delivery rate improved by" :
+                             deliveryTrend.trend === "declined" ? aiTranslations["insight_delivery_declined"] || "Delivery rate declined by" :
+                             aiTranslations["insight_delivery_stable"] || "Delivery rate stable by";
+    
+    const li2 = document.createElement("li");
+    li2.innerHTML = `<span style="color: ${deliveryTrend.color}">${deliveryTrend.emoji}</span> ${deliveryTrendText} <strong style="color: ${deliveryTrend.color}">${deliverySign}${deliveryChangePercent}%</strong> ${aiTranslations["insight_this_week"] || "this week"}`;
+    ul.appendChild(li2);
+
+    // Insight 3: Summary with colors
+    const li3 = document.createElement("li");
+    if (countCanceled > 2) {
+      const canceledText = aiTranslations["insight_canceled_trend"] || "orders canceled — check customer satisfaction";
+      li3.innerHTML = `<span style="color: #ff7782">❌</span> <strong style="color: #ff7782">${countCanceled} ${canceledText}</strong>`;
+    } else if (countProcessing > 3) {
+      const processingText = aiTranslations["insight_processing_trend"] || "orders in progress — monitor workflow";
+      li3.innerHTML = `<span style="color: #ffbb55">⏳</span> <strong style="color: #ffbb55">${countProcessing} ${processingText}</strong>`;
+    } else {
+      li3.innerHTML = `<span style="color: #41f1b6">✅</span> ${aiTranslations["insight_excellent"] || "Excellent performance — keep up the good work!"}`;
+    }
+    ul.appendChild(li3);
+  } 
+  // ORDERS VERSION - простые подсказки
+  else {
+    const hints = [];
+
+    const manyNewText = aiTranslations["insight_many_new"] || "Many new orders — process them faster.";
+    const fewNewText = aiTranslations["insight_few_new"] || "Few new orders — current pace is normal.";
+    const processingText = aiTranslations["insight_processing"] || "Orders in progress are accumulating — check resources.";
+    const deliveredText = aiTranslations["insight_delivered"] || "Many delivered orders — great work!";
+    const canceledMsgText = aiTranslations["insight_canceled_msg"] || "Canceled orders detected — consider contacting customers.";
+    const noCanceledText = aiTranslations["insight_no_canceled"] || "No canceled orders — excellent!";
+
+    if(countNew > 3) hints.push("• 💬 " + manyNewText);
+    else hints.push("• 😔 " + fewNewText);
+
+    if(countProcessing > 2) hints.push("• 💼 " + processingText);
+    if(countDelivered > 1) hints.push("• ✅ " + deliveredText);
+    if(countCanceled > 0) hints.push(`• ‼️ ${canceledMsgText} (${countCanceled} ${aiTranslations["total"] || "total"})`);
+    else hints.push("• ☺️ " + noCanceledText);
+
+    hints.forEach(text => {
+      const li = document.createElement("li");
+      li.textContent = text;
+      ul.appendChild(li);
+    });
+  }
 }
 
 // Авто-запуск при загрузке страницы
 document.addEventListener("DOMContentLoaded", () => {
-  generateAIHints(orders);
+  // Генерируем подсказки (используются переводы, если они загружены, или fallback)
+  if (document.getElementById("aiInsights")) {
+    generateAIHints(orders);
+  }
+  
+  // Загружаем переводы в фоне для дальнейших обновлений
+  loadAITranslations();
 });
+
+// Экспортируем данные заказов для графиков
+export const ordersData = orders;

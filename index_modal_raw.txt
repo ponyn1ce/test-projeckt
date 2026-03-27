@@ -1,0 +1,131 @@
+     	<div id="orderModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="orderModalTitle">
+		<div class="modal-content modal-wide">
+			<div class="modal-header">
+				<h2 class="modal-title" id="orderModalTitle" data-i18n="order">Order</h2>
+				<button class="close-modal" type="button" id="closeOrderModal" aria-label="Close">×</button>
+			</div>
+			<div class="order-modal-grid">
+				<section class="order-card">
+					<h3 class="order-card-title" data-i18n="main">Main information</h3>
+					<div class="order-fields">
+						<div class="order-field-col">
+							<div class="kv" id="orderMeta"></div>
+						</div>
+						<div class="order-field-divider" aria-hidden="true"></div>
+						<div class="order-field-coll">
+							<div class="field">
+								<label class="field-label" for="modalStatus" data-i18n="status">Status</label>
+								<select class="field-input" id="modalStatus">
+									<option value="new" data-i18n="new">New</option>
+									<option value="processing" data-i18n="processing">Processing</option>
+									<option value="shipped" data-i18n="shipped">Shipped</option>
+									<option value="delivered" data-i18n="delivered">Delivered</option>
+									<option value="canceled" data-i18n="canceled">Canceled</option>
+									<option value="refunded" data-i18n="refunded">Refunded</option>
+								</select>
+							</div>
+							<div class="field">
+								<label class="field-label" for="modalPayment" data-i18n="payment">Payment</label>
+								<select class="field-input1" id="modalPayment">
+									<option value="paid" data-i18n="paid">Paid</option>
+									<option value="unpaid" data-i18n="unpaid">Unpaid</option>
+									<option value="refund" data-i18n="refund">Refund</option>
+								</select>
+							</div>
+							<div class="field">
+								<label class="field-label" for="modalPages" data-i18n="pages">Pages</label>
+								<input class="field-input2" id="modalPages" type="number" min="10" step="4" value="10" />
+							</div>
+							<div class="field">
+								<label class="field-label" for="modalTotal" data-i18n="price">Price</label>
+								<input class="field-input1" id="modalTotal" type="text" readonly value="—" />
+							</div>
+						</div>
+					</div>
+					<div class="row" style="justify-content: center; margin-top: 2rem;">
+						<button class="btn-primary" type="button" id="btnSaveOrder" data-i18n="save">Save</button>
+						<button class="btn-secondary" type="button" id="btnCopy" data-i18n="copy_id">Copy ID</button>
+						<button class="btn-danger" type="button" id="btnDeleteOrder" data-i18n="delete">Delete</button>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+    <!--Modal window end-->
+
+    <div class="right">
+        <div class="top">
+            <button id="menu-btn">
+                <span class="material-icons-sharp">menu</span>
+            </button>
+            <div class="language-switcher">
+                <select name="" id="languageSelect">
+                    <option value="en">English</option>
+                    <option value="ru">Russian</option>
+                </select>
+            </div>
+            <div class="theme-toggler">
+                <span class="material-icons-sharp active" >light_mode</span>
+                <span class="material-icons-sharp">dark_mode</span>
+            </div>
+            <div class="profile">
+                <div class="info">
+                    <p>Hey, <b>Chapman</b></p>
+                    <small class="text-muted" data-i18n="admin">Admin</small>
+                </div>
+                <div class="profile-photo">
+                    <img src="./img/photo_2026-03-04_16-17-17.jpg" alt="">
+                </div>
+            </div>
+        </div>
+
+
+        <!--END OF TOP-->
+
+        <div class="recent-updates">
+            <h2 data-i18n="recent_updates">Recent Updates</h2>
+            <div class="updates">
+
+
+                <div class="update">
+                    <div class="profile-photo">
+                        <img src="./img/megan-fox-leather-transformers-reverse-of-the-fallen-22-x-34-vintage-poster-813_535x.jpg.webp" alt="">
+                    </div>
+                    <div class="message">
+                        <p><b>Megan Fox</b> <span data-i18n="received_order">received an order for a rectangular small album</span></p>
+                        <small class="text-muted" data-i18n="minutes_ago">2 Minutes Ago</small>
+                    </div>
+                </div>
+
+
+                <div class="update">
+                    <div class="profile-photo">
+                        <img src="./img/photo_2026-03-04_16-19-10.jpg" alt="">
+                    </div>
+                    <div class="message">
+                        <p><b>Andrei Chapman</b> <span data-i18n="received_order1">received his order of Galoshes last night</span></p>
+                        <small class="text-muted" data-i18n="minutes_ago1">20 Minutes Ago</small>
+                    </div>
+                </div>
+
+
+                <div class="update">
+                    <div class="profile-photo">
+                        <img src="./img/john-wick-1200-1200.jpg.avif" alt="">
+                    </div>
+                    <div class="message">
+                        <p><b>John Wick</b> <span data-i18n="review_comment">He wrote in the reviews that "the galoshes are super duper cool" and wants to order more</span></p>
+                        <small class="text-muted" data-i18n="hours_ago">2 Hours Ago</small>
+                    </div>
+                </div>
+
+
+                <div class="update">
+                    <div class="profile-photo">
+                        <img src="./img/960px-Brad_Pitt-69858.jpeg" alt="">
+                    </div>
+                    <div class="message">
+                        <p><b>Brad Pitt</b> <span data-i18n="received_order2">received an order for a rectangular small album</span></p>
+                        <small class="text-muted" data-i18n="hours_ago_6">6 Hours Ago</small>
+                    </div>
+                </div>
