@@ -1212,6 +1212,7 @@ border-bottom:none;
     .right .language-switcher{
         position: static;
         margin-left: 10rem;
+        margin-top: 1rem;
         width: auto;
         justify-self: center;
     }
