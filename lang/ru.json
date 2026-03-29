@@ -173,5 +173,7 @@
     "initiated_checkout": "Начало оформления",
     "purchased": "Куплено",
     "lost": "Потеряно",
-    "orders_word": "заказов"
+    "orders_word": "заказов",
+    "active_customers": "Активные клиенты",
+    "lost_customers": "Потерянные клиенты"
 }
