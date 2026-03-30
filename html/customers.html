@@ -33,40 +33,40 @@
                 <span class="material-icons-sharp">grid_view</span>
                 <h3 data-i18n="dashboard">Dashboard</h3>
             </a>
-            <a href="/html/customers.html" class="active">
+            <a href="./html/customers.html" class="active">
                 <span class="material-icons-sharp">person_outline</span>
                 <h3 data-i18n="customers">Customers</h3>
             </a>
-            <a href="/html/orders.html">
+            <a href="./html/orders.html">
                 <span class="material-icons-sharp">receipt_long</span>
                 <h3 data-i18n="orders">Orders</h3>
             </a>
-            <a href="/html/analytics.html">
+            <a href="./html/analytics.html">
                 <span class="material-icons-sharp">insights</span>
                 <h3 data-i18n="analytics">Analytics</h3>
             </a>
-            <a href="/html/messages.html">
+            <a href="./html/messages.html">
                 <span class="material-icons-sharp">mail_outline</span>
                 <h3 data-i18n="messages">Messages</h3>
 				<span class="message-count"></span>
             </a>
-            <a href="/html/products.html">
+            <a href="./html/products.html">
                 <span class="material-icons-sharp">inventory</span>
                 <h3 data-i18n="products">Products</h3>
             </a>
-            <a href="/html/reports.html">
+            <a href="./html/reports.html">
                 <span class="material-icons-sharp">report_gmailerrorred</span>
                 <h3 data-i18n="reports">Reports</h3>
             </a>
-            <a href="/html/setting.html">
+            <a href="./html/setting.html">
                 <span class="material-icons-sharp">settings</span>
                 <h3 data-i18n="settings">Setting</h3>
             </a>
-            <a href="/html/add_products.html">
+            <a href="./html/add_products.html">
                 <span class="material-icons-sharp">add</span>
                 <h3 data-i18n="add_product">Add Product</h3>
             </a>
-            <a href="/html/profile.html">
+            <a href="./html/profile.html">
                 <span class="material-icons-sharp">logout</span>
                 <h3 data-i18n="logout">Logout</h3>
             </a>
@@ -75,10 +75,10 @@
 
     <!--Main Section-->
 
-<main>
-    <h1 data-i18n="customers">Customers</h1>
+    <main>
+        <h1 data-i18n="customers">Customers</h1>
 
-    <div class="tracking-cus">
+        <div class="tracking-cus">
 		    <div class="summary-grid">
 				<div class="start-card icon-right">
 					<div class="start-text">
@@ -111,9 +111,75 @@
 					</div>
                     <span class="material-icons-sharp">person_off</span>
 				</div>
+            </div>
 
 
-</main>
+		    <section class="filters">
+			    <div class="field">
+				    <label class="field-label" for="q" data-i18n="search">Search</label>
+				    <input class="field-input" id="q" type="search" placeholder="ID, name, email, phone" autocomplete="off" />
+			    </div>
+                <div class="field">
+                    <label class="field-label" for="amount" data-i18n="amount">Amount</label>
+                    <input class="field-input" id="amount" type="search" placeholder="the client spent" autocomplete="off" />
+                </div>
+			    <div class="field">
+				    <label class="field-label" for="status" data-i18n="potential">Potential</label>
+				    <select class="field-input" id="status">
+					    <option value="all" data-i18n="all" style="font-size: .1rem">All</option>
+					    <option value="new" data-i18n="new">New</option>
+					    <option value="processing" data-i18n="high">High🌟</option>
+					    <option value="shipped" data-i18n="medium">Medium💕</option>
+					    <option value="delivered" data-i18n="low">Low😢</option>
+				    </select>
+			    </div>
+			    <div class="field">
+				    <label class="field-label" for="status" data-i18n="status">Status</label>
+				    <select class="field-input" id="status">
+					    <option value="" data-i18n="all">All</option>
+					    <option value="active" data-i18n="active_customer">Active Customers</option>
+					    <option value="lost" data-i18n="lost_customer">Lost Customers</option>
+                        <option value="vip" data-i18n="vip">VIP Customers</option>
+                        <option value="sleeping" data-i18n="sleeping">Sleeping Customers </option>
+				    </select>
+			    </div>
+			    <div class="field">
+				    <label class="field-label" for="dateFrom" data-i18n="from_date">From Date</label>
+				    <input class="field-input" id="dateFrom" type="date" />
+			    </div>
+			    <div class="field">
+				    <label class="field-label" for="dateTo" data-i18n="to_date">To Date</label>
+				    <input class="field-input" id="dateTo" type="date" />
+			    </div>
+			    <div class="field field-actions">
+				    <label class="field-label" aria-hidden="true">&nbsp;</label>
+				    <button class="btn-ghost" type="button" id="btnReset" data-i18n="reset">Reset</button>
+				    <button class="btn-ghost1" type="button" id="btnApply" data-i18n="update">Update</button>
+			    </div>
+		    </section>
+
+            <div class="table-wrap">
+			    <table class="customers-table">
+				    <thead>
+					    <tr>
+						    <th data-i18n="number" style="width: 8%">№</th>
+						    <th data-i18n="client" style="width: 16%">Client</th>
+						    <th data-i18n="contacts" style="width: 21%">Contacts</th>
+						    <th data-i18n="total" style="width: 9.3%">Total</th>
+						    <th data-i18n="status" style="width: 14%">Status</th>
+						    <th data-i18n="payment" style="width: 6%">Payment</th>
+						    <th data-i18n="date" style="width: 14%">Date</th>
+						    <th data-i18n="actions">Actions</th>
+					    </tr>
+				    </thead>
+				    <tbody id="ordersTbody"></tbody>
+			    </table>
+            </div>
+
+        </div>
+
+
+    </main>
 
 
     <div class="right">
@@ -144,10 +210,40 @@
     </div>
 
 
+		<div class="orders-country">
+			<h2 data-i18n="orders_country">Orders by Country</h2>
+
+			<div class="update">
+				<div class="orders-chart orders-chart-expandable">
+					<div id="ordersByCountry" class="orders-list-preview"></div>
+					
+					<!-- Expanded list (скрыта по умолчанию) -->
+					<div id="countriesModal" class="countries-expanded">
+						<div id="countriesListContent" class="countries-list"></div>
+					</div>
+					
+					<!-- Button container -->
+					<div class="expand-collapse-buttons">
+						<button class="expand-btn" data-modal-trigger="countries" aria-label="Show all countries">
+							<span data-i18n="show_all">Show All</span>
+							<span class="material-icons-sharp">expand_more</span>
+						</button>
+						<button class="collapse-btn" data-modal-close="countries" aria-label="Collapse" style="display: none;">
+							<span data-i18n="show_less">Show Less</span>
+							<span class="material-icons-sharp">expand_less</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
 
 
 
 </div>
+<script src="../js/customersPage.js"></script>
+<script src="../js/customers.js"></script>
 <script src="../js/script.js"></script>
 <script src="../js/i18n.js"></script>
 <script src="../js/profileMenu.js"></script>

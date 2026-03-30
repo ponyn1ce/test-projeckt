@@ -124,6 +124,16 @@
     "purchased": "Purchased",
     "lost": "Lost",
     "orders_word": "orders",
+    "active_customer": "Active Customers 💪",
+    "lost_customer": "Lost Customers 😢",
     "active_customers": "Active Customers",
-    "lost_customers": "Lost Customers"
+    "lost_customers": "Lost Customers",
+    "potential": "Potential",
+    "high": "High 🌟",
+    "medium": "Medium 💕",
+    "low": "Low 😢",
+    "vip": "VIP Customers 👑",
+    "sleeping": "Sleeping Customers 😴",
+    "amount": "Amount €",
+    "update": "Update"
 }
