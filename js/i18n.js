@@ -3,8 +3,9 @@ const languageSelect = document.getElementById("languageSelect");
 async function loadLanguage(lang) {
 
   try {
-
-    const response = await fetch(`/lang/${lang}.json`);
+    const isHtmlFolder = window.location.pathname.includes('/html/');
+    const basePath = isHtmlFolder ? '../' : './';
+    const response = await fetch(`${basePath}lang/${lang}.json`);
     const translations = await response.json();
     window.currentTranslations = translations; // Экспортируем глобально для других скриптов
 

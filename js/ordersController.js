@@ -1,4 +1,4 @@
-import { orders } from "/js/orders.js";
+import { orders } from "./orders.js";
 
 // Сохраняем заказы в глобальную переменную для доступа из других скриптов
 window.lastOrdersData = orders;
