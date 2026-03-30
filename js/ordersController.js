@@ -653,7 +653,9 @@ let aiTranslations = {};
 async function loadAITranslations() {
   try {
     const currentLang = localStorage.getItem("language") || "en";
-    const response = await fetch(`/lang/${currentLang}.json`);
+    const isHtmlFolder = window.location.pathname.includes('/html/');
+    const basePath = isHtmlFolder ? '../' : './';
+    const response = await fetch(`${basePath}lang/${currentLang}.json`);
     aiTranslations = await response.json();
   } catch (error) {
     console.error("Failed to load AI hints translations:", error);
