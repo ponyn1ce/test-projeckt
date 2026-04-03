@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=person_heart" />
     <link rel="stylesheet" href="../css/customers.css">
     <link rel="stylesheet" href="../css/profile-menu.css">
-
     <title>Customers</title>
 </head>
 <body>
@@ -136,7 +135,7 @@
 				    <label class="field-label" for="potential" data-i18n="potential">Potential</label>
 				    <select class="field-input" id="potential">
 					    <option value="all" data-i18n="all" style="font-size: .1rem">All</option>
-					    <option value="new" data-i18n="new">New</option>
+					    <option value="new" data-i18n="new1">New🔥</option>
 					    <option value="high" data-i18n="high">High🌟</option>
 					    <option value="medium" data-i18n="medium">Medium💕</option>
 					    <option value="low" data-i18n="low">Low😢</option>
@@ -175,6 +174,7 @@
 						    <th data-i18n="client">Client</th>
 						    <th data-i18n="contacts">Contacts</th>
                             <th data-i18n="status">Status</th>
+                            <th data-i18n="potential">Potential</th>
 						    <th data-i18n="spend">Spend</th>
 						    <th data-i18n="reg_date">Registration Date</th>
                             <th data-i18n="last_order">Last Order</th>
@@ -184,11 +184,55 @@
 				    <tbody id="customers-table"></tbody>
 			    </table>
             </div>
-
+            <div class="test-items-pagination" style="display: none;">
+                <button class="page-btn" type="button" data-action="prev" data-i18n="prev">Prev</button>
+                <div class="page-list" aria-label="Pages"></div>
+                <button class="page-btn" type="button" data-action="next" data-i18n="next">Next</button>
+            </div>
         </div>
-
-
     </main>
+
+    <!-- Модальное окно -->
+
+	<div id="orderModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="orderModalTitle">
+		<div class="modal-content modal-wide">
+			<div class="modal-header" style="display: flex; align-items: center; justify-content: center; gap: 1rem; position: relative;">
+                <div class="profile-photo">
+                    <img id="modalAvatar" src="../img/john-wick-1200-1200.jpg.avif" alt="Profile">
+                </div>
+				<h2 class="modal-title" id="orderModalTitle" data-i18n="order" style="margin: 0;">Order</h2>
+				<button class="close-modal" type="button" id="closeOrderModal" aria-label="Close" style="position: absolute; top: -1.5rem; right: -1rem; transform: none;">×</button>
+			</div>
+			<div class="order-modal-grid">
+				<section class="order-card">
+					<h3 class="order-card-title" data-i18n="main">Main information</h3>
+					<div class="order-fields">
+						<div class="order-field-col">
+							<div class="kv" id="orderMeta"></div>
+						</div>
+						<div class="order-field-divider" aria-hidden="true"></div>
+						<div class="order-field-coll" style="display: flex; flex-direction: column; gap: 0.6rem; justify-content: center; min-width: 130px; margin-left: 0;">
+							<button class="btn-primary" style="display: flex; align-items: center; justify-content: center; gap: 0.4rem; padding: 0.4rem 0.8rem; font-size: 0.9rem; width: 100%; border-radius: var(--border-radius-1); cursor: pointer;" type="button">
+                                <span>➕</span> Новый заказ
+                            </button>
+                            <a href="messages.html" class="btn-secondary" style="display: flex; align-items: center; justify-content: center; gap: 0.4rem; padding: 0.4rem 0.8rem; font-size: 0.9rem; width: 100%; border-radius: var(--border-radius-1); text-decoration: none; color: var(--color-dark); border: 1px solid var(--color-info-dark);">
+                                <span>💬</span> Написать
+                            </a>
+						</div>
+					</div>
+					<div class="row" style="justify-content: center; margin-top: 2rem; display: flex; gap: 1rem;">
+						<button class="btn-primary" type="button" id="btnSaveOrder" data-i18n="save">Save</button>
+						<button class="btn-secondary" type="button" id="btnCopy" data-i18n="copy_id">Copy ID</button>
+						<button class="btn-danger" type="button" id="btnDeleteOrder" data-i18n="delete">Delete</button>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+
+    <!-- Модальное окно -->
+
+
 
 
     <div class="right">
@@ -216,7 +260,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    
 
 
 		<div class="orders-country">
@@ -250,6 +294,7 @@
 
 
 
+    </div>
 </div>
 <script type="module" src="../js/customersController.js"></script>
 <script type="module" src="../js/customers.js"></script>
