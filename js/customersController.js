@@ -290,6 +290,183 @@ const updateStatistics = (filteredCustomers) => {
     if (statNew) statNew.textContent = newCount;
     if (statActive) statActive.textContent = activeCount;
     if (statLost) statLost.textContent = lostCount;
+
+    // Обновляем правые панели
+    updateSidePanels(filteredCustomers);
+};
+
+// Функция для отрисовки правых блоков (Требуют внимания, Быстрые деньги и т.д.)
+const updateSidePanels = (customersList) => {
+    const attContainer = document.getElementById("attentionList");
+    const quickContainer = document.getElementById("quickMoneyList");
+    const trigContainer = document.getElementById("triggersList");
+    const recContainer = document.getElementById("recommendationsList");
+    const quickTotalEl = document.getElementById("quickMoneyTotal");
+    const attentionTitle = document.getElementById("attentionTitle");
+
+    let attHtml = '';
+    let quickHtml = '';
+    let trigHtml = '';
+
+    let attCount = 0;
+    let quickCount = 0;
+    let trigCount = 0;
+    let quickTotal = 0;
+
+    const t = (key, fallback) => window.currentTranslations && window.currentTranslations[key] ? window.currentTranslations[key] : fallback;
+
+    customersList.forEach(c => {
+        const hasOrders = c.orders && c.orders.length > 0;
+        let lastOrderDate = null;
+        let diffDays = -1;
+
+        if (hasOrders) {
+            lastOrderDate = parseCustomers(c.orders[c.orders.length - 1]);
+            if (lastOrderDate) {
+                diffDays = Math.floor(((new Date()).getTime() - lastOrderDate.getTime()) / (1000 * 60 * 60 * 24));
+            }
+        }
+
+        const numOrders = hasOrders ? c.orders.length : 0;
+        const statInfo = getCustomerStatus(c); // 'vip', 'active', 'lost', 'sleeping'
+        const isVip = (statInfo === 'vip');
+        const spendStr = c.totalSpend ? c.totalSpend.replace(/[^0-9.-]+/g, "") : "0";
+        const totalSpendNum = Number(spendStr);
+
+        // -- Блок 1: Требуют внимания --
+        let attReason = null;
+        if (numOrders === 0) attReason = t("no_orders_yet", "нет заказов");
+        else if (diffDays >= 60) attReason = `${diffDays} ${t("days_without_purchase", "дней без покупки")}`;
+        else if (numOrders === 1) attReason = t("one_order_push", "1 заказ — дожать");
+
+        if (attReason) {
+            attCount++;
+            attHtml += `
+                <div style="display: flex; align-items: center; justify-content: space-between; cursor: pointer;" onclick="window.openCustomerModalById(${c.id})">
+                    <span style="font-weight: 500; font-size: 0.9rem;">${c.client}</span>
+                    <span style="color: var(--color-danger); font-size: 0.8rem;">${attReason}</span>
+                </div>`;
+        }
+
+        // -- Блок 2: Быстрые деньги --
+        // 1-2 заказа, не VIP, последний заказ < 60 дней
+        if (numOrders >= 1 && numOrders <= 2 && !isVip && diffDays >= 0 && diffDays < 60) {
+            quickCount++;
+            quickTotal += totalSpendNum;
+            quickHtml += `
+                <div style="display: flex; align-items: center; justify-content: space-between; cursor: pointer;" onclick="window.openCustomerModalById(${c.id})">
+                    <span style="font-weight: 500; font-size: 0.9rem;">${c.client}</span>
+                    <span style="color: var(--color-success); font-size: 0.8rem; font-weight: 600;">${t("potential_high", "потенциал HIGH")}</span>
+                </div>`;
+        }
+
+        // -- Блок 3: Автоматические триггеры --
+        // > 30 дней -> предложить новый альбом, > 180 дней (6 мес) -> апселл
+        let trigReason = null;
+        if (diffDays >= 180) trigReason = t("upsell_text", "апселл");
+        else if (diffDays >= 30) trigReason = t("suggest_new_album", "предложить новый альбом");
+
+        if (trigReason) {
+            trigCount++;
+            trigHtml += `
+                <div style="display: flex; align-items: center; justify-content: space-between; cursor: pointer;" onclick="window.openCustomerModalById(${c.id})">
+                    <span style="font-weight: 500; font-size: 0.9rem;">${c.client}</span>
+                    <span style="color: var(--color-warning); font-size: 0.8rem;">${trigReason}</span>
+                </div>`;
+        }
+    });
+
+    const emptyMsg = `<p style="text-align: center; font-size: 0.85rem; color: var(--color-info-dark); margin: 0.5rem 0;">${t("empty_here", "Пока пусто 🤷‍♂️")}</p>`;
+
+   // Вспомогательная функция для рендера сжимающегося блока
+    const renderBlock = (containerId, html, count) => {
+        const previewId = containerId;
+        const modalId = containerId + "Content"; // attentionList -> attentionListContent
+        
+        const previewEl = document.getElementById(previewId);
+        const modalEl = document.getElementById(modalId);
+        
+        if (!previewEl || !modalEl) return;
+        
+        if (!html) {
+            previewEl.innerHTML = emptyMsg;
+            modalEl.innerHTML = '';
+            
+            const container = previewEl.closest('.update');
+            if (container) {
+                const openBtn = container.querySelector('.expand-btn');
+                const closeBtn = container.querySelector('.collapse-btn');
+                if (openBtn) openBtn.style.display = 'none';
+                if (closeBtn) closeBtn.style.display = 'none';
+            }
+            return;
+        }
+        
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = html;
+        const allItems = Array.from(tempDiv.children);
+        
+        const previewItems = allItems.slice(0, 5);
+        const modalItems = allItems.slice(5);
+        
+        previewEl.innerHTML = '';
+        previewItems.forEach(item => previewEl.appendChild(item.cloneNode(true)));
+        
+        modalEl.innerHTML = '';
+        modalItems.forEach(item => modalEl.appendChild(item.cloneNode(true)));
+        
+        const container = previewEl.closest('.update');
+        if (!container) return;
+        
+        const openBtn = container.querySelector('.expand-btn');
+        const closeBtn = container.querySelector('.collapse-btn');
+        const modalFull = previewEl.nextElementSibling;
+        
+        if (modalItems.length === 0) {
+            if (openBtn) openBtn.style.display = 'none';
+            if (closeBtn) closeBtn.style.display = 'none';
+        } else {
+            if (openBtn) openBtn.style.display = 'flex';
+            if (openBtn && !openBtn.dataset.listenerAttached) {
+                openBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    modalFull.classList.add('active');
+                    openBtn.setAttribute('aria-expanded', 'true');
+                    openBtn.style.display = 'none';
+                    if (closeBtn) closeBtn.style.display = 'flex';
+                });
+                openBtn.dataset.listenerAttached = 'true';
+            }
+            
+            if (closeBtn && !closeBtn.dataset.listenerAttached) {
+                closeBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    modalFull.classList.remove('active');
+                    openBtn.setAttribute('aria-expanded', 'false');
+                    openBtn.style.display = 'flex';
+                    closeBtn.style.display = 'none';
+                });
+                closeBtn.dataset.listenerAttached = 'true';
+            }
+        }
+    };
+
+    renderBlock('attentionList', attHtml, attCount);
+    renderBlock('quickMoneyList', quickHtml, quickCount);
+    renderBlock('triggersList', trigHtml, trigCount);
+
+    if (quickTotalEl) {
+        quickTotalEl.textContent = `€${quickTotal.toFixed(2)}`;
+    }
+    if (attentionTitle) {
+        const attText = t("attention_req", "Требуют внимания");
+        attentionTitle.innerHTML = `🔥 <span data-i18n="attention_req">${attText}</span> (${attCount})`;
+    }
+};
+
+window.openCustomerModalById = (id) => {
+    const c = customers.find(x => x.id === id);
+    if (c) openCustomerModal(c);
 };
 
 // Привязка событий (автоматическая фильтрация)
@@ -395,6 +572,13 @@ const attachModalListeners = () => {
 
 attachModalListeners();
 
+const languageSelectEl = document.getElementById("languageSelect");
+if (languageSelectEl) {
+    languageSelectEl.addEventListener("change", () => {
+        // Даем немного времени i18n.js на обновление window.currentTranslations
+        setTimeout(() => filterCustomers(), 100);
+    });
+}
 
 const initCustomersPagination = () => {
     const tableBody = document.getElementById('customers-table');
@@ -490,11 +674,21 @@ document.addEventListener("DOMContentLoaded", () => {
     filterCustomers(); // Запускаем первоначальный рендер и пагинацию
 });
 
-
-
-
-
-
-
 // Инициализация
 renderCustomers(customers);
+
+// Закрытие развернутых блоков при нажатии на ESC
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        const expandedLists = document.querySelectorAll('.collapsible-list:not(.collapsed)');
+        expandedLists.forEach(list => {
+            const btn = list.parentElement.querySelector('.expand-toggle-btn');
+            if (btn) {
+                list.classList.add('collapsed');
+                const t = (key, fallback) => window.currentTranslations && window.currentTranslations[key] ? window.currentTranslations[key] : fallback;
+                const textShow = t("show_all_btn", "Показать все");
+                btn.innerHTML = `<span>${textShow}</span> <span class="material-icons-sharp">expand_more</span>`;
+            }
+        });
+    }
+});

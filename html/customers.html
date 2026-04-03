@@ -263,31 +263,86 @@
     
 
 
-		<div class="orders-country">
-			<h2 data-i18n="orders_country">Orders by Country</h2>
+<!-- Блок 1: Требуют внимания -->
+                <div class="orders-country">
+                        <h2 id="attentionTitle">🔥 <span data-i18n="attention_req">Требуют внимания</span> (0)</h2>
+                        <div class="update">
+                                <div class="orders-chart orders-chart-expandable">
+                                        <div id="attentionList" class="orders-list-preview"></div>
+                                        
+                                        <div id="attentionListContentModal" class="countries-expanded">
+                                                <div id="attentionListContent" class="countries-list"></div>
+                                        </div>
+                                        
+                                        <div class="expand-collapse-buttons">
+                                                <button class="expand-btn" aria-label="Show all">
+                                                        <span data-i18n="show_all">Show All</span>
+                                                        <span class="material-icons-sharp">expand_more</span>
+                                                </button>
+                                                <button class="collapse-btn" aria-label="Collapse" style="display: none;">
+                                                        <span data-i18n="show_less">Show Less</span>
+                                                        <span class="material-icons-sharp">expand_less</span>
+                                                </button>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
 
-			<div class="update">
-				<div class="orders-chart orders-chart-expandable">
-					<div id="ordersByCountry" class="orders-list-preview"></div>
-					
-					<!-- Expanded list (скрыта по умолчанию) -->
-					<div id="countriesModal" class="countries-expanded">
-						<div id="countriesListContent" class="countries-list"></div>
-					</div>
-					
-					<!-- Button container -->
-					<div class="expand-collapse-buttons">
-						<button class="expand-btn" data-modal-trigger="countries" aria-label="Show all countries">
-							<span data-i18n="show_all">Show All</span>
-							<span class="material-icons-sharp">expand_more</span>
-						</button>
-						<button class="collapse-btn" data-modal-close="countries" aria-label="Collapse" style="display: none;">
-							<span data-i18n="show_less">Show Less</span>
-							<span class="material-icons-sharp">expand_less</span>
-						</button>
-					</div>
-				</div>
-			</div>
+                <!-- Блок 2: Быстрые деньги -->
+                <div class="orders-country" style="margin-top: 1.5rem;">
+                        <h2>💰 <span data-i18n="quick_deals">Быстрые сделки</span></h2>
+                        <div class="update">
+                                <div class="orders-chart orders-chart-expandable">
+                                        <div id="quickMoneyList" class="orders-list-preview"></div>
+                                        
+                                        <div id="quickMoneyListContentModal" class="countries-expanded">
+                                                <div id="quickMoneyListContent" class="countries-list"></div>
+                                        </div>
+                                        
+                                        <div class="expand-collapse-buttons">
+                                                <button class="expand-btn" aria-label="Show all">
+                                                        <span data-i18n="show_all">Show All</span>
+                                                        <span class="material-icons-sharp">expand_more</span>
+                                                </button>
+                                                <button class="collapse-btn" aria-label="Collapse" style="display: none;">
+                                                        <span data-i18n="show_less">Show Less</span>
+                                                        <span class="material-icons-sharp">expand_less</span>
+                                                </button>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+
+                <!-- Блок 3: Автоматические триггеры -->
+                <div class="orders-country" style="margin-top: 1.5rem;">
+                        <h2>⏰ <span data-i18n="triggers">Триггеры</span></h2>
+                        <div class="update">
+                                <div class="orders-chart orders-chart-expandable">
+                                        <div id="triggersList" class="orders-list-preview"></div>
+                                        
+                                        <div id="triggersListContentModal" class="countries-expanded">
+                                                <div id="triggersListContent" class="countries-list"></div>
+                                        </div>
+                                        
+                                        <div class="expand-collapse-buttons">
+                                                <button class="expand-btn" aria-label="Show all">
+                                                        <span data-i18n="show_all">Show All</span>
+                                                        <span class="material-icons-sharp">expand_more</span>
+                                                </button>
+                                                <button class="collapse-btn" aria-label="Collapse" style="display: none;">
+                                                        <span data-i18n="show_less">Show Less</span>
+                                                        <span class="material-icons-sharp">expand_less</span>
+                                                </button>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+                
+                <!-- Дополнительная секция "Прогноз дохода" -->
+                <div class="update" style="margin-top: 1rem; padding-top: 1rem;">
+                        <p style="text-align: center; width: 100%; font-size: 0.9rem; color: var(--color-dark-variant);">
+                                <span data-i18n="potential_today">💸 Потенциал сегодня:</span> <b id="quickMoneyTotal" style="color: var(--color-primary); font-size: 1.1rem; margin-left: 0.5rem;">€0.00</b>
+                        </p>
 		</div>
 
 
