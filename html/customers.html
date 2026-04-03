@@ -133,13 +133,13 @@
                     <input class="field-input" id="amount" type="search" placeholder="the client spent" autocomplete="off" />
                 </div>
 			    <div class="field">
-				    <label class="field-label" for="status" data-i18n="potential">Potential</label>
-				    <select class="field-input" id="status">
+				    <label class="field-label" for="potential" data-i18n="potential">Potential</label>
+				    <select class="field-input" id="potential">
 					    <option value="all" data-i18n="all" style="font-size: .1rem">All</option>
 					    <option value="new" data-i18n="new">New</option>
-					    <option value="processing" data-i18n="high">High🌟</option>
-					    <option value="shipped" data-i18n="medium">Medium💕</option>
-					    <option value="delivered" data-i18n="low">Low😢</option>
+					    <option value="high" data-i18n="high">High🌟</option>
+					    <option value="medium" data-i18n="medium">Medium💕</option>
+					    <option value="low" data-i18n="low">Low😢</option>
 				    </select>
 			    </div>
 			    <div class="field">
@@ -163,7 +163,7 @@
 			    <div class="field field-actions">
 				    <label class="field-label" aria-hidden="true">&nbsp;</label>
 				    <button class="btn-ghost" type="button" id="btnReset" data-i18n="reset">Reset</button>
-				    <button class="btn-ghost1" type="button" id="btnApply" data-i18n="update">Update</button>
+
 			    </div>
 		    </section>
 
@@ -171,17 +171,17 @@
 			    <table class="customers-table">
 				    <thead>
 					    <tr>
-						    <th data-i18n="number" style="width: 8%">№</th>
-						    <th data-i18n="client" style="width: 16%">Client</th>
-						    <th data-i18n="contacts" style="width: 21%">Contacts</th>
-						    <th data-i18n="total" style="width: 9.3%">Total</th>
-						    <th data-i18n="status" style="width: 14%">Status</th>
-						    <th data-i18n="payment" style="width: 6%">Payment</th>
-						    <th data-i18n="date" style="width: 14%">Date</th>
+						    <th data-i18n="number">№</th>
+						    <th data-i18n="client">Client</th>
+						    <th data-i18n="contacts">Contacts</th>
+                            <th data-i18n="status">Status</th>
+						    <th data-i18n="spend">Spend</th>
+						    <th data-i18n="reg_date">Registration Date</th>
+                            <th data-i18n="last_order">Last Order</th>
 						    <th data-i18n="actions">Actions</th>
 					    </tr>
 				    </thead>
-				    <tbody id="ordersTbody"></tbody>
+				    <tbody id="customers-table"></tbody>
 			    </table>
             </div>
 
@@ -251,8 +251,8 @@
 
 
 </div>
-<script src="../js/customersPage.js"></script>
-<script src="../js/customers.js"></script>
+<script type="module" src="../js/customersController.js"></script>
+<script type="module" src="../js/customers.js"></script>
 <script src="../js/script.js"></script>
 <script src="../js/i18n.js"></script>
 <script src="../js/profileMenu.js"></script>

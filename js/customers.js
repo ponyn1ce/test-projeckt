@@ -1,12 +1,11 @@
-export const orders = [
+export const customers = [
         {
         "id": 1,
         "client": "Megan Fox",
-        "contacts": "+1 185 389-05-63",
-        "total": "€ 0.00",
-        "orders": [],
+        "contacts": "+1 185 389-05-63", "email": "photarea.at@gmail.com",
+        "orders": ["13-04-2014", "15-07-2015", "20-11-2016", "17-11-2022", "01-01-2023"],
         "totalSpend": "€ 0.00",
-        "lastOrderDate": "13-04-2013",
+        "registrationDate": "13-04-2011",
         "action": "Divorce",
         "country": "USA"
     },
@@ -14,11 +13,10 @@ export const orders = [
     {
         "id": 2,
         "client": "Andrei Chapman",
-        "contacts": "+7 926 705-00-00",
-        "total": "€ 10.000.00",
-        "orders": [],
+        "contacts": "+7 926 705-00-00", "email": "photarea.at@gmail.com",
+        "orders": ["13-04-2016", "09-11-2016", "18-11-2016", "14-02-2017", "21-11-2016", "03-03-2018", "17-11-2022", "01-01-2023", "19-05-2024"],
         "totalSpend": "€ 10.000.00",
-        "lastOrderDate": "18-11-2017",
+        "registrationDate": "18-11-2017",
         "action": "Details",
         "country": "Russia"
     },
@@ -26,11 +24,10 @@ export const orders = [
     {
         "id": 3,
         "client": "John Wick",
-        "contacts": "+1 516 816-80-45",
-        "total": "€ 12.00",
+        "contacts": "+1 516 816-80-45", "email": "john.wick@example.com",
         "orders": [],
         "totalSpend": "€ 12.00",
-        "lastOrderDate": "11-10-2012",
+        "registrationDate": "11-10-2012",
         "action": "Details",
         "country": "USA"
     },
@@ -38,11 +35,10 @@ export const orders = [
     {
         "id": 4,
         "client": "Brad Pitt",
-        "contacts": "+1 365 826-00-43",
-        "total": "€ 1.20",
+        "contacts": "+1 365 826-00-43", "email": "photarea.at@gmail.com",
         "orders": [],
         "totalSpend": "€ 1.20",
-        "lastOrderDate": "27-02-2026",
+        "registrationDate": "27-02-2026",
         "action": "Refunded",
         "country": "USA"
     },
@@ -50,11 +46,10 @@ export const orders = [
     {
         "id": 5,
         "client": "Chuck Norris",
-        "contacts": "+1 888 775-11-12",
-        "total": "€ 25.55",
+        "contacts": "+1 888 775-11-12", "email": "photarea.at@gmail.com",
         "orders": [],
         "totalSpend": "€ 25.55",
-        "lastOrderDate": "23-03-2023",
+        "registrationDate": "23-03-2023",
         "action": "Details",
         "country": "USA"
     },
@@ -62,11 +57,10 @@ export const orders = [
     {
         "id": 6,
         "client": "Eva Keks",
-        "contacts": "+7 915 060-60-67",
-        "total": "€ 1200.00",
+        "contacts": "+7 915 060-60-67", "email": "photarea.at@gmail.com",
         "orders": [],
         "totalSpend": "€ 1200.00",
-        "lastOrderDate": "17-07-2025",
+        "registrationDate": "17-07-2025",
         "action": "Details",
         "country": "Russia"
     },
@@ -74,11 +68,10 @@ export const orders = [
     {
         "id": 7,
         "client": "Mark Gerasimov",
-        "contacts": "+7 915 002-99-11",
-        "total": "€ 20.00",
+        "contacts": "+7 915 002-99-11", "email": "photarea.at@gmail.com",
         "orders": [],
         "totalSpend": "€ 20.00",
-        "lastOrderDate": "23-11-2025",
+        "registrationDate": "23-11-2025",
         "action": "Details",
         "country": "Austria"
     },
@@ -86,11 +79,10 @@ export const orders = [
     {
         "id": 8,
         "client": "Ukio Chashiroma",
-        "contacts": "+7 999 123-45-67",
-        "total": "€ 120.00",
+        "contacts": "+7 999 123-45-67", "email": "ukio.chashiroma@example.com",
         "orders": [],
         "totalSpend": "€ 120.00",
-        "lastOrderDate": "02-02-2022",
+        "registrationDate": "02-02-2022",
         "action": "Details",
         "country": "Japan"
     },
@@ -98,11 +90,10 @@ export const orders = [
     {
         "id": 9,
         "client": "Yana Jacopson",
-        "contacts": "+7 909 303-11-24",
-        "total": "€ 56.10",
+        "contacts": "+7 909 303-11-24", "email": "photarea.at@gmail.com",
         "orders": [],
         "totalSpend": "€ 56.10",
-        "lastOrderDate": "14-02-2026",
+        "registrationDate": "14-02-2026",
         "action": "Details",
         "country": "Armenia"
     },
@@ -110,11 +101,10 @@ export const orders = [
     {
         "id": 10,
         "client": "Ivan Putin",
-        "contacts": "+7 999 999-99-99",
-        "total": "€ error",
+        "contacts": "+7 999 999-99-99", "email": "photarea.at@gmail.com",
         "orders": [],
         "totalSpend": "€ 0.00",
-        "lastOrderDate": "24-02-2022",
+        "registrationDate": "24-02-2022",
         "action": "When?",
         "country": "Russia"
     },
@@ -122,11 +112,10 @@ export const orders = [
     {
         "id": 11,
         "client": "Nick Meister",
-        "contacts": "+7 981 678-22-11",
-        "total": "€ 1990.00",
+        "contacts": "+7 981 678-22-11", "email": "photarea.at@gmail.com",
         "orders": [],
         "totalSpend": "€ 1990.00",
-        "lastOrderDate": "24-10-2025",
+        "registrationDate": "24-10-2025",
         "action": "Details",
         "country": "Germany"
     },
@@ -134,35 +123,24 @@ export const orders = [
     {
         "id": 12,
         "client": "Ukio Chirasima",
-        "contacts": "+7 999 123-45-67",
-        "total": "€ 120.00",
+        "contacts": "+7 999 123-45-67", "email": "photarea.at@gmail.com",
         "orders": [],
         "totalSpend": "€ 120.00",
-        "lastOrderDate": "14-02-2021",
+        "registrationDate": "14-02-2021",
         "action": "Details",
         "country": "Germany"
     },
 
-    {
-        "id": 13,
-        "client": "Anastasia Ivanova",
-        "contacts": "+7 382 011-18-52",
-        "total": "€ 48.75",
-        "orders": [],
-        "totalSpend": "€ 48.75",
-        "lastOrderDate": "01-01-2019",
-        "action": "Details",
-        "country": "Russia"
-    },
+
 
     {
         "id": 14,
         "client": "Velentina Kharpova",
-        "contacts": "+7 521 471-74-90",
-        "total": "€ 9.99",
+        "contacts": "+7 521 471-74-90", "email": "photarea.at@gmail.com",
+
         "orders": [],
         "totalSpend": "€ 9.99",
-        "lastOrderDate": "11-05-2019",
+        "registrationDate": "11-05-2019",
         "action": "Details",
         "country": "Austria"
     },
@@ -170,47 +148,35 @@ export const orders = [
     {
         "id": 15,
         "client": "Daniel Schmalz",
-        "contacts": "+7 999 123-45-67",
-        "total": "€ 120.00",
+        "contacts": "+7 999 123-45-67", "email": "photarea.at@gmail.com",
+
         "orders": [],
-        "totalSpend": "€ 120.00",
-        "lastOrderDate": "12-01-2026",
+        "totalSpend": "€ 120.00", 
+        "registrationDate": "12-01-2026",
         "action": "Details",
         "country": "Germany"
     },
 
     {
         "id": 16,
-        "client": "Adolf Hasenberg",
-        "contacts": "+43 681 111 475 11",
-        "total": "€ 00.00",
+        "client": "Adolf Hasenberg", 
+        "contacts": "+43 681 111 475 11", "email": "photarea.at@gmail.com",
+
         "orders": [],
         "totalSpend": "€ 0.00",
-        "lastOrderDate": "22-02-2022",
+        "registrationDate": "22-02-2022",
         "action": "Details",
         "country": "Austria"
     },
 
     {
         "id": 17,
-        "client": "Miron Valentinowich",
-        "contacts": "+7 582 097-49-44",
-        "total": "€ 12.00",
+        "client": "Miron Valentinowich", 
+        "contacts": "+7 582 097-49-44", "email": "photarea.at@gmail.com",
+
         "orders": [],
         "totalSpend": "€ 12.00",
-        "lastOrderDate": "26-06-2026",
-        "action": "Details",
-        "country": "Austria"
-    },
-
-    {
-        "id": 18,
-        "client": "Andrei Chapman",
-        "contacts": "+7 926 705-00-00",
-        "total": "€ 10.000.00",
-        "orders": [],
-        "totalSpend": "€ 10.000.00",
-        "lastOrderDate": "18-11-2018",
+        "registrationDate": "26-06-2026",
         "action": "Details",
         "country": "Austria"
     },
@@ -218,11 +184,10 @@ export const orders = [
     {
         "id": 19,
         "client": "Schamil Larchenko",
-        "contacts": "+7 916 887-14-12",
-        "total": "€ 12.00",
+        "contacts": "+7 916 887-14-12", "email": "photarea.at@gmail.com",
         "orders": [],
         "totalSpend": "€ 12.00",
-        "lastOrderDate": "20-06-2015",
+        "registrationDate": "20-06-2015",
         "action": "Details",
         "country": "Austria"
     },
@@ -231,11 +196,10 @@ export const orders = [
     {
         "id": 20,
         "client": "Sofia Belousova",
-        "contacts": "+7 985 101-40-07",
-        "total": "€ 00.00",
+        "contacts": "+7 985 101-40-07", "email": "photarea.at@gmail.com",
         "orders": [],
         "totalSpend": "€ 0.00",
-        "lastOrderDate": "13-04-2016",
+        "registrationDate": "13-04-2016",
         "action": "Divorce",
         "country": "Finland"
     },
@@ -243,11 +207,10 @@ export const orders = [
     {
         "id": 21,
         "client": "Polina Shanina",
-        "contacts": "+7 999 888-77-66",
-        "total": "€ 1.20",
+        "contacts": "+7 999 888-77-66", "email": "photarea.at@gmail.com",
         "orders": [],
         "totalSpend": "€ 1.20",
-        "lastOrderDate": "27-02-2026",
+        "registrationDate": "27-02-2026",
         "action": "Refunded",
         "country": "USA"
     },
@@ -255,552 +218,34 @@ export const orders = [
     {
         "id": 22,
         "client": "Valery Gnidenko",
-        "contacts": "+7 800 555-35-35",
-        "total": "€ 25.55",
+        "contacts": "+7 800 555-35-35", "email": "photarea.at@gmail.com",
         "orders": [],
         "totalSpend": "€ 25.55",
-        "lastOrderDate": "31-10-2020",
+        "registrationDate": "31-10-2020",
         "action": "Details",
         "country": "Finland"
-    },
-
-    {
-        "id": 23,
-        "client": "Eva Keks",
-        "contacts": "+7 915 060-60-67",
-        "total": "€ 1200.00",
-        "orders": [],
-        "totalSpend": "€ 1200.00",
-        "lastOrderDate": "17-07-2025",
-        "action": "Details",
-        "country": "Turkey"
-    },
-
-    {
-        "id": 24,
-        "client": "Yana Jacopson",
-        "contacts": "+7 909 303-11-24",
-        "total": "€ 56.10",
-        "orders": [],
-        "totalSpend": "€ 56.10",
-        "lastOrderDate": "14-02-2026",
-        "action": "Details",
-        "country": "Turkey"
     },
 
     {
         "id": 25,
         "client": "Alesya Unprecedented",
-        "contacts": "+7 911 005-15-99",
+        "contacts": "+7 911 005-15-99", "email": "photarea.at@gmail.com",
         "total": "€ 8.99",
         "orders": [],
         "totalSpend": "€ 8.99",
-        "lastOrderDate": "02-11-2022",
+        "registrationDate": "02-11-2022",
         "action": "Details",
         "country": "Armenia",
     },
-
-    {
-        "id": 26,
-        "client": "Mark Gerasimov",
-        "contacts": "+7 915 002-99-11",
-        "total": "€ 20.00",
-        "orders": [],
-        "totalSpend": "€ 20.00",
-        "lastOrderDate": "23-11-2025",
-        "action": "Details",
-        "country": "Austria"
-    },
-    
-    {
-        "id": 27,
-        "client": "Ivan Putin",
-        "contacts": "+7 999 999-99-99",
-        "total": "€ error",
-        "orders": [],
-        "totalSpend": "€ 0.00",
-        "lastOrderDate": "24-02-2022",
-        "action": "When?",
-        "country": "Ukraine"
-    },
-
-    {
-        "id": 28,
-        "client": "Nick Meister",
-        "contacts": "+7 981 678-22-11",
-        "total": "€ 1990.00",
-        "orders": [],
-        "totalSpend": "€ 1990.00",
-        "lastOrderDate": "24-10-2025",
-        "action": "Details",
-        "country": "Germany"
-    },
-
-    {
-        "id": 29,
-        "client": "Ukio Chirasima",
-        "contacts": "+7 999 123-45-67",
-        "total": "€ 120.00",
-        "orders": [],
-        "totalSpend": "€ 120.00",
-        "lastOrderDate": "01-06-2024",
-        "action": "Details",
-        "country": "Germany"
-    },
-
-    {
-        "id": 30,
-        "client": "Anastasia Ivanova",
-        "contacts": "+7 382 011-18-52",
-        "total": "€ 48.75",
-        "orders": [],
-        "totalSpend": "€ 48.75",
-        "lastOrderDate": "01-01-2019",
-        "action": "Details",
-        "country": "Italy"
-    },
-
-    {
-        "id": 31,
-        "client": "Velentina Kharpova",
-        "contacts": "+7 521 471-74-90",
-        "total": "€ 9.99",
-        "orders": [],
-        "totalSpend": "€ 9.99",
-        "lastOrderDate": "11-05-2019",
-        "action": "Details",
-        "country": "Spain"
-    },
-
-    {
-        "id": 32,
-        "client": "Daniel Schmalz",
-        "contacts": "+7 999 123-45-67",
-        "total": "€ 120.00",
-        "orders": [],
-        "totalSpend": "€ 120.00",
-        "lastOrderDate": "01-06-2024",
-        "action": "Details",
-        "country": "Germany"
-    },
-
-    {
-        "id": 33,
-        "client": "Adolf Hasenberg",
-        "contacts": "+43 681 111 475 11",
-        "total": "€ 00.00",
-        "orders": [],
-        "totalSpend": "€ 00.00",
-        "lastOrderDate": "22-02-2022",
-        "action": "Details",
-        "country": "Scotland"
-    },
-
-    {
-        "id": 34,
-        "client": "Miron Valentinowich",
-        "contacts": "+7 582 097-49-44",
-        "total": "€ 12.00",
-        "orders": [],
-        "totalSpend": "€ 12.00",
-        "lastOrderDate": "26-06-2026",
-        "action": "Details",
-        "country": "Switzerland"
-    },
-    
-    {
-        "id": 35,
-        "client": "Brad Pitt",
-        "contacts": "+1 365 826-00-43",
-        "total": "€ 1.20",
-        "orders": [],
-        "totalSpend": "€ 1.20",
-        "lastOrderDate": "27-02-2026",
-        "action": "Refunded",
-        "country": "Finland"
-    },
-
-    {
-        "id": 36,
-        "client": "Brad Pitt",
-        "contacts": "+1 365 826-00-43",
-        "total": "€ 1.20",
-        "orders": [],
-        "totalSpend": "€ 1.20",
-        "lastOrderDate": "27-02-2026",
-        "action": "Refunded",
-        "country": "Finland"
-    },
-
-    {
-        "id": 37,
-        "client": "Brad Pitt",
-        "contacts": "+1 365 826-00-43",
-        "total": "€ 1.20",
-        "orders": [],
-        "totalSpend": "€ 1.20",
-        "lastOrderDate": "27-02-2026",
-        "action": "Refunded",
-        "country": "Austria"
-    },
-
-    {
-        "id": 38,
-        "client": "Brad Pitt",
-        "contacts": "+1 365 826-00-43",
-        "total": "€ 1.20",
-        "orders": [],
-        "totalSpend": "€ 1.20",
-        "lastOrderDate": "27-02-2026",
-        "action": "Refunded",
-        "country": "Turkey"
-    },
-
-    {
-        "id": 39,
-        "client": "Brad Pitt",
-        "contacts": "+1 365 826-00-43",
-        "total": "€ 1.20",
-        "orders": [],
-        "totalSpend": "€ 1.20",
-        "lastOrderDate": "27-02-2026",
-        "action": "Refunded",
-        "country": "China"
-    },
-
-    {
-        "id": 40,
-        "client": "Brad Pitt",
-        "contacts": "+1 365 826-00-43",
-        "total": "€ 1.20",
-        "orders": [],
-        "totalSpend": "€ 1.20",
-        "lastOrderDate": "27-02-2026",
-        "action": "Refunded",
-        "country": "Japan"
-    },
-
-    {
-        "id": 41,
-        "client": "Brad Pitt",
-        "contacts": "+1 365 826-00-43",
-        "total": "€ 1.20",
-        "orders": [],
-        "totalSpend": "€ 1.20",
-        "lastOrderDate": "27-02-2026",
-        "action": "Refunded",
-        "country": "Italy"
-    },
-    {
-        "id": 42,
-        "client": "Ukio Chirasima",
-        "contacts": "+7 999 123-45-67",
-        "total": "€ 120.00",
-        "orders": [],
-        "totalSpend": "€ 120.00",
-        "lastOrderDate": "12-02-2024",
-        "action": "Details",
-        "country": "Germany"
-    },
-
-    {
-        "id": 43,
-        "client": "Anastasia Ivanova",
-        "contacts": "+7 382 011-18-52",
-        "total": "€ 48.75",
-        "orders": [],
-        "totalSpend": "€ 48.75",
-        "lastOrderDate": "01-01-2019",
-        "action": "Details",
-        "country": "Russia"
-    },
-    {
-
-        "id": 44,
-        "client": "Ukio Chirasima",
-        "contacts": "+7 999 123-45-67",
-        "total": "€ 120.00",
-        "orders": [],
-        "totalSpend": "€ 120.00",
-        "lastOrderDate": "02-08-2020",
-        "action": "Details",
-        "country": "Germany"
-    },
-
     {
         "id": 45,
         "client": "Anastasia Ivanova",
-        "contacts": "+7 382 011-18-52",
-        "total": "€ 48.75",
+        "contacts": "+7 382 011-18-52", "email": "photarea.at@gmail.com",
+
         "orders": [],
         "totalSpend": "€ 48.75",
-        "lastOrderDate": "01-01-2019",
+        "registrationDate": "01-01-2019", 
         "action": "Details",
         "country": "Russia"
     },
-
-    {
-    
-        "id": 46,
-        "client": "Ukio Chirasima",
-        "contacts": "+7 999 123-45-67",
-        "total": "€ 120.00",
-        "orders": [],
-        "totalSpend": "€ 120.00",
-        "lastOrderDate": "07-04-2023",
-        "action": "Details",
-        "country": "Germany"
-    },
-
-    {
-        "id": 47,
-        "client": "Anastasia Ivanova",
-        "contacts": "+7 382 011-18-52",
-        "total": "€ 48.75",
-        "orders": [],
-        "totalSpend": "€ 48.75",
-        "lastOrderDate": "01-01-2019",
-        "action": "Details",
-        "country": "Russia"
-    },
-
-    {
-        "id": 48,
-        "client": "Chuck Norris",
-        "contacts": "+1 888 775-11-12",
-        "total": "€ 25.55",
-        "orders": [],
-        "totalSpend": "€ 25.55",
-        "lastOrderDate": "01-05-2025",
-        "action": "Details",
-        "country": "USA"
-    },
-
-    {
-        "id": 49,
-        "client": "Eva Keks",
-        "contacts": "+7 915 060-60-67",
-        "total": "€ 1200.00",
-        "orders": [],
-        "totalSpend": "€ 1200.00",
-        "lastOrderDate": "17-07-2025",
-        "action": "Details",
-        "country": "Russia"
-    },
-
-    {
-        "id": 50,
-        "client": "Mark Gerasimov",
-        "contacts": "+7 915 002-99-11",
-        "total": "€ 20.00",
-        "orders": [],
-        "totalSpend": "€ 20.00",
-        "lastOrderDate": "23-11-2025",
-        "action": "Details",
-        "country": "Austria"
-    },
-
-    {
-        "id": 51,
-        "client": "Ukio Chashiroma",
-        "contacts": "+7 999 123-45-67",
-        "total": "€ 120.00",
-        "orders": [],
-        "totalSpend": "€ 120.00",
-        "lastOrderDate": "02-02-2022",
-        "action": "Details",
-        "country": "Japan"
-    },
-
-    {
-        "id": 52,
-        "client": "Yana Jacopson",
-        "contacts": "+7 909 303-11-24",
-        "total": "€ 56.10",
-        "orders": [],
-        "totalSpend": "€ 56.10",
-        "lastOrderDate": "14-02-2026",
-        "action": "Details",
-        "country": "Armenia"
-    },
-
-    {
-        "id": 53,
-        "client": "Chuck Norris",
-        "contacts": "+1 888 775-11-12",
-        "total": "€ 25.55",
-        "orders": [],
-        "totalSpend": "€ 25.55",
-        "lastOrderDate": "28-10-2020",
-        "action": "Details",
-        "country": "USA"
-    },
-
-    {
-        "id": 54,
-        "client": "Eva Keks",
-        "contacts": "+7 915 060-60-67",
-        "total": "€ 1200.00",
-        "orders": [],
-        "totalSpend": "€ 1200.00",
-        "lastOrderDate": "17-07-2025",
-        "action": "Details",
-        "country": "Russia"
-    },
-
-    {
-        "id": 55,
-        "client": "Mark Gerasimov",
-        "contacts": "+7 915 002-99-11",
-        "total": "€ 20.00",
-        "orders": [],
-        "totalSpend": "€ 20.00",
-        "lastOrderDate": "05-01-2026",
-        "action": "Details",
-        "country": "Austria"
-    },
-
-    {
-        "id": 56,
-        "client": "Ukio Chashiroma",
-        "contacts": "+7 999 123-45-67",
-        "total": "€ 120.00",
-        "orders": [],
-        "totalSpend": "€ 120.00",
-        "lastOrderDate": "30-09-2026",
-        "action": "Details",
-        "country": "Japan"
-    },
-
-    {
-        "id": 57,
-        "client": "Yana Jacopson",
-        "contacts": "+7 909 303-11-24",
-        "total": "€ 56.10",
-        "orders": [],
-        "totalSpend": "€ 56.10",
-        "lastOrderDate": "14-02-2026",
-        "action": "Details",
-        "country": "Armenia"
-    },
-
-    {
-        "id": 58,
-        "client": "Chuck Norris",
-        "contacts": "+1 888 775-11-12",
-        "total": "€ 25.55",
-        "orders": [],
-        "totalSpend": "€ 25.55",
-        "lastOrderDate": "28-10-2020",
-        "action": "Details",
-        "country": "USA"
-    },
-
-    {
-        "id": 59,
-        "client": "Eva Keks",
-        "contacts": "+7 915 060-60-67",
-        "total": "€ 1200.00",
-        "orders": [],
-        "totalSpend": "€ 1200.00",
-        "lastOrderDate": "17-07-2025",
-        "action": "Details",
-        "country": "Russia"
-    },
-
-    {
-        "id": 60,
-        "client": "Mark Gerasimov",
-        "contacts": "+7 915 002-99-11",
-        "total": "€ 20.00",
-        "status": "Delivered",
-        "payment": "Paid",
-        "date": "23-11-2025",
-        "action": "Details",
-        "country": "Austria"
-    },
-
-    {
-        "id": 61,
-        "client": "Ukio Chashiroma",
-        "contacts": "+7 999 123-45-67",
-        "total": "€ 120.00",
-        "orders": [],
-        "totalSpend": "€ 120.00",
-        "lastOrderDate": "19-06-2024",
-        "action": "Details",
-        "country": "Japan"
-    },
-
-    {
-        "id": 62,
-        "client": "Yana Jacopson",
-        "contacts": "+7 909 303-11-24",
-        "total": "€ 56.10",
-        "orders": [],
-        "totalSpend": "€ 56.10",
-        "lastOrderDate": "14-02-2026",
-        "action": "Details",
-        "country": "China"
-    },
-
-    {
-        "id": 63,
-        "client": "Chuck Norris",
-        "contacts": "+1 888 775-11-12",
-        "total": "€ 25.55",
-        "orders": [],
-        "totalSpend": "€ 25.55",
-        "lastOrderDate": "28-10-2020",
-        "action": "Details",
-        "country": "Turkey"
-    },
-
-    {
-        "id": 64,
-        "client": "Eva Keks",
-        "contacts": "+7 915 060-60-67",
-        "total": "€ 1200.00",
-        "orders": [],
-        "totalSpend": "€ 1200.00",
-        "lastOrderDate": "17-07-2025",
-        "action": "Details",
-        "country": "Russia"
-    },
-
-    {
-        "id": 65,
-        "client": "Mark Gerasimov",
-        "contacts": "+7 915 002-99-11",
-        "total": "€ 20.00",
-        "orders": [],
-        "totalSpend": "€ 20.00",
-        "lastOrderDate": "23-11-2025",
-        "action": "Details",
-        "country": "Austria"
-    },
-
-    {
-        "id": 66,
-        "client": "Ukio Chashiroma",
-        "contacts": "+7 999 123-45-67",
-        "total": "€ 120.00",
-        "orders": [],
-        "totalSpend": "€ 120.00",
-        "lastOrderDate": "17-11-2022",
-        "action": "Details",
-        "country": "Japan"
-    },
-
-    {
-        "id": 67,
-        "client": "Yana Jacopson",
-        "contacts": "+7 909 303-11-24",
-        "total": "€ 56.10",
-        "orders": [],
-        "totalSpend": "€ 56.10",
-        "lastOrderDate": "27-03-2026",
-        "action": "Details",
-        "country": "China"
-    }
 ];
