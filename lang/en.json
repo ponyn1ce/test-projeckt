@@ -123,5 +123,7 @@
     "payment_info": "Payment Info",
     "purchased": "Purchased",
     "lost": "Lost",
-    "orders_word": "orders"
+    "orders_word": "orders",
+    "loading": "Loading...",
+    "your_chats": "Your Chats"
 }

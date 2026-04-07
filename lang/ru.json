@@ -173,5 +173,7 @@
     "initiated_checkout": "Начало оформления",
     "purchased": "Куплено",
     "lost": "Потеряно",
-    "orders_word": "заказов"
+    "orders_word": "заказов",
+    "loading": "Загрузка...",
+    "your_chats": "Ваши чаты"
 }
