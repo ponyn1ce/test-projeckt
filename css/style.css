@@ -1070,3 +1070,10 @@ body.modal-open{
         margin-bottom: 0.5rem;
     }
 }
+@media screen and (max-width: 768px) {
+    main, .right {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}

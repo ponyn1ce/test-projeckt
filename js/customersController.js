@@ -342,7 +342,7 @@ const updateSidePanels = (customersList) => {
         if (attReason) {
             attCount++;
             attHtml += `
-                <div style="display: flex; align-items: center; justify-content: space-between; cursor: pointer;" onclick="window.openCustomerModalById(${c.id})">
+                <div class="country-row" style="cursor: pointer;" onclick="window.openCustomerModalById(${c.id})">
                     <span style="font-weight: 500; font-size: 0.9rem;">${c.client}</span>
                     <span style="color: var(--color-danger); font-size: 0.8rem;">${attReason}</span>
                 </div>`;
@@ -354,7 +354,7 @@ const updateSidePanels = (customersList) => {
             quickCount++;
             quickTotal += totalSpendNum;
             quickHtml += `
-                <div style="display: flex; align-items: center; justify-content: space-between; cursor: pointer;" onclick="window.openCustomerModalById(${c.id})">
+                <div class="country-row" style="cursor: pointer;" onclick="window.openCustomerModalById(${c.id})">
                     <span style="font-weight: 500; font-size: 0.9rem;">${c.client}</span>
                     <span style="color: var(--color-success); font-size: 0.8rem; font-weight: 600;">${t("potential_high", "потенциал HIGH")}</span>
                 </div>`;
@@ -369,7 +369,7 @@ const updateSidePanels = (customersList) => {
         if (trigReason) {
             trigCount++;
             trigHtml += `
-                <div style="display: flex; align-items: center; justify-content: space-between; cursor: pointer;" onclick="window.openCustomerModalById(${c.id})">
+                <div class="country-row" style="cursor: pointer;" onclick="window.openCustomerModalById(${c.id})">
                     <span style="font-weight: 500; font-size: 0.9rem;">${c.client}</span>
                     <span style="color: var(--color-warning); font-size: 0.8rem;">${trigReason}</span>
                 </div>`;
