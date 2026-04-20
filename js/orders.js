@@ -242,7 +242,7 @@ export const orders = [
 
     {
         "id": 21,
-        "client": "Polina Shanina",
+        "client": "Polina Kislaya",
         "contacts": "+7 999 888-77-66",
         "total": "€ 1.20",
         "status": "Shipped",
