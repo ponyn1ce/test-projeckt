@@ -92,8 +92,23 @@
 
 
             <div class="chat-wrapper">
-
-
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message incoming">
+                        <div class="message-content">
+                            <p>Hello! How can I help you today?</p>
+                            <span class="time1">18:11 PM</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-input-area">
+                    <button class="attach-btn" id="attachBtn" title="Attach file">
+                        <span class="material-icons-sharp">attach_file</span>
+                    </button>
+                    <input type="file" id="fileInput" style="display: none;">
+                    <input type="text" id="messageInput" placeholder="Type a message..." data-i18n-placeholder="type_message">
+                    <button class="send-btn" id="sendBtn" title="Send">
+                    </button>
+                </div>
             </div>
 
 
