@@ -186,7 +186,7 @@ aside h3{
 
 aside .sidebar a{
     display: flex;
-    color: var(--color-info-dark);
+    color: var(--color-indo-dark);
     margin-left: 2rem;
     gap: 1rem;
     align-items: center;
@@ -249,6 +249,7 @@ aside .sidebar .message-count{
     overflow: hidden;
 }
 
+
 /* sidebar */
 
 
@@ -265,41 +266,41 @@ main{
 .brand{color:var(--color-dark);font-weight:700;font-size:19px;letter-spacing:-0.01em;text-decoration:none;}
 
 
-main .tracking-orders{
+main .tracking-cus{
     margin-top: 1.8rem;
 }
 
-main .tracking-orders .summary-grid{
+main .tracking-cus .summary-grid{
     display: grid;
-    gap: 1.6rem;
-    grid-template-columns: repeat(5, 1fr);
+    gap: 1.8rem;
+    grid-template-columns: repeat(4, 1fr);
 }
 
-main .tracking-orders .summary-grid > div{
+main .tracking-cus .summary-grid > div{
     background: var(--color-white);
     padding: var(--card-padding);
     border-radius: var(--card-border-radius);
-    margin-top: 1rem;
+    margin-top: 1.8rem;
     box-shadow: var(--box-shadow);
     transition: all 300ms ease;
     min-width: 0;
 }
 
-main .tracking-orders .summary-grid > div:hover{
+main .tracking-cus .summary-grid > div:hover{
     box-shadow: none;
 }
 
-main .tracking-orders .summary-grid h1{
+main .tracking-cus .summary-grid h1{
     font-size: 2rem;
     color: var(--color-dark);
 }
 
-main .tracking-orders .summary-grid h3{
+main .tracking-cus .summary-grid h3{
     font-size: 0.87rem;
     color: var(--color-dark);
 }
 
-main .tracking-orders > div span{
+main .tracking-cus > div span{
     background: var(--color-primary);
     padding: .3rem;
     color: var(--color-white);
@@ -307,33 +308,34 @@ main .tracking-orders > div span{
 }
 
 
-main .tracking-orders .summary-grid .start-text{
+main .tracking-cus .summary-grid .start-text{
     display: flex;
-    flex-direction: column;
+    flex-direction:row;
     align-items: center;
-    gap: 0.4rem;
+    gap: 0.9rem;
 }
 
-main .tracking-orders .summary-grid .start-card.icon-right{
+main .tracking-cus .summary-grid .start-card.icon-right{
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 2rem;
 }
 
-main .tracking-orders .summary-grid .start-card.icon-right .start-text h3,
-main .tracking-orders .summary-grid .start-card.icon-right .start-text h1{
+main .tracking-cus .summary-grid .start-card.icon-right .start-text h3,
+main .tracking-cus .summary-grid .start-card.icon-right .start-text h1{
     text-align: center;
 }
 
-main .tracking-orders .summary-grid .start-card.icon-right span{
+main .tracking-cus .summary-grid .start-card.icon-right span{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
 }
- 
-main .tracking-orders .filters{
+
+
+main .tracking-cus .filters{
     background: var(--color-white);
     padding: var(--card-padding);
     border-radius: var(--card-border-radius);
@@ -345,23 +347,24 @@ main .tracking-orders .filters{
     transition: all 300ms ease;
 }
 
-main .tracking-orders .filters:hover{
+main .tracking-cus .filters:hover{
     box-shadow: none;
 }
 
-main .tracking-orders .filters .field{
+main .tracking-cus .filters .field{
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
 }
 
-main .tracking-orders .filters .field .field-label{
+
+main .tracking-cus .filters .field .field-label{
     color: var(--color-info-dark);
     font-size: 0.75rem;
     text-transform: uppercase;
 }
 
-main .tracking-orders .filters .field .field-input{
+main .tracking-cus .filters .field .field-input{
     background: var(--color-background);
     border-radius: var(--border-radius-1);
     padding: 0.5rem 1rem;
@@ -370,17 +373,19 @@ main .tracking-orders .filters .field .field-input{
     transition: all 300ms ease;
 }
 
-main .tracking-orders .filters .field .field-input:focus{
+
+
+main .tracking-cus .filters .field .field-input:focus{
     border-color: var(--color-primary);
     outline: none;
 }
 
-main .tracking-orders .filters .field.field-actions{
+main .tracking-cus .filters .field.field-actions{
     flex-direction: row;
     justify-content: flex-end;
 }
 
-main .tracking-orders .filters .field.field-actions .btn-ghost{
+main .tracking-cus .filters .field.field-actions .btn-ghost{
     background: transparent;
     color: var(--color-dark);
     border: 1px solid var(--color-info-dark);
@@ -390,138 +395,104 @@ main .tracking-orders .filters .field.field-actions .btn-ghost{
     margin-right: 0;
 }
 
-main .tracking-orders .filters .field.field-actions .btn-ghost:hover{
-    background: var(--color-info-dark);
+main .tracking-cus .filters .field.field-actions .btn-ghost:hover{
+    background: var(--color-danger);
     color: var(--color-white);
 }
 
-main .tracking-orders .filters .field.field-actions .btn-ghost{
+main .tracking-cus .filters .field.field-actions .btn-ghost1:hover{
+    background: var(--color-success);
+    color: var(--color-white);
+}
+
+main .tracking-cus .filters .field.field-actions .btn-ghost1{
     background: transparent;
     color: var(--color-dark);
     border: 1px solid var(--color-info-dark);
-    padding: 0.5rem 1.2rem;
-    border-radius: var(--border-radius-1);
+    padding: 0.5rem 1rem;
+    border-radius: var(--card-border-radius);
     transition: all 300ms ease;
     margin-right: 0;
 }
 
-main .tracking-orders .table-wrap{
+
+
+main .tracking-cus .table-wrap{
     background: var(--color-white);
     border-radius: var(--card-border-radius);
     box-shadow: var(--box-shadow);
     overflow-x: auto;
     margin-top: 1.4rem;
+    padding: calc(var(--card-padding) * 0.7);
 }
 
-main .tracking-orders .table-wrap:hover{
+main .tracking-cus .table-wrap:hover{
     box-shadow: none;
 }
 
-main .tracking-orders .table-wrap table{
+main .tracking-cus .table-wrap table{
     width: 100%;
     border-collapse: collapse;
     justify-content: center;
     align-items: center;
 }
 
-main .tracking-orders .table-wrap table thead th{
+main .tracking-cus .table-wrap table thead th{
     text-align: center;
-    color: var(--color-info-dark);
+    color: var(--color-dark-veriant);
     font-size: 0.75rem;
     text-transform: uppercase;
-    padding: 1rem 1rem;
+    padding: 0.6rem 1rem;
 }
 
-main .tracking-orders .table-wrap table tbody tr{
+main .tracking-cus .table-wrap table tbody tr{
     border-bottom: 1px solid var(--color-light);
 }
 
-
-main .tracking-orders .table-wrap table tbody tr td{
-    padding: 0.8rem 1rem;
-    color: var(--color-dark);
-    text-align: center;
-    
+main .tracking-cus .table-wrap table tbody tr:last-child{
+    border-bottom: none;
 }
 
-main .tracking-orders .table-wrap table tbody tr td .status{
+main .tracking-cus .table-wrap table tbody tr.is-last-visible{
+    border-bottom: none;
+}
+
+main .tracking-cus .table-wrap table tbody tr td{
+    padding: 0.6rem 0.5rem;
+    color: var(--color-info-dark);
+    text-align: center;
+}
+
+main .tracking-cus .table-wrap table tbody tr td .status{
     display: inline-block;
     padding: 2px 8px;
-    border-radius: var(--border-radius-1);
+    border-radius: var(--card-border-radius);
     font-size: 0.75rem;
     color: var(--color-white);
 }
 
-main .tracking-orders .table-wrap table tbody tr td .status.new{
-    background: var(--color-primary);
-}
-
-main .tracking-orders .table-wrap table tbody tr td .status.processing{
-    background: var(--color-warning);
-}
-
-main .tracking-orders .table-wrap table tbody tr td .status.delivered{
-    background: var(--color-success);
-}
-
-main .tracking-orders .table-wrap table tbody tr td .status.canceled{
-    background: var(--color-danger);
-}
-
-main .tracking-orders .table-wrap table tbody tr td .status.unconfirmed{
-    background: var(--color-info-dark);
-}
-
-main .tracking-orders .table-wrap table tbody tr td .status.refunded{
-    background: var(--color-info-light);
-}
-
-main .tracking-orders .table-wrap table tbody tr td .payment{
-    display: inline-block;
-    padding: 2px 8px;
-    border-radius: var(--border-radius-1);
-    font-size: 0.75rem; 
-    color: var(--color-white);
-}
-
-main .tracking-orders .table-wrap table tbody tr td .payment.paid{
-    background: var(--color-success);
-}
-
-main .tracking-orders .table-wrap table tbody tr td .payment.unpaid{
-    background: var(--color-danger);
-}
-
-main .tracking-orders .table-wrap table tbody tr td .payment.refund{
-    background: var(--color-warning);
-}
-
-main .tracking-orders .table-wrap table tbody tr td .actions{
-    display: flex;
-    gap: 0.4rem;
-}
-
-main .tracking-orders .table-wrap table tbody tr td .actions button{
+main .tracking-cus .table-wrap table tbody tr td .details-btn{
     background: transparent;
     color: var(--color-primary);
     border: 1px solid var(--color-primary);
-    padding: 2px 8px;
-    border-radius: var(--border-radius-1);
+    padding: 4px 12px;
+    border-radius: var(--card-border-radius);
     font-size: 0.75rem;
+    cursor: pointer;
     transition: all 300ms ease;
 }
 
-main .tracking-orders .table-wrap table tbody tr td .actions button:hover{
+main .tracking-cus .table-wrap table tbody tr td .details-btn:hover{
     background: var(--color-primary);
     color: var(--color-white);
 }
 
 
-main .tracking-orders .test-items{
+main .tracking-cus .test-items{
     margin-top: 1.4rem;
 }
 
-main .tracking-orders .test-items table{
+main .tracking-cus .test-items table{
     background: var(--color-white);
     width: 100%;
     border-radius: var(--card-border-radius);
@@ -531,35 +502,19 @@ main .tracking-orders .test-items table{
 }
 
 
-main .tracking-orders .test-items table th,
-main .tracking-orders .test-items table td{
+main .tracking-cus .test-items table th,
+main .tracking-cus .test-items table td{
     text-align: center;
     padding: 10px;
     
 }
 
 
-main .tracking-orders .test-items table:hover{
+main .tracking-cus .test-items table:hover{
     box-shadow: none;
 } 
 
-
-
-main .tracking-orders .test-items table tbody td{
-    height: 2.8rem;
-    border-bottom: 1px solid var(--color-light);
-    color: var(--color-dark-veriant);
-}
-
-main .tracking-orders .test-items table tbody tr:last-child td{
-    border-bottom: none;
-}
-
-main .tracking-orders .test-items table tbody tr.is-last-visible td{
-    border-bottom: none;
-}
-
-main .tracking-orders .test-items-pagination{
+main .tracking-cus .test-items-pagination{
     margin-top: 1rem;
     display: flex;
     align-items: center;
@@ -567,14 +522,14 @@ main .tracking-orders .test-items-pagination{
     gap: 0.6rem;
 }
 
-main .tracking-orders .test-items-pagination .page-list{
+main .tracking-cus .test-items-pagination .page-list{
     display: flex;
     align-items: center;
     gap: 0.4rem;
 }
 
-main .tracking-orders .test-items-pagination .page-btn,
-main .tracking-orders .test-items-pagination .page-number{
+main .tracking-cus .test-items-pagination .page-btn,
+main .tracking-cus .test-items-pagination .page-number{
     background: var(--color-white);
     color: var(--color-dark);
     border: 1px solid var(--color-light);
@@ -585,23 +540,15 @@ main .tracking-orders .test-items-pagination .page-number{
     transition: all 200ms ease;
 }
 
-main .tracking-orders .test-items-pagination .page-btn:disabled{
+main .tracking-cus .test-items-pagination .page-btn:disabled{
     opacity: 0.5;
     cursor: not-allowed;
 }
 
-main .tracking-orders .test-items-pagination .page-number.active{
+main .tracking-cus .test-items-pagination .page-number.active{
     background: var(--color-primary);
     color: var(--color-white);
     border-color: var(--color-primary);
-}
-
-
-
-main .tracking-orders .table-wrap .hint-empty{
-    margin: 1rem 1.2rem 1.2rem;
-    text-align: center;
-    font-size: 0.9rem;
 }
 
 body.modal-open{
@@ -761,27 +708,6 @@ body.modal-open{
     border-radius: var(--border-radius-1);
 }
 
-
-@keyframes fadeInSmooth {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-main {
-    animation: fadeInSmooth 0.6s ease-out forwards;
-}
-
-.right {
-    animation: fadeInSmooth 0.6s ease-out 0.1s forwards;
-    opacity: 0; /* начальное состояние до анимации */
-}
-
 .modal .order-fields .field-input1{
     width: 35%;
     height: 2rem;
@@ -846,28 +772,12 @@ main {
     transition: all 200ms ease;
 }
 
-.order-details-btn:hover{
-    background: var(--color-primary);
-    color: var(--color-white);
-}
 
-@media (max-width: 900px){
-    .modal .modal-content.modal-wide{
-        max-width: 40rem;
-    }
 
-    .modal .order-fields{
-        grid-template-columns: 1fr;
-    }
 
-    .modal .order-field-divider{
-        display: none;
-    }
 
-    .modal .order-fields .field-input{
-        width: 100%;
-    }
-}
+
+
 
 .right{
     margin-top: 1.4rem;
@@ -935,6 +845,8 @@ main {
     cursor: pointer;
 }
 
+
+
 .right .orders-country{
     margin-top: 1rem;
 }
@@ -963,65 +875,73 @@ main {
     color: var(--color-info-dark);
 }
 
-.country-row{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap: 1rem;
-padding:0.5rem 0;
-border-bottom:1px solid rgba(255,255,255,0.05);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 1921px) {
+    html {
+        font-size: 21px;
+    }
 }
 
-.country-row span{
-    min-width: 0;
+
+@media (max-width: 900px){
+    .modal .modal-content.modal-wide{
+        max-width: 40rem;
+    }
+
+    .modal .order-fields{
+        grid-template-columns: 1fr;
+    }
+
+    .modal .order-field-divider{
+        display: none;
+    }
+
+    .modal .order-fields .field-input{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 768px) {
+    main, .right {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
 }
 
-.country-row:last-child{
-border-bottom:none;
+/* Увеличиваем высоту верхних блоков примерно в 2 раза для ПК версии */
+@media screen and (min-width: 1201px) {
+    main .tracking-cus .summary-grid .start-card {
+        min-height: 11rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
-.orders-country a{
-    text-align:  center;
-    display: block;
-    margin: 0.8rem auto;
-    color: var(--color-primary);
+/* Увеличиваем высоту верхних блоков примерно в 2 раза для ПК версии */
+@media screen and (min-width: 1201px) {
+    main .tracking-cus .summary-grid .start-card {
+        min-height: 11rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
-
-
-.right .ai-like-insights{
-    margin-top: 2rem;
-}
-
-.right .ai-like-insights h2{
-    margin-bottom: 0.8rem ;
-    margin-left: 1.1rem;
-}
-
-.right .ai-like-insights .ai-like{
-    background: var(--color-white);
-    padding: var(--card-padding);
-    border-radius: var(--card-border-radius);
-    box-shadow: var(--box-shadow);
-    transition: all 300ms ease;
-    width: 100%;
-    min-width: 0;
-}
-
-.right .ai-like-insights .ai-like:hover{
-    box-shadow: none;
-}
-
-.right .ai-like-insights #aiHints .ai-like #aiInsights{
-    font-size: 1rem;
-    padding: var(--padding-1);
-    color: var(--color-dark-veriant);
-}
-
-.right .ai-like-insights #aiHints .ai-like #aiInsights li{
-    margin-bottom: 0.4rem;
-}
-
-/*media queries*/
 
 @media screen and (max-width: 1200px){
     .container{
@@ -1029,10 +949,7 @@ border-bottom:none;
         grid-template-columns: 7rem minmax(0, 1fr) 20rem;
     }
 
-    aside .logo h2{
-        display: none;
-    }
-
+    aside .logo h2,
     aside .sidebar h3{
         display: none;
     }
@@ -1040,33 +957,15 @@ border-bottom:none;
     aside .sidebar a{
         width: 5.6rem;
     }
-
-    aside .sidebar a:last-child{
-        position: relative;
-        margin-top: 1.8rem;
-    }
-
-    main .tracking-orders .summary-grid{
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    main .tracking-orders .summary-grid > div:last-child{
-        grid-column: 1 / -1;
-    }
-
-    .language-switcher{
-        position: static;
-    }
 }
-
-@media screen and (max-width: 768px) {
-    .container{
+  
+/* Media querys for tablet */
+@media screen and (max-width: 1080px) {
+    .container {
         width: 100%;
         grid-template-columns: 1fr;
-        gap: 0;
     }
-
-    aside{
+    aside {
         position: fixed;
         left: -100%;
         background: var(--color-white);
@@ -1078,122 +977,65 @@ border-bottom:none;
         display: none;
         animation: showMenu 400ms ease forwards;
     }
-
     @keyframes showMenu {
-        to{
+        to {
             left: 0;
         }
     }
-
-    aside .logo{
+    aside .logo {
         margin-left: 1rem;
     }
-
-    aside .logo h2,
-    aside .sidebar h3{
+    aside .logo h2 {
         display: inline;
     }
-
-    aside .sidebar a{
+    aside .sidebar h3 {
+        display: inline;
+    }
+    aside .sidebar a {
         width: 100%;
         height: 3.4rem;
     }
-
-    aside .sidebar a:last-child{
+    aside .sidebar a:last-child {
         position: absolute;
         bottom: 5rem;
     }
-
-    aside .close{
+    aside .close {
         display: inline-block;
         cursor: pointer;
     }
 
-    main{
+    main {
         margin-top: 8rem;
         padding: 0 1rem;
     }
-
-    main h1{
-        font-size: 1.9rem;
-        line-height: 1.15;
-    }
-
-    main .tracking-orders,
-    .right,
-    .right .orders-country,
-    .right .ai-like-insights{
-        width: 100%;
-    }
-
-    main .tracking-orders .summary-grid{
-        grid-template-columns: 1fr;
+    main .tracking-cus .summary-grid {
+        grid-template-columns: 1fr 1fr;
         gap: 1rem;
     }
-
-    main .tracking-orders .summary-grid .start-card.icon-right{
-        justify-content: space-between;
-        gap: 0.8rem;
-    }
-
-    main .tracking-orders .summary-grid .start-text{
-        align-items: flex-start;
-    }
-
-    main .tracking-orders .summary-grid .start-card.icon-right .start-text h3,
-    main .tracking-orders .summary-grid .start-card.icon-right .start-text h1{
-        text-align: left;
-    }
-
-    main .tracking-orders .filters{
-        grid-template-columns: 1fr;
+    main .tracking-cus .filters {
+        grid-template-columns: 1fr 1fr;
         gap: 1rem;
     }
-
-    main .tracking-orders .filters .field.field-actions{
-        justify-content: flex-start;
-    }
-
-    main .tracking-orders .table-wrap,
-    main .tracking-orders .test-items,
-    .right .orders-country .orders-chart,
-    .right .ai-like-insights .ai-like{
+    main .tracking-cus .table-wrap {
         width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-
-    main .tracking-orders .table-wrap,
-    main .tracking-orders .test-items{
         overflow-x: auto;
     }
-
-    main .tracking-orders .table-wrap table,
-    main .tracking-orders .test-items table{
-        width: 100%;
-        min-width: 600px;
+    main .tracking-cus .table-wrap table {
+        min-width: 900px;
     }
 
-    main .tracking-orders .filters .field.field-actions .btn-ghost{
-        width: 200%;
-        text-align: center;
-        margin-top: 0.67rem;
-    }
-
-    .right{
+    .right {
         margin: 0 auto 4rem;
         padding: 0 1rem;
         box-sizing: border-box;
     }
-
-    .right .top{
+    .right .top {
         position: fixed;
         top: 0;
         left: 0;
-        display: grid;
-        grid-template-columns: auto minmax(0, 1fr) auto auto;
+        display: flex;
+        justify-content: space-between;
         align-items: center;
-        gap: 0.75rem;
         padding: 0 1rem;
         height: 4.6rem;
         background: var(--color-white);
@@ -1202,133 +1044,135 @@ border-bottom:none;
         z-index: 2;
         box-shadow: 0 1rem 1rem var(--color-light);
     }
-
-    .right .top button{
+    .right .top button {
         display: inline-block;
         background: transparent;
         cursor: pointer;
-        position: static;
         color: var(--color-dark);
-        justify-self: start;
     }
-
-    .right .top button span{
+    .right .top button span {
         font-size: 2rem;
     }
-
-    .right .top .theme-toggler{
-        width: 4.4rem;
-        position: static;
-    }
-
-    .right .profile .info{
+    .right .profile .info {
         display: none;
     }
-
-    .right .top .profile{
+    .right .top .profile {
         gap: 0;
-        justify-self: end;
-    }
-
-    .right .language-switcher{
-        position: static;
-        margin-left: 10rem;
-        margin-top: 1rem;
-        width: auto;
-        justify-self: center;
-    }
-
-    #languageSelect{
-        width: 100%;
-        max-width: 8rem;
-    }
-
-    .right .orders-country h2,
-    .right .ai-like-insights h2{
-        margin-left: 0;
-    }
-
-    .right .orders-country .orders-chart #ordersByCountry,
-    .right .ai-like-insights #aiHints .ai-like #aiInsights{
-        font-size: 1.1rem;
-    }
-
-    .country-row span:first-child{
-        flex: 1;
-        overflow-wrap: anywhere;
     }
 }
 
-@media screen and (max-width: 420px) {
-    main,
-    .right{
-        padding-left: 0.75rem;
-        padding-right: 0.75rem;
-    }
-
-    main .tracking-orders .summary-grid > div{
-        padding: 1rem;
-    }
-
-    .right .top{
-        gap: 0.5rem;
-        padding: 0 0.75rem;
-    }
-
-    #languageSelect{
-        max-width: 6.8rem;
-        font-size: 0.95rem;
-        padding: 4px 8px;
-    }
-
-    .right .top .theme-toggler{
-        width: 4rem;
-    }
-}
-
-@media screen and (min-width: 1921px) {
-    html {
-        font-size: 21px;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .modal .order-fields {
+/* Media querys for mobile */
+@media screen and (max-width: 756px) {
+    main .tracking-cus .summary-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
     }
-    .modal .order-field-divider {
-        display: block;
-        width: 100%;
-        height: 1px;
-        margin: 0.5rem 0;
+    main .tracking-cus .filters {
+        grid-template-columns: 1fr;
     }
-    .modal .modal-content {
-        padding: 1rem;
-        width: 95%;
+    .right .top {
+        gap: 0.5rem;
     }
-    .modal .kv {
-        grid-template-columns: 90px 1fr;
-        font-size: 1rem;
-    }
-    .modal .modal-title {
-        font-size: 1.5rem;
-    }
-    .modal .row {
-        flex-direction: column;
-        align-items: stretch;
-    }
-    .modal .row button {
-        width: 100%;
-        margin-bottom: 0.5rem;
+    .right .language-switcher {
+        margin-left: auto;
     }
 }
 
+/* Styles for expandable blocks in right sidebar */
+.orders-chart-expandable {
+    display: flex;
+    flex-direction: column;
+}
+.orders-list-preview {
+    flex: 1;
+}
+.expand-collapse-buttons {
+    display: flex;
+    gap: 0;
+    border-top: 1px solid var(--color-light);
+    margin-top: 0.5rem;
+}
+.expand-btn,
+.collapse-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-primary);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 200ms ease;
+    font-family: 'Poppins', sans-serif;
+    flex: 1;
+}
+.expand-btn:hover,
+.collapse-btn:hover {
+    color: var(--color-primary-veriant);
+}
+.expand-btn .material-icons-sharp,
+.collapse-btn .material-icons-sharp {
+    font-size: 20px;
+    transition: transform 300ms ease;
+}
+.expand-btn[aria-expanded="true"] .material-icons-sharp {
+    transform: rotate(180deg);
+}
+.countries-expanded {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 400ms ease, opacity 300ms ease;
+}
+.countries-expanded.active {
+    max-height: 600px;
+    opacity: 1;
+    overflow-y: auto;
+}
+.countries-expanded.active .countries-list {
+    opacity: 1;
+    animation: slideInList 300ms ease 100ms forwards;
+}
+.countries-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0 0 0.5rem 0;
+    animation: slideInList 300ms ease 100ms forwards;
+    opacity: 0;
+}
+.country-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 200ms ease;
+    animation: slideInItem 300ms ease backwards;
+    font-size: 1.2rem;
+    color: var(--color-dark-veriant);
+}
+.country-row:last-child {
+    border-bottom: none;
+}
+.country-row span {
+    min-width: 0;
+}
+.country-row span:last-child {
+    color: var(--color-info-dark);
+}
+.country-row:hover {
+    color: var(--color-primary);
+}
+@keyframes slideInList { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideInItem { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
 
+/* Fix overflow on small screens for the sidebar expanded content */
 @media screen and (max-width: 768px) {
-    main, .right {
-        animation: none !important;
-        opacity: 1 !important;
-        transform: none !important;
+    .countries-expanded.active {
+        max-height: 300px; /* Reduce max height on mobile */
     }
 }
